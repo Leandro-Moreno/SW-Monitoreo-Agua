@@ -52,7 +52,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('upgrade', function () {
 		return view('pages.upgrade');
 	})->name('upgrade');
+  Route::get('registro/import','RegistroController@import')->name('registroimport');
+  Route::post('registro/import','RegistroController@importCreate')->name('registroCreate');
+  Route::resource('registro', 'RegistroController');
+  Route::resource('region', 'RegionController');
+  Route::resource('celular', 'CelularController');
 });
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
@@ -60,4 +66,3 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
-

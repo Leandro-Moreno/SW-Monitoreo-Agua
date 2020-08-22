@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Registro;
 use Illuminate\Http\Request;
 
+use App\Imports\RegistroImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 class RegistroController extends Controller
 {
     /**
@@ -12,9 +15,10 @@ class RegistroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Registro $registros)
     {
-        //
+        $registros = Registro::paginate(80);
+        return view('registros.index', ['registros' => $registros]);
     }
 
     /**
@@ -81,5 +85,13 @@ class RegistroController extends Controller
     public function destroy(Registro $registro)
     {
         //
+    }
+    public function importCreate(){
+      Excel::import(new RegistroImport, request()->file('file'));
+      return redirect('/')->with('success', 'Salio Bien');
+
+    }
+    public function import(){
+      return view('registros.import');
     }
 }

@@ -22,10 +22,13 @@ class CreateRegistrosTable extends Migration
             $table->double('conduct');
             $table->double('od');
             $table->double('ph');
-            $table->foreignId('region_id')->references('id')->on('regions');
-            $table->foreignId('celular_id')->references('id')->on('celulars')->nullable();
+            $table->biginteger('region_id')->unsigned();
+            $table->foreign('region_id')->references('id')->on('regions')->onUpdate('cascade')->onDelete('cascade');
+            $table->biginteger('celular_id')->unsigned()->nullable();
+            $table->foreign('celular_id')->references('id')->on('celulars');
             $table->integer('estado');
-            $table->timestamps();
+            $table->datetime('created_at');
+            $table->datetime('updated_at');
         });
     }
 
