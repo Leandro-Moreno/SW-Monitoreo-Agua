@@ -15,7 +15,7 @@ class Registro extends Model
    */
   protected $fillable = [
       'longitud', 'latitud', 'temperatura', 'hg', 'conduct', 'od', 'ph',
-      'region_id', 'celular_id', 'estado', 'created_at', 'updated_at'
+      'region_id', 'transfer_id' , 'created_at', 'updated_at'
   ];
   /**
      * @return Region

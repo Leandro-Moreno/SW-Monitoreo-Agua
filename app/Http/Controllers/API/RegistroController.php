@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use Auth;
+use App\Http\Controllers\Controller;
 use App\Metodo;
 use App\Registro;
 use App\Transference;
 use Illuminate\Http\Request;
-
-use App\Imports\RegistroImport;
-use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Resources\RegistroResource;
+use Illuminate\Support\Carbon;
 
 class RegistroController extends Controller
 {
@@ -18,20 +17,10 @@ class RegistroController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Registro $registros)
+    public function index()
     {
-        $registros = Registro::orderBy('id', 'DESC')->paginate(80);
-        return view('registros.index', ['registros' => $registros]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+      $registros = Registro::all();
+      return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
     }
 
     /**
@@ -42,7 +31,18 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $transfer = new Transference();
+      $transfer->metodo_id = Metodo::where('id','=',2)->first()->id;
+      $transfer->estado = 1;
+      $transfer->save();
+      $data = $request->all();
+      $data['transfer_id'] =  $transfer->id;
+      $data['created_at'] =  Carbon::now();
+      $data['updated_at'] =  Carbon::now();
+      $registro = Registro::create($data);
+      // dd($registro);
+        return response(['message' => 'Retrieved successfully'], 200);
     }
 
     /**
@@ -52,17 +52,6 @@ class RegistroController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Registro $registro)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Registro $registro)
     {
         //
     }
@@ -89,17 +78,5 @@ class RegistroController extends Controller
     {
         //
     }
-    public function importCreate(){
-      $transfer = new Transference();
-      $transfer->user_id = Auth::id();
-      $transfer->metodo_id = Metodo::where('id','=',1)->first()->id;
-      $transfer->estado = 1;
-      $transfer->save();
-      Excel::import(new RegistroImport($transfer), request()->file('file'));
-      return redirect('/')->with('success', 'Salio Bien');
 
-    }
-    public function import(){
-      return view('registros.import');
-    }
 }

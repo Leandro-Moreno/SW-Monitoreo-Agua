@@ -2,13 +2,21 @@
 
 namespace App\Imports;
 
+
+
 use App\Region;
 use App\Registro;
+use App\Transference;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class RegistroImport implements ToModel, WithHeadingRow
 {
+    private $transfer=null;
+    public function __construct(Transference $transfer)
+    {
+        $this->transfer=$transfer;
+    }
     /**
     * @param array $row
     *
@@ -16,6 +24,7 @@ class RegistroImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
+
         return new Registro([
             'longitud' => $row['longitude'],
             'latitud' => $row['latitude'],
@@ -24,8 +33,8 @@ class RegistroImport implements ToModel, WithHeadingRow
             'conduct' => $row['conduct'],
             'od' => $row['od'],
             'ph' => $row['ph'],
+            'transfer_id' => $this->transfer->id,
             'region_id' => $row['region'],
-            'estado' => 1,
             'created_at' => $row['createdat'],
             'updated_at' => $row['updatedat'],
         ]);

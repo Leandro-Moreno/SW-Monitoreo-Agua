@@ -2,26 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\Metodo;
-use App\Registro;
 use App\Transference;
 use Illuminate\Http\Request;
 
-use App\Imports\RegistroImport;
-use Maatwebsite\Excel\Facades\Excel;
-
-class RegistroController extends Controller
+class TransferenceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Registro $registros)
+    public function index()
     {
-        $registros = Registro::orderBy('id', 'DESC')->paginate(80);
-        return view('registros.index', ['registros' => $registros]);
+        //
     }
 
     /**
@@ -48,10 +41,10 @@ class RegistroController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Registro  $registro
+     * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function show(Registro $registro)
+    public function show(Transference $transference)
     {
         //
     }
@@ -59,10 +52,10 @@ class RegistroController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Registro  $registro
+     * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function edit(Registro $registro)
+    public function edit(Transference $transference)
     {
         //
     }
@@ -71,10 +64,10 @@ class RegistroController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Registro  $registro
+     * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Registro $registro)
+    public function update(Request $request, Transference $transference)
     {
         //
     }
@@ -82,24 +75,11 @@ class RegistroController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Registro  $registro
+     * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Registro $registro)
+    public function destroy(Transference $transference)
     {
         //
-    }
-    public function importCreate(){
-      $transfer = new Transference();
-      $transfer->user_id = Auth::id();
-      $transfer->metodo_id = Metodo::where('id','=',1)->first()->id;
-      $transfer->estado = 1;
-      $transfer->save();
-      Excel::import(new RegistroImport($transfer), request()->file('file'));
-      return redirect('/')->with('success', 'Salio Bien');
-
-    }
-    public function import(){
-      return view('registros.import');
     }
 }
