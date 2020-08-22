@@ -9,11 +9,15 @@ use App\Transference;
 use Illuminate\Http\Request;
 use App\Http\Resources\RegistroResource;
 use Illuminate\Support\Carbon;
-
+/**
+ *
+ * @group Registros
+ * APIs para administrar los Datos de las Registros
+ */
 class RegistroController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra el listado de todos los registros.
      *
      * @return \Illuminate\Http\Response
      */
@@ -24,7 +28,15 @@ class RegistroController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena un nuevo registro
+     * @bodyParam longitud float required Longitud de la ubicación. Example: 4.12
+     * @bodyParam latitud float required Latitud de la ubicación. Example: -74.105001
+     * @bodyParam temperatura double required PH del agua. Example: 15.2
+     * @bodyParam hg double required PH del agua. Example: 0
+     * @bodyParam conduct double required PH del agua. Example: 4.5
+     * @bodyParam od double required PH del agua. Example: 6
+     * @bodyParam ph double required PH del agua. Example: 4.5
+     * @bodyParam region_id int required PH del agua. Example: 2
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -43,40 +55,6 @@ class RegistroController extends Controller
       $registro = Registro::create($data);
       // dd($registro);
         return response(['message' => 'Retrieved successfully'], 200);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Registro $registro)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Registro $registro)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Registro $registro)
-    {
-        //
     }
 
 }

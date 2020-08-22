@@ -9,11 +9,15 @@ use Illuminate\Http\Request;
 use App\Http\Resources\RegionResource;
 use App\Http\Resources\RegistroResource;
 use Illuminate\Support\Carbon;
-
+/**
+ *
+ * @group Regiones
+ * APIs para administrar los Datos de las Regiones
+ */
 class RegionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra el listado de todas las regiones
      *
      * @return \Illuminate\Http\Response
      */
@@ -24,19 +28,8 @@ class RegionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        // dd($request);
-        return response([ 'regiones' => RegionResource::collection($request), 'message' => 'Retrieved successfully'], 200);
-    }
-
-    /**
-     * Display the specified resource.
+     * Muestra los registros de una region en Especifico
+     * @urlParam region required requerido para seleccionar la region. Example: 2
      *
      * @param  \App\Region  $region
      * @return \Illuminate\Http\Response
@@ -47,29 +40,15 @@ class RegionController extends Controller
       $registros = Registro::where('region_id', '=', $region->id)->orderBy('id', 'DESC')->paginate(80);
       return response(['registros' => RegistroResource::collection( $registros), 'message' => 'Retrieved successfully'], 200);
     }
-
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Region  $region
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Region $region)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
+     * Muestra el listado de registros de una region en unas fechas determinadas.
+     * @urlParam  region required requerido para seleccionar la region. Example: 3
+     * @urlParam  fechaIni required requerido para filtrar la fecha de inicio de la busqueda. Example: 12-04-2018
+     * @urlParam  fechaFin required requerido para filtrar la fecha final de la busqueda, 20-04-2020 para seleccionar el 20 de Abril de 2020. Example: 20-04-2020
      *
      * @param  \App\Region  $region
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Region $region)
-    {
-        //
-    }
     public function porfecha(Region $region, $fechaIni = null, $fechaFin = null)
     {
       $fechaInicial = Carbon::createFromDate($fechaIni);
