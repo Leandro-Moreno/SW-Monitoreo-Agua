@@ -18,50 +18,26 @@
                     ID
                   </th>
                   <th>
-                    Latitud
+                    nombre
                   </th>
                   <th>
-                    Longitud
+                    cantidad
                   </th>
                   <th>
-                    temperatura
-                  </th>
-                  <th>
-                    hg
-                  </th>
-                  <th>
-                    conduct
-                  </th>
-                  <th>
-                    od
-                  </th>
-                  <th>
-                    ph
-                  </th>
-                  <th>
-                    region_id
-                  </th>
-                  <th>
-                    estado
+                    ver
                   </th>
                 </thead>
                 <tbody>
-                @foreach($registros as $registro)
+                @foreach($regiones as $key => $region)
                 <tr>
-                  <td>{{$registro->id}}</td>
-                  <td>{{$registro->latitud}}</td>
-                  <td>{{$registro->longitud}}</td>
-                  <td>{{$registro->temperatura}}</td>
-                  <td>{{$registro->hg}}</td>
-                  <td>{{$registro->conduct}}</td>
-                  <td>{{$registro->od}}</td>
-                  <td>{{$registro->ph}}</td>
+                  <td>{{$region->id}}</td>
+                  <td>{{$region->nombre}}</td>
                   <td>
-                    <a href="{{ route('region.show', $registro->region_id) }}">
-                    {{$registro->region_id}}
-                  </a>
+                    {{isset($registros[$key+1])?$registros[$key+1]:0}}
                   </td>
-                  <td>{{$registro->estado}}</td>
+                  <td>
+                    <a href="{{  route('region.show', $region)  }}"> entrar </a>
+                  </td>
                 </tr>
                 @endforeach
                 </tbody>

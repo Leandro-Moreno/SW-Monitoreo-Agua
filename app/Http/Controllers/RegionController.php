@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Region;
+use App\Registro;
 use Illuminate\Http\Request;
 
 class RegionController extends Controller
@@ -14,7 +15,13 @@ class RegionController extends Controller
      */
     public function index()
     {
-        //
+      $regiones = Region::paginate(80);
+      $registros = Registro::all();
+      $registros = $registros->countBy(function ($registro) {
+                return $registro->region_id;
+            });
+            // dd($registros);
+      return view('regiones.index', ['regiones' => $regiones, 'registros' => $registros]);
     }
 
     /**
@@ -46,7 +53,8 @@ class RegionController extends Controller
      */
     public function show(Region $region)
     {
-        //
+      $registros = Registro::where('region_id', '=', $region->id)->orderBy('id', 'DESC')->paginate(80);
+      return view('regiones.show', ['region' => $region, 'registros' => $registros]);
     }
 
     /**

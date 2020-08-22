@@ -17,7 +17,7 @@ class RegistroController extends Controller
      */
     public function index(Registro $registros)
     {
-        $registros = Registro::paginate(80);
+        $registros = Registro::orderBy('id', 'DESC')->paginate(80);
         return view('registros.index', ['registros' => $registros]);
     }
 

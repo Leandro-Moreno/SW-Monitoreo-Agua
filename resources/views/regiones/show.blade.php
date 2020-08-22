@@ -7,7 +7,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title ">Simple Table</h4>
+            <h4 class="card-title ">{{$region->nombre}}</h4>
             <p class="card-category"> Here is a subtitle for this table</p>
           </div>
           <div class="card-body">
@@ -56,11 +56,7 @@
                   <td>{{$registro->conduct}}</td>
                   <td>{{$registro->od}}</td>
                   <td>{{$registro->ph}}</td>
-                  <td>
-                    <a href="{{ route('region.show', $registro->region_id) }}">
-                    {{$registro->region_id}}
-                  </a>
-                  </td>
+                  <td>{{$registro->region_id}}</td>
                   <td>{{$registro->estado}}</td>
                 </tr>
                 @endforeach
