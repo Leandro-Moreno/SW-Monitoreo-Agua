@@ -45,7 +45,7 @@ class RegistroController extends Controller
     {
 
       $transfer = new Transference();
-      $transfer->metodo_id = Metodo::where('id','=',2)->first()->id;
+      $transfer->metodo_id = Metodo::where('id','=',3)->first()->id;
       $transfer->estado = 1;
       $transfer->save();
       $data = $request->all();

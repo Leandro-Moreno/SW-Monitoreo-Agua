@@ -4,6 +4,7 @@ title: API Reference
 language_tabs:
 - bash
 - javascript
+- python
 
 includes:
 
@@ -53,6 +54,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/region'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (200):
 
@@ -61,51 +75,51 @@ fetch(url, {
     "regiones": [
         {
             "id": 1,
-            "nombre": "Chia",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "nombre": "1",
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 2,
-            "nombre": "Bogotá",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "nombre": "2",
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 3,
             "nombre": "3",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 4,
             "nombre": "4",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 5,
             "nombre": "5",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 6,
             "nombre": "6",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 7,
             "nombre": "7",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         },
         {
             "id": 8,
             "nombre": "8 ",
-            "created_at": "2020-08-22T16:48:01.000000Z",
-            "updated_at": "2020-08-22T16:48:01.000000Z"
+            "created_at": "2020-08-22T21:36:51.000000Z",
+            "updated_at": "2020-08-22T21:36:51.000000Z"
         }
     ],
     "message": "Retrieved successfully"
@@ -148,6 +162,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/region/2'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (200):
 
@@ -155,7 +182,7 @@ fetch(url, {
 {
     "registros": [
         {
-            "id": 520,
+            "id": 514,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 19.92,
@@ -164,12 +191,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 519,
+            "id": 513,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 24.29,
@@ -178,12 +205,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 518,
+            "id": 512,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -192,12 +219,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 517,
+            "id": 511,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -206,12 +233,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 516,
+            "id": 510,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.13,
@@ -220,12 +247,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 515,
+            "id": 509,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -234,12 +261,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 514,
+            "id": 508,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.07,
@@ -248,12 +275,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 513,
+            "id": 507,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -262,12 +289,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 512,
+            "id": 506,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.11,
@@ -276,12 +303,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 511,
+            "id": 505,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -290,12 +317,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 510,
+            "id": 504,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -304,12 +331,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 509,
+            "id": 503,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -318,12 +345,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 508,
+            "id": 502,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.32,
@@ -332,12 +359,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 507,
+            "id": 501,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 19.16,
@@ -346,12 +373,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 506,
+            "id": 500,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20,
@@ -360,12 +387,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 505,
+            "id": 499,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 15.09,
@@ -374,12 +401,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 504,
+            "id": 498,
             "longitud": -73.977379,
             "latitud": 4.707583,
             "temperatura": 16.39,
@@ -388,12 +415,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 503,
+            "id": 497,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 18.54,
@@ -402,12 +429,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 502,
+            "id": 496,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 22.86,
@@ -416,12 +443,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 501,
+            "id": 495,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20.31,
@@ -430,12 +457,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 500,
+            "id": 494,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 18.37,
@@ -444,12 +471,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 499,
+            "id": 493,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 24.69,
@@ -458,12 +485,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 498,
+            "id": 492,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 22.16,
@@ -472,12 +499,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 497,
+            "id": 491,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 25.04,
@@ -486,12 +513,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 496,
+            "id": 490,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 22.94,
@@ -500,12 +527,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 495,
+            "id": 489,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.1,
@@ -514,12 +541,12 @@ fetch(url, {
             "od": 17.42,
             "ph": 9.812,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 494,
+            "id": 488,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.77,
@@ -528,12 +555,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 8.122,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 493,
+            "id": 487,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.24,
@@ -542,12 +569,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 6.87,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 492,
+            "id": 486,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 22.44,
@@ -556,12 +583,12 @@ fetch(url, {
             "od": 12,
             "ph": 6.987,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 491,
+            "id": 485,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 19.98,
@@ -570,12 +597,12 @@ fetch(url, {
             "od": 10.24,
             "ph": 6.984,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 490,
+            "id": 484,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21,
@@ -584,12 +611,12 @@ fetch(url, {
             "od": 9.84,
             "ph": 7.006,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 489,
+            "id": 483,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 22.12,
@@ -598,12 +625,12 @@ fetch(url, {
             "od": 10.01,
             "ph": 6.854,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 488,
+            "id": 482,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.6,
@@ -612,12 +639,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 7.38,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 487,
+            "id": 481,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 19,
@@ -626,12 +653,12 @@ fetch(url, {
             "od": 7.01,
             "ph": 6.284,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 486,
+            "id": 480,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.24,
@@ -640,12 +667,12 @@ fetch(url, {
             "od": 6.23,
             "ph": 7.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 485,
+            "id": 479,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.14,
@@ -654,12 +681,12 @@ fetch(url, {
             "od": 6.45,
             "ph": 6.896,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 484,
+            "id": 478,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 13,
@@ -668,12 +695,12 @@ fetch(url, {
             "od": 10.01,
             "ph": 6.204,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 483,
+            "id": 477,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -682,12 +709,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.204,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 482,
+            "id": 476,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.56,
@@ -696,12 +723,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.58,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:38:08.000000Z",
             "updated_at": "2018-06-27T16:38:08.000000Z"
         },
         {
-            "id": 481,
+            "id": 475,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 12,
@@ -710,12 +737,12 @@ fetch(url, {
             "od": 7.84,
             "ph": 6.756,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 480,
+            "id": 474,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 24.87,
@@ -724,12 +751,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 479,
+            "id": 473,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -738,12 +765,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 478,
+            "id": 472,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -752,12 +779,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 477,
+            "id": 471,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -766,12 +793,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 476,
+            "id": 470,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -780,12 +807,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 475,
+            "id": 469,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -794,12 +821,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 474,
+            "id": 468,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.02,
@@ -808,12 +835,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 473,
+            "id": 467,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.14,
@@ -822,12 +849,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 472,
+            "id": 466,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.14,
@@ -836,12 +863,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 471,
+            "id": 465,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 19.32,
@@ -850,12 +877,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 470,
+            "id": 464,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 15.52,
@@ -864,12 +891,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 469,
+            "id": 463,
             "longitud": -73.967705,
             "latitud": 4.721514,
             "temperatura": 17.51,
@@ -878,12 +905,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 468,
+            "id": 462,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.66,
@@ -892,12 +919,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 467,
+            "id": 461,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20.35,
@@ -906,12 +933,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 466,
+            "id": 460,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 21.38,
@@ -920,12 +947,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 465,
+            "id": 459,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 22.34,
@@ -934,12 +961,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 464,
+            "id": 458,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.54,
@@ -948,12 +975,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 463,
+            "id": 457,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 16.47,
@@ -962,12 +989,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 462,
+            "id": 456,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.54,
@@ -976,12 +1003,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 461,
+            "id": 455,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 23.73,
@@ -990,12 +1017,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 460,
+            "id": 454,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 24.6,
@@ -1004,12 +1031,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 459,
+            "id": 453,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.31,
@@ -1018,12 +1045,12 @@ fetch(url, {
             "od": 13.88,
             "ph": 6.782,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T19:53:24.000000Z",
             "updated_at": "2018-06-29T19:53:24.000000Z"
         },
         {
-            "id": 458,
+            "id": 452,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -1032,12 +1059,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.204,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:41:49.000000Z",
             "updated_at": "2018-06-29T16:41:49.000000Z"
         },
         {
-            "id": 457,
+            "id": 451,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -1046,12 +1073,12 @@ fetch(url, {
             "od": 19.27,
             "ph": 9.135,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 455,
+            "id": 449,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.11,
@@ -1060,12 +1087,12 @@ fetch(url, {
             "od": 9.1,
             "ph": 6.894,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 454,
+            "id": 448,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.56,
@@ -1074,12 +1101,12 @@ fetch(url, {
             "od": 8,
             "ph": 4.99,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 453,
+            "id": 447,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -1088,12 +1115,12 @@ fetch(url, {
             "od": 7.22,
             "ph": 6.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 452,
+            "id": 446,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 22.22,
@@ -1102,12 +1129,12 @@ fetch(url, {
             "od": 10.11,
             "ph": 6.894,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 451,
+            "id": 445,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21.02,
@@ -1116,12 +1143,12 @@ fetch(url, {
             "od": 13.17,
             "ph": 7.004,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 450,
+            "id": 444,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21.01,
@@ -1130,12 +1157,12 @@ fetch(url, {
             "od": 9.5,
             "ph": 6.789,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 449,
+            "id": 443,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20.02,
@@ -1144,12 +1171,12 @@ fetch(url, {
             "od": 7.17,
             "ph": 7.144,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 448,
+            "id": 442,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 19,
@@ -1158,12 +1185,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 6.934,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 447,
+            "id": 441,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 20.25,
@@ -1172,12 +1199,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 7.744,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 446,
+            "id": 440,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 14,
@@ -1186,12 +1213,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 7.934,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 445,
+            "id": 439,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 20.35,
@@ -1200,12 +1227,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 444,
+            "id": 438,
             "longitud": -73.954117,
             "latitud": 4.727611,
             "temperatura": 20.26,
@@ -1214,12 +1241,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 443,
+            "id": 437,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 21.64,
@@ -1228,12 +1255,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 442,
+            "id": 436,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -1242,12 +1269,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 441,
+            "id": 435,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -1256,12 +1283,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 440,
+            "id": 434,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -1270,7 +1297,7 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         }
@@ -1318,6 +1345,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/region/3/12-04-2018/20-04-2020'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -1376,6 +1416,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/registro'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (200):
 
@@ -1384,90 +1437,6 @@ fetch(url, {
     "registros": [
         {
             "id": 1,
-            "longitud": 74,
-            "latitud": 4.1,
-            "temperatura": 18,
-            "hg": 0,
-            "conduct": 10,
-            "od": 10,
-            "ph": 4,
-            "region_id": 2,
-            "transfer_id": 22,
-            "created_at": "2020-08-22T17:22:19.000000Z",
-            "updated_at": "2020-08-22T17:22:19.000000Z"
-        },
-        {
-            "id": 2,
-            "longitud": 74,
-            "latitud": 4.1,
-            "temperatura": 18,
-            "hg": 0,
-            "conduct": 10,
-            "od": 10,
-            "ph": 4,
-            "region_id": 2,
-            "transfer_id": 23,
-            "created_at": "2020-08-22T17:24:30.000000Z",
-            "updated_at": "2020-08-22T17:24:30.000000Z"
-        },
-        {
-            "id": 3,
-            "longitud": 74,
-            "latitud": 4.1,
-            "temperatura": 18,
-            "hg": 0,
-            "conduct": 10,
-            "od": 10,
-            "ph": 4,
-            "region_id": 2,
-            "transfer_id": 24,
-            "created_at": "2020-08-22T17:26:13.000000Z",
-            "updated_at": "2020-08-22T17:26:13.000000Z"
-        },
-        {
-            "id": 4,
-            "longitud": 72.2,
-            "latitud": 4.1,
-            "temperatura": 18,
-            "hg": 0,
-            "conduct": 10,
-            "od": 10,
-            "ph": 4,
-            "region_id": 2,
-            "transfer_id": 25,
-            "created_at": "2020-08-22T17:26:53.000000Z",
-            "updated_at": "2020-08-22T17:26:53.000000Z"
-        },
-        {
-            "id": 5,
-            "longitud": 72.2,
-            "latitud": 4.1,
-            "temperatura": 18,
-            "hg": 0,
-            "conduct": 10,
-            "od": 10,
-            "ph": 4,
-            "region_id": 2,
-            "transfer_id": 26,
-            "created_at": "2020-08-22T17:27:03.000000Z",
-            "updated_at": "2020-08-22T17:27:03.000000Z"
-        },
-        {
-            "id": 6,
-            "longitud": 72.2,
-            "latitud": 4.1,
-            "temperatura": 18,
-            "hg": 0,
-            "conduct": 10,
-            "od": 10,
-            "ph": 4,
-            "region_id": 2,
-            "transfer_id": 27,
-            "created_at": "2020-08-22T17:28:08.000000Z",
-            "updated_at": "2020-08-22T17:28:08.000000Z"
-        },
-        {
-            "id": 7,
             "longitud": -70.1327717,
             "latitud": -4.0084371,
             "temperatura": 28.5,
@@ -1476,12 +1445,12 @@ fetch(url, {
             "od": 7.61,
             "ph": 7,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 8,
+            "id": 2,
             "longitud": -70.349729,
             "latitud": -3.79183,
             "temperatura": 28.9,
@@ -1490,12 +1459,12 @@ fetch(url, {
             "od": 9.42,
             "ph": 6.56,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 9,
+            "id": 3,
             "longitud": -69.94506,
             "latitud": -4.2214267,
             "temperatura": 28.94,
@@ -1504,7 +1473,91 @@ fetch(url, {
             "od": 47.67,
             "ph": 8.02,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
+            "created_at": "2018-06-27T15:20:53.000000Z",
+            "updated_at": "2018-06-27T15:20:53.000000Z"
+        },
+        {
+            "id": 4,
+            "longitud": -70.349729,
+            "latitud": -3.79183,
+            "temperatura": 28.06,
+            "hg": 0,
+            "conduct": 103.68,
+            "od": 10.24,
+            "ph": 6.33,
+            "region_id": 3,
+            "transfer_id": 1,
+            "created_at": "2018-06-27T15:20:53.000000Z",
+            "updated_at": "2018-06-27T15:20:53.000000Z"
+        },
+        {
+            "id": 5,
+            "longitud": -70.349729,
+            "latitud": -3.79183,
+            "temperatura": 27.94,
+            "hg": 0,
+            "conduct": 20.92,
+            "od": 9.72,
+            "ph": 7.28,
+            "region_id": 3,
+            "transfer_id": 1,
+            "created_at": "2018-06-27T15:20:53.000000Z",
+            "updated_at": "2018-06-27T15:20:53.000000Z"
+        },
+        {
+            "id": 6,
+            "longitud": -70.1330174,
+            "latitud": -4.0084622,
+            "temperatura": 26.69,
+            "hg": 0,
+            "conduct": 16.35,
+            "od": 7.32,
+            "ph": 6.66,
+            "region_id": 3,
+            "transfer_id": 1,
+            "created_at": "2018-06-27T15:20:53.000000Z",
+            "updated_at": "2018-06-27T15:20:53.000000Z"
+        },
+        {
+            "id": 7,
+            "longitud": -70.349729,
+            "latitud": -3.79183,
+            "temperatura": 28.5,
+            "hg": 0,
+            "conduct": 88.16,
+            "od": 10.08,
+            "ph": 7.12,
+            "region_id": 3,
+            "transfer_id": 1,
+            "created_at": "2018-06-27T15:20:53.000000Z",
+            "updated_at": "2018-06-27T15:20:53.000000Z"
+        },
+        {
+            "id": 8,
+            "longitud": -69.94506,
+            "latitud": -4.2214267,
+            "temperatura": 29.06,
+            "hg": 0,
+            "conduct": 15.05,
+            "od": 47.67,
+            "ph": 8.02,
+            "region_id": 3,
+            "transfer_id": 1,
+            "created_at": "2018-06-27T15:20:53.000000Z",
+            "updated_at": "2018-06-27T15:20:53.000000Z"
+        },
+        {
+            "id": 9,
+            "longitud": -70.349729,
+            "latitud": -3.79183,
+            "temperatura": 28.06,
+            "hg": 0,
+            "conduct": 144.41,
+            "od": 10.08,
+            "ph": 6.84,
+            "region_id": 3,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
@@ -1514,100 +1567,16 @@ fetch(url, {
             "latitud": -3.79183,
             "temperatura": 28.06,
             "hg": 0,
-            "conduct": 103.68,
-            "od": 10.24,
-            "ph": 6.33,
+            "conduct": 20.85,
+            "od": 9.57,
+            "ph": 5.41,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
             "id": 11,
-            "longitud": -70.349729,
-            "latitud": -3.79183,
-            "temperatura": 27.94,
-            "hg": 0,
-            "conduct": 20.92,
-            "od": 9.72,
-            "ph": 7.28,
-            "region_id": 3,
-            "transfer_id": 28,
-            "created_at": "2018-06-27T15:20:53.000000Z",
-            "updated_at": "2018-06-27T15:20:53.000000Z"
-        },
-        {
-            "id": 12,
-            "longitud": -70.1330174,
-            "latitud": -4.0084622,
-            "temperatura": 26.69,
-            "hg": 0,
-            "conduct": 16.35,
-            "od": 7.32,
-            "ph": 6.66,
-            "region_id": 3,
-            "transfer_id": 28,
-            "created_at": "2018-06-27T15:20:53.000000Z",
-            "updated_at": "2018-06-27T15:20:53.000000Z"
-        },
-        {
-            "id": 13,
-            "longitud": -70.349729,
-            "latitud": -3.79183,
-            "temperatura": 28.5,
-            "hg": 0,
-            "conduct": 88.16,
-            "od": 10.08,
-            "ph": 7.12,
-            "region_id": 3,
-            "transfer_id": 28,
-            "created_at": "2018-06-27T15:20:53.000000Z",
-            "updated_at": "2018-06-27T15:20:53.000000Z"
-        },
-        {
-            "id": 14,
-            "longitud": -69.94506,
-            "latitud": -4.2214267,
-            "temperatura": 29.06,
-            "hg": 0,
-            "conduct": 15.05,
-            "od": 47.67,
-            "ph": 8.02,
-            "region_id": 3,
-            "transfer_id": 28,
-            "created_at": "2018-06-27T15:20:53.000000Z",
-            "updated_at": "2018-06-27T15:20:53.000000Z"
-        },
-        {
-            "id": 15,
-            "longitud": -70.349729,
-            "latitud": -3.79183,
-            "temperatura": 28.06,
-            "hg": 0,
-            "conduct": 144.41,
-            "od": 10.08,
-            "ph": 6.84,
-            "region_id": 3,
-            "transfer_id": 28,
-            "created_at": "2018-06-27T15:20:53.000000Z",
-            "updated_at": "2018-06-27T15:20:53.000000Z"
-        },
-        {
-            "id": 16,
-            "longitud": -70.349729,
-            "latitud": -3.79183,
-            "temperatura": 28.06,
-            "hg": 0,
-            "conduct": 20.85,
-            "od": 9.57,
-            "ph": 5.41,
-            "region_id": 3,
-            "transfer_id": 28,
-            "created_at": "2018-06-27T15:20:53.000000Z",
-            "updated_at": "2018-06-27T15:20:53.000000Z"
-        },
-        {
-            "id": 17,
             "longitud": -70.349729,
             "latitud": -3.79183,
             "temperatura": 26.37,
@@ -1616,12 +1585,12 @@ fetch(url, {
             "od": 9.46,
             "ph": 8.95,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 18,
+            "id": 12,
             "longitud": -70.349729,
             "latitud": -3.79183,
             "temperatura": 26.37,
@@ -1630,12 +1599,12 @@ fetch(url, {
             "od": 9.29,
             "ph": 7.1,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 19,
+            "id": 13,
             "longitud": -69.938903,
             "latitud": -4.18984,
             "temperatura": 30.31,
@@ -1644,12 +1613,12 @@ fetch(url, {
             "od": 11.9,
             "ph": 6.52,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 20,
+            "id": 14,
             "longitud": -69.938903,
             "latitud": -4.18984,
             "temperatura": 30.31,
@@ -1658,12 +1627,12 @@ fetch(url, {
             "od": 11.9,
             "ph": 6.52,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 21,
+            "id": 15,
             "longitud": -70.1298459,
             "latitud": -4.0085118,
             "temperatura": 25.94,
@@ -1672,12 +1641,12 @@ fetch(url, {
             "od": 9.57,
             "ph": 7.41,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 22,
+            "id": 16,
             "longitud": -69.938903,
             "latitud": -4.18984,
             "temperatura": 30.44,
@@ -1686,12 +1655,12 @@ fetch(url, {
             "od": 14.22,
             "ph": 7.6,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 23,
+            "id": 17,
             "longitud": -74.065511,
             "latitud": 4.603334,
             "temperatura": 14.1,
@@ -1700,12 +1669,12 @@ fetch(url, {
             "od": 7.57,
             "ph": 7.4,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 24,
+            "id": 18,
             "longitud": -74.065511,
             "latitud": 4.603334,
             "temperatura": 14,
@@ -1714,12 +1683,12 @@ fetch(url, {
             "od": 7.76,
             "ph": 7.59,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 25,
+            "id": 19,
             "longitud": -69.974471,
             "latitud": -4.082099,
             "temperatura": 28.25,
@@ -1728,12 +1697,12 @@ fetch(url, {
             "od": 9.47,
             "ph": 7.68,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 26,
+            "id": 20,
             "longitud": -69.937283,
             "latitud": -4.096417,
             "temperatura": 28.5,
@@ -1742,12 +1711,12 @@ fetch(url, {
             "od": 12.7,
             "ph": 6.88,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 27,
+            "id": 21,
             "longitud": -69.937283,
             "latitud": -4.096417,
             "temperatura": 28.56,
@@ -1756,12 +1725,12 @@ fetch(url, {
             "od": 12.41,
             "ph": 7.13,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 28,
+            "id": 22,
             "longitud": -69.937283,
             "latitud": -4.096417,
             "temperatura": 28.5,
@@ -1770,12 +1739,12 @@ fetch(url, {
             "od": 12.59,
             "ph": 6.97,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 29,
+            "id": 23,
             "longitud": -69.974471,
             "latitud": -4.082099,
             "temperatura": 28.44,
@@ -1784,12 +1753,12 @@ fetch(url, {
             "od": 9.67,
             "ph": 7.48,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 30,
+            "id": 24,
             "longitud": -69.974471,
             "latitud": -4.082099,
             "temperatura": 28.44,
@@ -1798,12 +1767,12 @@ fetch(url, {
             "od": 9.64,
             "ph": 7.08,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:53.000000Z",
             "updated_at": "2018-06-27T15:20:53.000000Z"
         },
         {
-            "id": 31,
+            "id": 25,
             "longitud": -69.974471,
             "latitud": -4.082099,
             "temperatura": 28.44,
@@ -1812,12 +1781,12 @@ fetch(url, {
             "od": 9.86,
             "ph": 7.08,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:54.000000Z",
             "updated_at": "2018-06-27T15:20:54.000000Z"
         },
         {
-            "id": 32,
+            "id": 26,
             "longitud": -70.312024,
             "latitud": -3.767798,
             "temperatura": 25.06,
@@ -1826,12 +1795,12 @@ fetch(url, {
             "od": 9.48,
             "ph": 6.21,
             "region_id": 3,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T15:20:54.000000Z",
             "updated_at": "2018-06-27T15:20:54.000000Z"
         },
         {
-            "id": 33,
+            "id": 27,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -1840,12 +1809,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.204,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:53:26.000000Z",
             "updated_at": "2018-08-30T15:53:26.000000Z"
         },
         {
-            "id": 34,
+            "id": 28,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.14,
@@ -1854,12 +1823,12 @@ fetch(url, {
             "od": 6.45,
             "ph": 4.896,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 35,
+            "id": 29,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.56,
@@ -1868,12 +1837,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 36,
+            "id": 30,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21,
@@ -1882,12 +1851,12 @@ fetch(url, {
             "od": 7.48,
             "ph": 4.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 37,
+            "id": 31,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.25,
@@ -1896,12 +1865,12 @@ fetch(url, {
             "od": 5.14,
             "ph": 4.24,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:21:11.000000Z",
             "updated_at": "2018-07-19T20:21:11.000000Z"
         },
         {
-            "id": 38,
+            "id": 32,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.44,
@@ -1910,12 +1879,12 @@ fetch(url, {
             "od": 6.9,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 39,
+            "id": 33,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.19,
@@ -1924,12 +1893,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 6.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 40,
+            "id": 34,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.89,
@@ -1938,12 +1907,12 @@ fetch(url, {
             "od": 8.99,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 41,
+            "id": 35,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.11,
@@ -1952,12 +1921,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 42,
+            "id": 36,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.48,
@@ -1966,12 +1935,12 @@ fetch(url, {
             "od": 6.92,
             "ph": 7.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 43,
+            "id": 37,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 23.78,
@@ -1980,12 +1949,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 7.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 44,
+            "id": 38,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.67,
@@ -1994,12 +1963,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 6.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 45,
+            "id": 39,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22,
@@ -2008,12 +1977,12 @@ fetch(url, {
             "od": 9,
             "ph": 7.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 46,
+            "id": 40,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.89,
@@ -2022,12 +1991,12 @@ fetch(url, {
             "od": 8.99,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 47,
+            "id": 41,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -2036,12 +2005,12 @@ fetch(url, {
             "od": 7.55,
             "ph": 7.92,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 48,
+            "id": 42,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.55,
@@ -2050,12 +2019,12 @@ fetch(url, {
             "od": 10.99,
             "ph": 8.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 49,
+            "id": 43,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.24,
@@ -2064,12 +2033,12 @@ fetch(url, {
             "od": 9.31,
             "ph": 4.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:00:14.000000Z",
             "updated_at": "2018-08-31T17:00:14.000000Z"
         },
         {
-            "id": 50,
+            "id": 44,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.89,
@@ -2078,12 +2047,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 7.77,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 51,
+            "id": 45,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20,
@@ -2092,12 +2061,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 52,
+            "id": 46,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.88,
@@ -2106,12 +2075,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 3.984,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:06:28.000000Z",
             "updated_at": "2018-08-31T17:06:28.000000Z"
         },
         {
-            "id": 53,
+            "id": 47,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.14,
@@ -2120,12 +2089,12 @@ fetch(url, {
             "od": 8.89,
             "ph": 6.202,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:06:28.000000Z",
             "updated_at": "2018-08-31T17:06:28.000000Z"
         },
         {
-            "id": 54,
+            "id": 48,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.15,
@@ -2134,12 +2103,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 55,
+            "id": 49,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.41,
@@ -2148,12 +2117,12 @@ fetch(url, {
             "od": 8.99,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 56,
+            "id": 50,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.15,
@@ -2162,12 +2131,12 @@ fetch(url, {
             "od": 7.22,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 57,
+            "id": 51,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.18,
@@ -2176,12 +2145,12 @@ fetch(url, {
             "od": 6.92,
             "ph": 7.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 58,
+            "id": 52,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.88,
@@ -2190,12 +2159,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 59,
+            "id": 53,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -2204,12 +2173,12 @@ fetch(url, {
             "od": 9.81,
             "ph": 8.54,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 60,
+            "id": 54,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.14,
@@ -2218,12 +2187,12 @@ fetch(url, {
             "od": 8.45,
             "ph": 4.69,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 61,
+            "id": 55,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.01,
@@ -2232,12 +2201,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 7.203,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 62,
+            "id": 56,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.15,
@@ -2246,12 +2215,12 @@ fetch(url, {
             "od": 9.78,
             "ph": 5.415,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:06:28.000000Z",
             "updated_at": "2018-08-31T17:06:28.000000Z"
         },
         {
-            "id": 63,
+            "id": 57,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -2260,12 +2229,12 @@ fetch(url, {
             "od": 9.64,
             "ph": 4.21,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 64,
+            "id": 58,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.4,
@@ -2274,12 +2243,12 @@ fetch(url, {
             "od": 9.78,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 65,
+            "id": 59,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.25,
@@ -2288,12 +2257,12 @@ fetch(url, {
             "od": 6.98,
             "ph": 4.144,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 66,
+            "id": 60,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.55,
@@ -2302,12 +2271,12 @@ fetch(url, {
             "od": 6.18,
             "ph": 5.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 67,
+            "id": 61,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.14,
@@ -2316,12 +2285,12 @@ fetch(url, {
             "od": 7.93,
             "ph": 6.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 68,
+            "id": 62,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19,
@@ -2330,12 +2299,12 @@ fetch(url, {
             "od": 6.23,
             "ph": 3.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 69,
+            "id": 63,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.85,
@@ -2344,12 +2313,12 @@ fetch(url, {
             "od": 7.77,
             "ph": 6.5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 70,
+            "id": 64,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.55,
@@ -2358,12 +2327,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 6.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 71,
+            "id": 65,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -2372,12 +2341,12 @@ fetch(url, {
             "od": 9.12,
             "ph": 6.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 72,
+            "id": 66,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.88,
@@ -2386,12 +2355,12 @@ fetch(url, {
             "od": 6.867,
             "ph": 5.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:27:07.000000Z",
             "updated_at": "2018-07-19T20:27:07.000000Z"
         },
         {
-            "id": 73,
+            "id": 67,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.5,
@@ -2400,12 +2369,12 @@ fetch(url, {
             "od": 9.01,
             "ph": 7.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 74,
+            "id": 68,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.99,
@@ -2414,12 +2383,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 5.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 75,
+            "id": 69,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.44,
@@ -2428,12 +2397,12 @@ fetch(url, {
             "od": 9.38,
             "ph": 6.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 76,
+            "id": 70,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.87,
@@ -2442,12 +2411,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 77,
+            "id": 71,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.22,
@@ -2456,12 +2425,12 @@ fetch(url, {
             "od": 4.14,
             "ph": 7.39,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 78,
+            "id": 72,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.77,
@@ -2470,12 +2439,12 @@ fetch(url, {
             "od": 9,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 79,
+            "id": 73,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.45,
@@ -2484,12 +2453,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 80,
+            "id": 74,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.55,
@@ -2498,12 +2467,12 @@ fetch(url, {
             "od": 8.65,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 81,
+            "id": 75,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.45,
@@ -2512,12 +2481,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 8.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 82,
+            "id": 76,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.45,
@@ -2526,12 +2495,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 9.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 83,
+            "id": 77,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.55,
@@ -2540,12 +2509,12 @@ fetch(url, {
             "od": 12.41,
             "ph": 9.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 84,
+            "id": 78,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -2554,12 +2523,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 3.38,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 85,
+            "id": 79,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.55,
@@ -2568,12 +2537,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 5.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 86,
+            "id": 80,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20,
@@ -2582,12 +2551,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 5.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 87,
+            "id": 81,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22,
@@ -2596,12 +2565,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 5.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 88,
+            "id": 82,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.21,
@@ -2610,12 +2579,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 89,
+            "id": 83,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.98,
@@ -2624,12 +2593,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 90,
+            "id": 84,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.56,
@@ -2638,12 +2607,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 6.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 91,
+            "id": 85,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.98,
@@ -2652,12 +2621,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 92,
+            "id": 86,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.99,
@@ -2666,12 +2635,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 9.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 93,
+            "id": 87,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.26,
@@ -2680,12 +2649,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 5.85,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:06:28.000000Z",
             "updated_at": "2018-08-31T17:06:28.000000Z"
         },
         {
-            "id": 94,
+            "id": 88,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.05,
@@ -2694,12 +2663,12 @@ fetch(url, {
             "od": 8.45,
             "ph": 6.001,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 95,
+            "id": 89,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.15,
@@ -2708,12 +2677,12 @@ fetch(url, {
             "od": 8.88,
             "ph": 6.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 96,
+            "id": 90,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20.02,
@@ -2722,12 +2691,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 7.06,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 97,
+            "id": 91,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.45,
@@ -2736,12 +2705,12 @@ fetch(url, {
             "od": 8.115,
             "ph": 6.086,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 98,
+            "id": 92,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16,
@@ -2750,12 +2719,12 @@ fetch(url, {
             "od": 10.68,
             "ph": 3.85,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 99,
+            "id": 93,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -2764,12 +2733,12 @@ fetch(url, {
             "od": 12,
             "ph": 6.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 100,
+            "id": 94,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -2778,12 +2747,12 @@ fetch(url, {
             "od": 10,
             "ph": 4.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 101,
+            "id": 95,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.45,
@@ -2792,12 +2761,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 4.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:48:34.000000Z",
             "updated_at": "2018-07-19T20:48:34.000000Z"
         },
         {
-            "id": 102,
+            "id": 96,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.24,
@@ -2806,12 +2775,12 @@ fetch(url, {
             "od": 8.96,
             "ph": 6.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 103,
+            "id": 97,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.2,
@@ -2820,12 +2789,12 @@ fetch(url, {
             "od": 4.56,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:48:34.000000Z",
             "updated_at": "2018-07-19T20:48:34.000000Z"
         },
         {
-            "id": 104,
+            "id": 98,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.15,
@@ -2834,12 +2803,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 105,
+            "id": 99,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.7,
@@ -2848,12 +2817,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 106,
+            "id": 100,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.37,
@@ -2862,12 +2831,12 @@ fetch(url, {
             "od": 6.18,
             "ph": 6.76,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 107,
+            "id": 101,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.48,
@@ -2876,12 +2845,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 7,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 108,
+            "id": 102,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.14,
@@ -2890,12 +2859,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 7.08,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 109,
+            "id": 103,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.55,
@@ -2904,12 +2873,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 7.02,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 110,
+            "id": 104,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.07,
@@ -2918,12 +2887,12 @@ fetch(url, {
             "od": 9.12,
             "ph": 6.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 111,
+            "id": 105,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.99,
@@ -2932,12 +2901,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 112,
+            "id": 106,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21,
@@ -2946,12 +2915,12 @@ fetch(url, {
             "od": 9.38,
             "ph": 6.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 113,
+            "id": 107,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -2960,12 +2929,12 @@ fetch(url, {
             "od": 9.22,
             "ph": 9.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 114,
+            "id": 108,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.24,
@@ -2974,12 +2943,12 @@ fetch(url, {
             "od": 8.17,
             "ph": 8.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 115,
+            "id": 109,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.89,
@@ -2988,12 +2957,12 @@ fetch(url, {
             "od": 8.45,
             "ph": 6.47,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:00:14.000000Z",
             "updated_at": "2018-08-31T17:00:14.000000Z"
         },
         {
-            "id": 116,
+            "id": 110,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.55,
@@ -3002,12 +2971,12 @@ fetch(url, {
             "od": 9.1,
             "ph": 7.008,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 117,
+            "id": 111,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.44,
@@ -3016,12 +2985,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 118,
+            "id": 112,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.11,
@@ -3030,12 +2999,12 @@ fetch(url, {
             "od": 12.48,
             "ph": 5.711,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 119,
+            "id": 113,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.11,
@@ -3044,12 +3013,12 @@ fetch(url, {
             "od": 9.22,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 120,
+            "id": 114,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.78,
@@ -3058,12 +3027,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 4.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 121,
+            "id": 115,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.98,
@@ -3072,12 +3041,12 @@ fetch(url, {
             "od": 4.63,
             "ph": 4.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 122,
+            "id": 116,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.44,
@@ -3086,12 +3055,12 @@ fetch(url, {
             "od": 7.03,
             "ph": 4.95,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 123,
+            "id": 117,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.78,
@@ -3100,12 +3069,12 @@ fetch(url, {
             "od": 7.48,
             "ph": 6.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 124,
+            "id": 118,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.44,
@@ -3114,12 +3083,12 @@ fetch(url, {
             "od": 9.27,
             "ph": 5.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 125,
+            "id": 119,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22,
@@ -3128,12 +3097,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 6.76,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 126,
+            "id": 120,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20,
@@ -3142,12 +3111,12 @@ fetch(url, {
             "od": 6.89,
             "ph": 6.54,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 127,
+            "id": 121,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21,
@@ -3156,12 +3125,12 @@ fetch(url, {
             "od": 7.55,
             "ph": 6.66,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 128,
+            "id": 122,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.87,
@@ -3170,12 +3139,12 @@ fetch(url, {
             "od": 10.01,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 129,
+            "id": 123,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.44,
@@ -3184,12 +3153,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 130,
+            "id": 124,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.14,
@@ -3198,12 +3167,12 @@ fetch(url, {
             "od": 10.23,
             "ph": 7.18,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 131,
+            "id": 125,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.88,
@@ -3212,12 +3181,12 @@ fetch(url, {
             "od": 10.16,
             "ph": 7.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 132,
+            "id": 126,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.07,
@@ -3226,12 +3195,12 @@ fetch(url, {
             "od": 11.78,
             "ph": 7.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 133,
+            "id": 127,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.21,
@@ -3240,12 +3209,12 @@ fetch(url, {
             "od": 9.45,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 134,
+            "id": 128,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.88,
@@ -3254,12 +3223,12 @@ fetch(url, {
             "od": 9.38,
             "ph": 6.5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 135,
+            "id": 129,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -3268,12 +3237,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 8.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 136,
+            "id": 130,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23,
@@ -3282,12 +3251,12 @@ fetch(url, {
             "od": 9.45,
             "ph": 7.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 137,
+            "id": 131,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.42,
@@ -3296,12 +3265,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 8.49,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 138,
+            "id": 132,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.88,
@@ -3310,12 +3279,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 139,
+            "id": 133,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.45,
@@ -3324,12 +3293,12 @@ fetch(url, {
             "od": 9.18,
             "ph": 7.85,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 140,
+            "id": 134,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.45,
@@ -3338,12 +3307,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 9.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:19.000000Z",
             "updated_at": "2018-07-19T20:47:19.000000Z"
         },
         {
-            "id": 141,
+            "id": 135,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -3352,12 +3321,12 @@ fetch(url, {
             "od": 9.88,
             "ph": 9.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 142,
+            "id": 136,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.09,
@@ -3366,12 +3335,12 @@ fetch(url, {
             "od": 9.45,
             "ph": 6.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 143,
+            "id": 137,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.86,
@@ -3380,12 +3349,12 @@ fetch(url, {
             "od": 11.14,
             "ph": 6.085,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 144,
+            "id": 138,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.1,
@@ -3394,12 +3363,12 @@ fetch(url, {
             "od": 9.88,
             "ph": 9.06,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 145,
+            "id": 139,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.11,
@@ -3408,12 +3377,12 @@ fetch(url, {
             "od": 8.56,
             "ph": 5.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 146,
+            "id": 140,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.21,
@@ -3422,12 +3391,12 @@ fetch(url, {
             "od": 5.69,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 147,
+            "id": 141,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.24,
@@ -3436,12 +3405,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 4.51,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 148,
+            "id": 142,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.28,
@@ -3450,12 +3419,12 @@ fetch(url, {
             "od": 6.56,
             "ph": 7.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 149,
+            "id": 143,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.21,
@@ -3464,12 +3433,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 4.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 150,
+            "id": 144,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.55,
@@ -3478,12 +3447,12 @@ fetch(url, {
             "od": 8.55,
             "ph": 9.014,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 151,
+            "id": 145,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.37,
@@ -3492,12 +3461,12 @@ fetch(url, {
             "od": 6.18,
             "ph": 5.76,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 152,
+            "id": 146,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.24,
@@ -3506,12 +3475,12 @@ fetch(url, {
             "od": 6.23,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 153,
+            "id": 147,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.11,
@@ -3520,12 +3489,12 @@ fetch(url, {
             "od": 8,
             "ph": 5.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 154,
+            "id": 148,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.19,
@@ -3534,12 +3503,12 @@ fetch(url, {
             "od": 7.03,
             "ph": 6.46,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 155,
+            "id": 149,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.14,
@@ -3548,12 +3517,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 7.75,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 156,
+            "id": 150,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.01,
@@ -3562,12 +3531,12 @@ fetch(url, {
             "od": 9.17,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 157,
+            "id": 151,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.47,
@@ -3576,12 +3545,12 @@ fetch(url, {
             "od": 8.96,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 158,
+            "id": 152,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.11,
@@ -3590,12 +3559,12 @@ fetch(url, {
             "od": 9.22,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 159,
+            "id": 153,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.87,
@@ -3604,12 +3573,12 @@ fetch(url, {
             "od": 9.49,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 160,
+            "id": 154,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.56,
@@ -3618,12 +3587,12 @@ fetch(url, {
             "od": 10,
             "ph": 8.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 161,
+            "id": 155,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19,
@@ -3632,12 +3601,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 162,
+            "id": 156,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.17,
@@ -3646,12 +3615,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 4.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 163,
+            "id": 157,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.45,
@@ -3660,12 +3629,12 @@ fetch(url, {
             "od": 7.25,
             "ph": 6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 164,
+            "id": 158,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.21,
@@ -3674,12 +3643,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 5.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 165,
+            "id": 159,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.03,
@@ -3688,12 +3657,12 @@ fetch(url, {
             "od": 10.06,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 166,
+            "id": 160,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.89,
@@ -3702,12 +3671,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 167,
+            "id": 161,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.46,
@@ -3716,12 +3685,12 @@ fetch(url, {
             "od": 6.45,
             "ph": 8.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 168,
+            "id": 162,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.33,
@@ -3730,12 +3699,12 @@ fetch(url, {
             "od": 9.15,
             "ph": 8.79,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 169,
+            "id": 163,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.13,
@@ -3744,12 +3713,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 7.06,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 170,
+            "id": 164,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -3758,12 +3727,12 @@ fetch(url, {
             "od": 8.75,
             "ph": 6.778,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 171,
+            "id": 165,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20.14,
@@ -3772,12 +3741,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 172,
+            "id": 166,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.01,
@@ -3786,12 +3755,12 @@ fetch(url, {
             "od": 5.89,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 173,
+            "id": 167,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.55,
@@ -3800,12 +3769,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 6.52,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 174,
+            "id": 168,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15,
@@ -3814,12 +3783,12 @@ fetch(url, {
             "od": 6.36,
             "ph": 5.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 175,
+            "id": 169,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.12,
@@ -3828,12 +3797,12 @@ fetch(url, {
             "od": 7.34,
             "ph": 6.77,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 176,
+            "id": 170,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.44,
@@ -3842,12 +3811,12 @@ fetch(url, {
             "od": 9.17,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 177,
+            "id": 171,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.44,
@@ -3856,12 +3825,12 @@ fetch(url, {
             "od": 11.02,
             "ph": 6.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 178,
+            "id": 172,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.57,
@@ -3870,12 +3839,12 @@ fetch(url, {
             "od": 4.14,
             "ph": 5.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 179,
+            "id": 173,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.44,
@@ -3884,12 +3853,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 180,
+            "id": 174,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.14,
@@ -3898,12 +3867,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 7.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 181,
+            "id": 175,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.45,
@@ -3912,12 +3881,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 7.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 182,
+            "id": 176,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.45,
@@ -3926,12 +3895,12 @@ fetch(url, {
             "od": 8.92,
             "ph": 7.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 183,
+            "id": 177,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.11,
@@ -3940,12 +3909,12 @@ fetch(url, {
             "od": 8.45,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 184,
+            "id": 178,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.44,
@@ -3954,12 +3923,12 @@ fetch(url, {
             "od": 9.52,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 185,
+            "id": 179,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -3968,12 +3937,12 @@ fetch(url, {
             "od": 8.14,
             "ph": 6.223,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:06:28.000000Z",
             "updated_at": "2018-08-31T17:06:28.000000Z"
         },
         {
-            "id": 186,
+            "id": 180,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.48,
@@ -3982,12 +3951,12 @@ fetch(url, {
             "od": 10.36,
             "ph": 4.984,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 187,
+            "id": 181,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.24,
@@ -3996,12 +3965,12 @@ fetch(url, {
             "od": 10.31,
             "ph": 5.112,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 188,
+            "id": 182,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.04,
@@ -4010,12 +3979,12 @@ fetch(url, {
             "od": 15.04,
             "ph": 6.788,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 189,
+            "id": 183,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.21,
@@ -4024,12 +3993,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 190,
+            "id": 184,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.02,
@@ -4038,12 +4007,12 @@ fetch(url, {
             "od": 8.65,
             "ph": 6.52,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 191,
+            "id": 185,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.36,
@@ -4052,12 +4021,12 @@ fetch(url, {
             "od": 11.13,
             "ph": 5.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 192,
+            "id": 186,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.56,
@@ -4066,12 +4035,12 @@ fetch(url, {
             "od": 8.25,
             "ph": 5.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 193,
+            "id": 187,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.34,
@@ -4080,12 +4049,12 @@ fetch(url, {
             "od": 10.34,
             "ph": 3.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T22:41:31.000000Z",
             "updated_at": "2019-01-25T22:41:31.000000Z"
         },
         {
-            "id": 194,
+            "id": 188,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17,
@@ -4094,12 +4063,12 @@ fetch(url, {
             "od": 7,
             "ph": 9.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 195,
+            "id": 189,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.59,
@@ -4108,12 +4077,12 @@ fetch(url, {
             "od": 8.98,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 196,
+            "id": 190,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.89,
@@ -4122,12 +4091,12 @@ fetch(url, {
             "od": 9.78,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 197,
+            "id": 191,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.14,
@@ -4136,12 +4105,12 @@ fetch(url, {
             "od": 12.1,
             "ph": 8.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 198,
+            "id": 192,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.98,
@@ -4150,12 +4119,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 8.59,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 199,
+            "id": 193,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20,
@@ -4164,12 +4133,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 3.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 200,
+            "id": 194,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.14,
@@ -4178,12 +4147,12 @@ fetch(url, {
             "od": 7.93,
             "ph": 6.39,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 201,
+            "id": 195,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.18,
@@ -4192,12 +4161,12 @@ fetch(url, {
             "od": 7.34,
             "ph": 7.7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 202,
+            "id": 196,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.88,
@@ -4206,12 +4175,12 @@ fetch(url, {
             "od": 7.56,
             "ph": 6.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 203,
+            "id": 197,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.01,
@@ -4220,12 +4189,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 204,
+            "id": 198,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.05,
@@ -4234,12 +4203,12 @@ fetch(url, {
             "od": 12.01,
             "ph": 7.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 205,
+            "id": 199,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.69,
@@ -4248,12 +4217,12 @@ fetch(url, {
             "od": 9.27,
             "ph": 5.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 206,
+            "id": 200,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -4262,12 +4231,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 8.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 207,
+            "id": 201,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23,
@@ -4276,12 +4245,12 @@ fetch(url, {
             "od": 14.92,
             "ph": 8.51,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 208,
+            "id": 202,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.24,
@@ -4290,12 +4259,12 @@ fetch(url, {
             "od": 8.04,
             "ph": 5.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 209,
+            "id": 203,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.45,
@@ -4304,12 +4273,12 @@ fetch(url, {
             "od": 7.45,
             "ph": 5.86,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 210,
+            "id": 204,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -4318,12 +4287,12 @@ fetch(url, {
             "od": 8.89,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 211,
+            "id": 205,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17,
@@ -4332,12 +4301,12 @@ fetch(url, {
             "od": 8.44,
             "ph": 4.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 212,
+            "id": 206,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -4346,12 +4315,12 @@ fetch(url, {
             "od": 10.03,
             "ph": 6.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 213,
+            "id": 207,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.02,
@@ -4360,12 +4329,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 214,
+            "id": 208,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.19,
@@ -4374,12 +4343,12 @@ fetch(url, {
             "od": 7.03,
             "ph": 7.6,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 215,
+            "id": 209,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -4388,12 +4357,12 @@ fetch(url, {
             "od": 11,
             "ph": 6.32,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 216,
+            "id": 210,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.02,
@@ -4402,12 +4371,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 5.77,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 217,
+            "id": 211,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.14,
@@ -4416,12 +4385,12 @@ fetch(url, {
             "od": 7,
             "ph": 8.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 218,
+            "id": 212,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.3,
@@ -4430,12 +4399,12 @@ fetch(url, {
             "od": 10,
             "ph": 8.056,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 219,
+            "id": 213,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.04,
@@ -4444,12 +4413,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 7.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 220,
+            "id": 214,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19,
@@ -4458,12 +4427,12 @@ fetch(url, {
             "od": 9.68,
             "ph": 7.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 221,
+            "id": 215,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.55,
@@ -4472,12 +4441,12 @@ fetch(url, {
             "od": 8.88,
             "ph": 6.044,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 222,
+            "id": 216,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 22,
@@ -4486,12 +4455,12 @@ fetch(url, {
             "od": 8.12,
             "ph": 8.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 223,
+            "id": 217,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.11,
@@ -4500,12 +4469,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 4.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 224,
+            "id": 218,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.14,
@@ -4514,12 +4483,12 @@ fetch(url, {
             "od": 5.14,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 225,
+            "id": 219,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.05,
@@ -4528,12 +4497,12 @@ fetch(url, {
             "od": 8.14,
             "ph": 9.032,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 226,
+            "id": 220,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.7,
@@ -4542,12 +4511,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 227,
+            "id": 221,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.44,
@@ -4556,12 +4525,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 7.75,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 228,
+            "id": 222,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.47,
@@ -4570,12 +4539,12 @@ fetch(url, {
             "od": 8.96,
             "ph": 7.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 229,
+            "id": 223,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.11,
@@ -4584,12 +4553,12 @@ fetch(url, {
             "od": 7.22,
             "ph": 7.38,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 230,
+            "id": 224,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.56,
@@ -4598,12 +4567,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 6.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 231,
+            "id": 225,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.24,
@@ -4612,12 +4581,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 232,
+            "id": 226,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.17,
@@ -4626,12 +4595,12 @@ fetch(url, {
             "od": 7.55,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:39:43.000000Z",
             "updated_at": "2018-07-19T20:39:43.000000Z"
         },
         {
-            "id": 233,
+            "id": 227,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.88,
@@ -4640,12 +4609,12 @@ fetch(url, {
             "od": 10,
             "ph": 8.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 234,
+            "id": 228,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.55,
@@ -4654,12 +4623,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 235,
+            "id": 229,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.37,
@@ -4668,12 +4637,12 @@ fetch(url, {
             "od": 10.78,
             "ph": 6.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:06:28.000000Z",
             "updated_at": "2018-08-31T17:06:28.000000Z"
         },
         {
-            "id": 236,
+            "id": 230,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.14,
@@ -4682,12 +4651,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 5.904,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 237,
+            "id": 231,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.07,
@@ -4696,12 +4665,12 @@ fetch(url, {
             "od": 9.98,
             "ph": 5.85,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 238,
+            "id": 232,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20.04,
@@ -4710,12 +4679,12 @@ fetch(url, {
             "od": 7.69,
             "ph": 7.2,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 239,
+            "id": 233,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.01,
@@ -4724,12 +4693,12 @@ fetch(url, {
             "od": 9.89,
             "ph": 7.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 240,
+            "id": 234,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.56,
@@ -4738,12 +4707,12 @@ fetch(url, {
             "od": 12.15,
             "ph": 4.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 241,
+            "id": 235,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.21,
@@ -4752,12 +4721,12 @@ fetch(url, {
             "od": 10.04,
             "ph": 4.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 242,
+            "id": 236,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.54,
@@ -4766,12 +4735,12 @@ fetch(url, {
             "od": 8.54,
             "ph": 5.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 243,
+            "id": 237,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.25,
@@ -4780,12 +4749,12 @@ fetch(url, {
             "od": 6.48,
             "ph": 6.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 244,
+            "id": 238,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.23,
@@ -4794,12 +4763,12 @@ fetch(url, {
             "od": 8.56,
             "ph": 4.21,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 245,
+            "id": 239,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.21,
@@ -4808,12 +4777,12 @@ fetch(url, {
             "od": 7.55,
             "ph": 4.49,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:48:01.000000Z",
             "updated_at": "2018-07-19T20:48:01.000000Z"
         },
         {
-            "id": 246,
+            "id": 240,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.01,
@@ -4822,12 +4791,12 @@ fetch(url, {
             "od": 9.859,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 247,
+            "id": 241,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.14,
@@ -4836,12 +4805,12 @@ fetch(url, {
             "od": 11.4,
             "ph": 9.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 248,
+            "id": 242,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.41,
@@ -4850,12 +4819,12 @@ fetch(url, {
             "od": 12.14,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 249,
+            "id": 243,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -4864,12 +4833,12 @@ fetch(url, {
             "od": 9.45,
             "ph": 5.601,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T16:55:44.000000Z",
             "updated_at": "2018-08-31T16:55:44.000000Z"
         },
         {
-            "id": 250,
+            "id": 244,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.21,
@@ -4878,12 +4847,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.18,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 251,
+            "id": 245,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.01,
@@ -4892,12 +4861,12 @@ fetch(url, {
             "od": 9.15,
             "ph": 5.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 252,
+            "id": 246,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.45,
@@ -4906,12 +4875,12 @@ fetch(url, {
             "od": 6.98,
             "ph": 6.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 253,
+            "id": 247,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.41,
@@ -4920,12 +4889,12 @@ fetch(url, {
             "od": 8.46,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 254,
+            "id": 248,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19,
@@ -4934,12 +4903,12 @@ fetch(url, {
             "od": 6.66,
             "ph": 7.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 255,
+            "id": 249,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.26,
@@ -4948,12 +4917,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 256,
+            "id": 250,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.56,
@@ -4962,12 +4931,12 @@ fetch(url, {
             "od": 8.15,
             "ph": 7.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 257,
+            "id": 251,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.36,
@@ -4976,12 +4945,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 258,
+            "id": 252,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.01,
@@ -4990,12 +4959,12 @@ fetch(url, {
             "od": 8.14,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 259,
+            "id": 253,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.45,
@@ -5004,12 +4973,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 6.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 260,
+            "id": 254,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.11,
@@ -5018,12 +4987,12 @@ fetch(url, {
             "od": 8,
             "ph": 7.1,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 261,
+            "id": 255,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.12,
@@ -5032,12 +5001,12 @@ fetch(url, {
             "od": 6.867,
             "ph": 6.98,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 262,
+            "id": 256,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.4,
@@ -5046,12 +5015,12 @@ fetch(url, {
             "od": 6.36,
             "ph": 5.6,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 263,
+            "id": 257,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20,
@@ -5060,12 +5029,12 @@ fetch(url, {
             "od": 7.48,
             "ph": 7.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 264,
+            "id": 258,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.15,
@@ -5074,12 +5043,12 @@ fetch(url, {
             "od": 7.77,
             "ph": 6.5,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 265,
+            "id": 259,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.18,
@@ -5088,12 +5057,12 @@ fetch(url, {
             "od": 7.34,
             "ph": 7.7,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 266,
+            "id": 260,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.15,
@@ -5102,12 +5071,12 @@ fetch(url, {
             "od": 5.14,
             "ph": 5.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 267,
+            "id": 261,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.4,
@@ -5116,12 +5085,12 @@ fetch(url, {
             "od": 6.99,
             "ph": 7.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 268,
+            "id": 262,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.14,
@@ -5130,12 +5099,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 7.75,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 269,
+            "id": 263,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.65,
@@ -5144,12 +5113,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 6.67,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 270,
+            "id": 264,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.44,
@@ -5158,12 +5127,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 4.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:35.000000Z",
             "updated_at": "2018-07-19T20:25:35.000000Z"
         },
         {
-            "id": 271,
+            "id": 265,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.44,
@@ -5172,12 +5141,12 @@ fetch(url, {
             "od": 6.99,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:25:36.000000Z",
             "updated_at": "2018-07-19T20:25:36.000000Z"
         },
         {
-            "id": 272,
+            "id": 266,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20.05,
@@ -5186,12 +5155,12 @@ fetch(url, {
             "od": 15.11,
             "ph": 6.91,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 273,
+            "id": 267,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.27,
@@ -5200,12 +5169,12 @@ fetch(url, {
             "od": 10.36,
             "ph": 5.981,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T19:18:18.000000Z",
             "updated_at": "2018-08-31T19:18:18.000000Z"
         },
         {
-            "id": 274,
+            "id": 268,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.21,
@@ -5214,12 +5183,12 @@ fetch(url, {
             "od": 9.65,
             "ph": 4.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 275,
+            "id": 269,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.21,
@@ -5228,12 +5197,12 @@ fetch(url, {
             "od": 9.89,
             "ph": 5.124,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 276,
+            "id": 270,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.89,
@@ -5242,12 +5211,12 @@ fetch(url, {
             "od": 11.2,
             "ph": 4.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 277,
+            "id": 271,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.02,
@@ -5256,12 +5225,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 6.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 278,
+            "id": 272,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.56,
@@ -5270,12 +5239,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 5.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 279,
+            "id": 273,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.21,
@@ -5284,12 +5253,12 @@ fetch(url, {
             "od": 8.89,
             "ph": 5.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:09:59.000000Z",
             "updated_at": "2019-01-25T23:09:59.000000Z"
         },
         {
-            "id": 280,
+            "id": 274,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -5298,12 +5267,12 @@ fetch(url, {
             "od": 6.12,
             "ph": 5.487,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 281,
+            "id": 275,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.55,
@@ -5312,12 +5281,12 @@ fetch(url, {
             "od": 9.22,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 282,
+            "id": 276,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.21,
@@ -5326,12 +5295,12 @@ fetch(url, {
             "od": 9.27,
             "ph": 7.7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 283,
+            "id": 277,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.22,
@@ -5340,12 +5309,12 @@ fetch(url, {
             "od": 9.88,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 284,
+            "id": 278,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.99,
@@ -5354,12 +5323,12 @@ fetch(url, {
             "od": 8.12,
             "ph": 7.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-07-19T20:47:18.000000Z",
             "updated_at": "2018-07-19T20:47:18.000000Z"
         },
         {
-            "id": 285,
+            "id": 279,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.22,
@@ -5368,12 +5337,12 @@ fetch(url, {
             "od": 7.66,
             "ph": 5.762,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 286,
+            "id": 280,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.02,
@@ -5382,12 +5351,12 @@ fetch(url, {
             "od": 8.87,
             "ph": 6.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 287,
+            "id": 281,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.14,
@@ -5396,12 +5365,12 @@ fetch(url, {
             "od": 9.85,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 288,
+            "id": 282,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.99,
@@ -5410,12 +5379,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 289,
+            "id": 283,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 22.15,
@@ -5424,12 +5393,12 @@ fetch(url, {
             "od": 11.15,
             "ph": 9.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 290,
+            "id": 284,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.89,
@@ -5438,12 +5407,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 6.31,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 291,
+            "id": 285,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.01,
@@ -5452,12 +5421,12 @@ fetch(url, {
             "od": 7.45,
             "ph": 7.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 292,
+            "id": 286,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.01,
@@ -5466,12 +5435,12 @@ fetch(url, {
             "od": 12.56,
             "ph": 8.18,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T15:57:52.000000Z",
             "updated_at": "2018-08-30T15:57:52.000000Z"
         },
         {
-            "id": 293,
+            "id": 287,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.23,
@@ -5480,12 +5449,12 @@ fetch(url, {
             "od": 9.74,
             "ph": 6.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 294,
+            "id": 288,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.43,
@@ -5494,12 +5463,12 @@ fetch(url, {
             "od": 10.12,
             "ph": 7.77,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 295,
+            "id": 289,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.13,
@@ -5508,12 +5477,12 @@ fetch(url, {
             "od": 8.62,
             "ph": 8.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 296,
+            "id": 290,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.89,
@@ -5522,12 +5491,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 7.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 297,
+            "id": 291,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -5536,12 +5505,12 @@ fetch(url, {
             "od": 8,
             "ph": 5.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 298,
+            "id": 292,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.15,
@@ -5550,12 +5519,12 @@ fetch(url, {
             "od": 10,
             "ph": 6.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T16:55:44.000000Z",
             "updated_at": "2018-08-31T16:55:44.000000Z"
         },
         {
-            "id": 299,
+            "id": 293,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.06,
@@ -5564,12 +5533,12 @@ fetch(url, {
             "od": 10.11,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 300,
+            "id": 294,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.12,
@@ -5578,12 +5547,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 7.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 301,
+            "id": 295,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.12,
@@ -5592,12 +5561,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 302,
+            "id": 296,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -5606,12 +5575,12 @@ fetch(url, {
             "od": 9.01,
             "ph": 6.66,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 303,
+            "id": 297,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.24,
@@ -5620,12 +5589,12 @@ fetch(url, {
             "od": 6.31,
             "ph": 8.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 304,
+            "id": 298,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.01,
@@ -5634,12 +5603,12 @@ fetch(url, {
             "od": 8.63,
             "ph": 9.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 305,
+            "id": 299,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.17,
@@ -5648,12 +5617,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.39,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 306,
+            "id": 300,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -5662,12 +5631,12 @@ fetch(url, {
             "od": 14,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 307,
+            "id": 301,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 14.14,
@@ -5676,12 +5645,12 @@ fetch(url, {
             "od": 11,
             "ph": 5.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 308,
+            "id": 302,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.14,
@@ -5690,12 +5659,12 @@ fetch(url, {
             "od": 6.68,
             "ph": 6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 309,
+            "id": 303,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.21,
@@ -5704,12 +5673,12 @@ fetch(url, {
             "od": 8,
             "ph": 5.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 310,
+            "id": 304,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.14,
@@ -5718,12 +5687,12 @@ fetch(url, {
             "od": 9.65,
             "ph": 5.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:08:02.000000Z",
             "updated_at": "2018-08-31T17:08:02.000000Z"
         },
         {
-            "id": 311,
+            "id": 305,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.14,
@@ -5732,12 +5701,12 @@ fetch(url, {
             "od": 8.89,
             "ph": 6.704,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:08:02.000000Z",
             "updated_at": "2018-08-31T17:08:02.000000Z"
         },
         {
-            "id": 312,
+            "id": 306,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.23,
@@ -5746,12 +5715,12 @@ fetch(url, {
             "od": 10,
             "ph": 4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 313,
+            "id": 307,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.11,
@@ -5760,12 +5729,12 @@ fetch(url, {
             "od": 9.48,
             "ph": 4.711,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:08:02.000000Z",
             "updated_at": "2018-08-31T17:08:02.000000Z"
         },
         {
-            "id": 314,
+            "id": 308,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.31,
@@ -5774,12 +5743,12 @@ fetch(url, {
             "od": 9,
             "ph": 7.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 315,
+            "id": 309,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19,
@@ -5788,12 +5757,12 @@ fetch(url, {
             "od": 9,
             "ph": 6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 316,
+            "id": 310,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20,
@@ -5802,12 +5771,12 @@ fetch(url, {
             "od": 8,
             "ph": 7.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 317,
+            "id": 311,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -5816,12 +5785,12 @@ fetch(url, {
             "od": 9,
             "ph": 9.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 318,
+            "id": 312,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.07,
@@ -5830,12 +5799,12 @@ fetch(url, {
             "od": 7.45,
             "ph": 9.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 319,
+            "id": 313,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.95,
@@ -5844,12 +5813,12 @@ fetch(url, {
             "od": 7.85,
             "ph": 7.94,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 320,
+            "id": 314,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17,
@@ -5858,12 +5827,12 @@ fetch(url, {
             "od": 9.23,
             "ph": 8.65,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 321,
+            "id": 315,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.14,
@@ -5872,12 +5841,12 @@ fetch(url, {
             "od": 7.93,
             "ph": 7.39,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 322,
+            "id": 316,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.7,
@@ -5886,12 +5855,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 6.45,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 323,
+            "id": 317,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.01,
@@ -5900,12 +5869,12 @@ fetch(url, {
             "od": 5.89,
             "ph": 6.89,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 324,
+            "id": 318,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.16,
@@ -5914,12 +5883,12 @@ fetch(url, {
             "od": 6.9,
             "ph": 6.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 325,
+            "id": 319,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.01,
@@ -5928,12 +5897,12 @@ fetch(url, {
             "od": 9.17,
             "ph": 7.89,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 326,
+            "id": 320,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.07,
@@ -5942,12 +5911,12 @@ fetch(url, {
             "od": 9.12,
             "ph": 6.6,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 327,
+            "id": 321,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.47,
@@ -5956,12 +5925,12 @@ fetch(url, {
             "od": 8.96,
             "ph": 7.1,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 328,
+            "id": 322,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.5,
@@ -5970,12 +5939,12 @@ fetch(url, {
             "od": 9.01,
             "ph": 7.99,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 329,
+            "id": 323,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.65,
@@ -5984,12 +5953,12 @@ fetch(url, {
             "od": 11.02,
             "ph": 6.07,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 330,
+            "id": 324,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.57,
@@ -5998,12 +5967,12 @@ fetch(url, {
             "od": 9,
             "ph": 7.07,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 331,
+            "id": 325,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.99,
@@ -6012,12 +5981,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 5.89,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 332,
+            "id": 326,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.11,
@@ -6026,12 +5995,12 @@ fetch(url, {
             "od": 9.22,
             "ph": 6.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 333,
+            "id": 327,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.44,
@@ -6040,12 +6009,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 6.89,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 334,
+            "id": 328,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.89,
@@ -6054,12 +6023,12 @@ fetch(url, {
             "od": 8.99,
             "ph": 7.01,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 335,
+            "id": 329,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 14.05,
@@ -6068,12 +6037,12 @@ fetch(url, {
             "od": 9.55,
             "ph": 7.101,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 336,
+            "id": 330,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 12.02,
@@ -6082,12 +6051,12 @@ fetch(url, {
             "od": 9.1,
             "ph": 7.144,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 337,
+            "id": 331,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 21.12,
@@ -6096,12 +6065,12 @@ fetch(url, {
             "od": 9.98,
             "ph": 7.854,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 338,
+            "id": 332,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20.01,
@@ -6110,12 +6079,12 @@ fetch(url, {
             "od": 8.5,
             "ph": 6.989,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 339,
+            "id": 333,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20.05,
@@ -6124,12 +6093,12 @@ fetch(url, {
             "od": 6.55,
             "ph": 6.201,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 340,
+            "id": 334,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 21.56,
@@ -6138,12 +6107,12 @@ fetch(url, {
             "od": 9.65,
             "ph": 6.885,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 341,
+            "id": 335,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 20,
@@ -6152,12 +6121,12 @@ fetch(url, {
             "od": 10.54,
             "ph": 6.934,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 342,
+            "id": 336,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 22.05,
@@ -6166,12 +6135,12 @@ fetch(url, {
             "od": 6.55,
             "ph": 6.801,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 343,
+            "id": 337,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21.06,
@@ -6180,12 +6149,12 @@ fetch(url, {
             "od": 8.65,
             "ph": 6.415,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 344,
+            "id": 338,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.69,
@@ -6194,12 +6163,12 @@ fetch(url, {
             "od": 9.27,
             "ph": 5.35,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:37.000000Z",
             "updated_at": "2018-06-29T16:44:37.000000Z"
         },
         {
-            "id": 345,
+            "id": 339,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.98,
@@ -6208,12 +6177,12 @@ fetch(url, {
             "od": 9,
             "ph": 6.56,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:37.000000Z",
             "updated_at": "2018-06-29T16:44:37.000000Z"
         },
         {
-            "id": 346,
+            "id": 340,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23,
@@ -6222,12 +6191,12 @@ fetch(url, {
             "od": 6.92,
             "ph": 5.51,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 347,
+            "id": 341,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.87,
@@ -6236,12 +6205,12 @@ fetch(url, {
             "od": 9.42,
             "ph": 7.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 348,
+            "id": 342,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 23.62,
@@ -6250,12 +6219,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 7.908,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 349,
+            "id": 343,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.24,
@@ -6264,12 +6233,12 @@ fetch(url, {
             "od": 6.45,
             "ph": 6.09,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:34:28.000000Z",
             "updated_at": "2018-12-05T18:34:28.000000Z"
         },
         {
-            "id": 350,
+            "id": 344,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 22.1,
@@ -6278,12 +6247,12 @@ fetch(url, {
             "od": 8.85,
             "ph": 7.152,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:32:08.000000Z",
             "updated_at": "2018-06-29T18:32:08.000000Z"
         },
         {
-            "id": 351,
+            "id": 345,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.4,
@@ -6292,12 +6261,12 @@ fetch(url, {
             "od": 18.95,
             "ph": 9.804,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:34:41.000000Z",
             "updated_at": "2018-06-29T18:34:41.000000Z"
         },
         {
-            "id": 352,
+            "id": 346,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 22.77,
@@ -6306,12 +6275,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 353,
+            "id": 347,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 23.73,
@@ -6320,12 +6289,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 354,
+            "id": 348,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 23.73,
@@ -6334,12 +6303,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 355,
+            "id": 349,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 17.59,
@@ -6348,12 +6317,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 356,
+            "id": 350,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.71,
@@ -6362,12 +6331,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 357,
+            "id": 351,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 17.51,
@@ -6376,12 +6345,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 358,
+            "id": 352,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20.78,
@@ -6390,12 +6359,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 359,
+            "id": 353,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 21.3,
@@ -6404,12 +6373,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 360,
+            "id": 354,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 23.03,
@@ -6418,12 +6387,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 361,
+            "id": 355,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.75,
@@ -6432,12 +6401,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 362,
+            "id": 356,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 15.09,
@@ -6446,12 +6415,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 363,
+            "id": 357,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 17.94,
@@ -6460,12 +6429,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 364,
+            "id": 358,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.3,
@@ -6474,12 +6443,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 365,
+            "id": 359,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -6488,12 +6457,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 366,
+            "id": 360,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.07,
@@ -6502,12 +6471,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 367,
+            "id": 361,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -6516,12 +6485,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 368,
+            "id": 362,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -6530,12 +6499,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 369,
+            "id": 363,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -6544,12 +6513,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 370,
+            "id": 364,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 20.87,
@@ -6558,12 +6527,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 371,
+            "id": 365,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21,
@@ -6572,12 +6541,12 @@ fetch(url, {
             "od": 9.38,
             "ph": 6.99,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:23:37.000000Z",
             "updated_at": "2018-06-27T16:23:37.000000Z"
         },
         {
-            "id": 372,
+            "id": 366,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 11.19,
@@ -6586,12 +6555,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.184,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 373,
+            "id": 367,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 12.01,
@@ -6600,12 +6569,12 @@ fetch(url, {
             "od": 9.5,
             "ph": 7.989,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 374,
+            "id": 368,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 14.88,
@@ -6614,12 +6583,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.254,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 375,
+            "id": 369,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 21,
@@ -6628,12 +6597,12 @@ fetch(url, {
             "od": 8.14,
             "ph": 6.744,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 376,
+            "id": 370,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20.19,
@@ -6642,12 +6611,12 @@ fetch(url, {
             "od": 7.04,
             "ph": 6.284,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 377,
+            "id": 371,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 19.88,
@@ -6656,12 +6625,12 @@ fetch(url, {
             "od": 9.24,
             "ph": 6.254,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 378,
+            "id": 372,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 22.04,
@@ -6670,12 +6639,12 @@ fetch(url, {
             "od": 10,
             "ph": 6.004,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 379,
+            "id": 373,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21,
@@ -6684,12 +6653,12 @@ fetch(url, {
             "od": 12.14,
             "ph": 6.044,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 380,
+            "id": 374,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 20.05,
@@ -6698,12 +6667,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 6.004,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 381,
+            "id": 375,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.11,
@@ -6712,12 +6681,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 6,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:37.000000Z",
             "updated_at": "2018-06-29T16:44:37.000000Z"
         },
         {
-            "id": 382,
+            "id": 376,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.62,
@@ -6726,12 +6695,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 5.98,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 383,
+            "id": 377,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -6740,12 +6709,12 @@ fetch(url, {
             "od": 7.55,
             "ph": 4.92,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 384,
+            "id": 378,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.78,
@@ -6754,12 +6723,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 5.4,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 385,
+            "id": 379,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.81,
@@ -6768,12 +6737,12 @@ fetch(url, {
             "od": 8.75,
             "ph": 6.763,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 386,
+            "id": 380,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20.12,
@@ -6782,12 +6751,12 @@ fetch(url, {
             "od": 18.02,
             "ph": 6.998,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 387,
+            "id": 381,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.9,
@@ -6796,12 +6765,12 @@ fetch(url, {
             "od": 10.65,
             "ph": 6.17,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:09:59.000000Z",
             "updated_at": "2019-01-25T23:09:59.000000Z"
         },
         {
-            "id": 388,
+            "id": 382,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21.81,
@@ -6810,12 +6779,12 @@ fetch(url, {
             "od": 10.37,
             "ph": 5.824,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T19:13:52.000000Z",
             "updated_at": "2018-06-29T19:13:52.000000Z"
         },
         {
-            "id": 389,
+            "id": 383,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 24.34,
@@ -6824,12 +6793,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 390,
+            "id": 384,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 25.48,
@@ -6838,12 +6807,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 391,
+            "id": 385,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 21.73,
@@ -6852,12 +6821,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 392,
+            "id": 386,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 18.8,
@@ -6866,12 +6835,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 393,
+            "id": 387,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20.69,
@@ -6880,12 +6849,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 394,
+            "id": 388,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 23.03,
@@ -6894,12 +6863,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 395,
+            "id": 389,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.14,
@@ -6908,12 +6877,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 396,
+            "id": 390,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 17.85,
@@ -6922,12 +6891,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 397,
+            "id": 391,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 18.45,
@@ -6936,12 +6905,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 398,
+            "id": 392,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.13,
@@ -6950,12 +6919,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 399,
+            "id": 393,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -6964,7 +6933,91 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 394,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.07,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 395,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.06,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 396,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.07,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 397,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.04,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 398,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.07,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 399,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.07,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
@@ -6978,7 +7031,7 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
@@ -6992,96 +7045,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
             "id": 402,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.07,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 403,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.04,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 404,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.07,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 405,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.07,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 406,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.07,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 407,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.06,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 408,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 29.43,
@@ -7090,12 +7059,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 409,
+            "id": 403,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 23,
@@ -7104,12 +7073,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 7.104,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 410,
+            "id": 404,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 19.56,
@@ -7118,12 +7087,12 @@ fetch(url, {
             "od": 7.653,
             "ph": 7.145,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 411,
+            "id": 405,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 22.24,
@@ -7132,12 +7101,12 @@ fetch(url, {
             "od": 10.64,
             "ph": 7.004,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 412,
+            "id": 406,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20,
@@ -7146,12 +7115,12 @@ fetch(url, {
             "od": 8.84,
             "ph": 6.756,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 413,
+            "id": 407,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20.25,
@@ -7160,12 +7129,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 7.004,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 414,
+            "id": 408,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 20.49,
@@ -7174,12 +7143,12 @@ fetch(url, {
             "od": 9.04,
             "ph": 6.8384,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 415,
+            "id": 409,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 19,
@@ -7188,12 +7157,12 @@ fetch(url, {
             "od": 8.01,
             "ph": 6.524,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 416,
+            "id": 410,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.87,
@@ -7202,12 +7171,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 5.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:37.000000Z",
             "updated_at": "2018-06-29T16:44:37.000000Z"
         },
         {
-            "id": 417,
+            "id": 411,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -7216,12 +7185,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 4.87,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 418,
+            "id": 412,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 21.04,
@@ -7230,12 +7199,12 @@ fetch(url, {
             "od": 8.32,
             "ph": 6.82,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 419,
+            "id": 413,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.09,
@@ -7244,12 +7213,12 @@ fetch(url, {
             "od": 9.27,
             "ph": 7.735,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 420,
+            "id": 414,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -7258,12 +7227,12 @@ fetch(url, {
             "od": 9.95,
             "ph": 8.458,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 421,
+            "id": 415,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.34,
@@ -7272,12 +7241,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 422,
+            "id": 416,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.47,
@@ -7286,12 +7255,12 @@ fetch(url, {
             "od": 17.4,
             "ph": 9.102,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 423,
+            "id": 417,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.62,
@@ -7300,12 +7269,12 @@ fetch(url, {
             "od": 16.46,
             "ph": 9.598,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 424,
+            "id": 418,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.87,
@@ -7314,12 +7283,12 @@ fetch(url, {
             "od": 14,
             "ph": 8.021,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T19:53:24.000000Z",
             "updated_at": "2018-06-29T19:53:24.000000Z"
         },
         {
-            "id": 425,
+            "id": 419,
             "longitud": -73.957397,
             "latitud": 4.725964,
             "temperatura": 21.54,
@@ -7328,12 +7297,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 426,
+            "id": 420,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.63,
@@ -7342,12 +7311,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 427,
+            "id": 421,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.63,
@@ -7356,12 +7325,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 428,
+            "id": 422,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.63,
@@ -7370,12 +7339,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 429,
+            "id": 423,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 17.15,
@@ -7384,12 +7353,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 430,
+            "id": 424,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 15.78,
@@ -7398,7 +7367,91 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 425,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.06,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 426,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 18.2,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 427,
+            "longitud": -73.954117,
+            "latitud": 4.727614,
+            "temperatura": 19.23,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 428,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.23,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 429,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.16,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
+            "created_at": "2018-06-29T20:28:23.000000Z",
+            "updated_at": "2018-06-29T20:28:23.000000Z"
+        },
+        {
+            "id": 430,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.06,
+            "hg": 0,
+            "conduct": 0,
+            "od": 0,
+            "ph": 0,
+            "region_id": 2,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
@@ -7412,7 +7465,7 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
@@ -7420,116 +7473,32 @@ fetch(url, {
             "id": 432,
             "longitud": -73.957397,
             "latitud": 4.725948,
-            "temperatura": 18.2,
+            "temperatura": 19.07,
             "hg": 0,
             "conduct": 0,
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
             "id": 433,
-            "longitud": -73.954117,
-            "latitud": 4.727614,
-            "temperatura": 19.23,
+            "longitud": -73.957397,
+            "latitud": 4.725948,
+            "temperatura": 19.07,
             "hg": 0,
             "conduct": 0,
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
             "id": 434,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.23,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 435,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.16,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 436,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.06,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 437,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.06,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 438,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.07,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 439,
-            "longitud": -73.957397,
-            "latitud": 4.725948,
-            "temperatura": 19.07,
-            "hg": 0,
-            "conduct": 0,
-            "od": 0,
-            "ph": 0,
-            "region_id": 2,
-            "transfer_id": 28,
-            "created_at": "2018-06-29T20:28:23.000000Z",
-            "updated_at": "2018-06-29T20:28:23.000000Z"
-        },
-        {
-            "id": 440,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -7538,12 +7507,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 441,
+            "id": 435,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -7552,12 +7521,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 442,
+            "id": 436,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -7566,12 +7535,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 443,
+            "id": 437,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 21.64,
@@ -7580,12 +7549,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 444,
+            "id": 438,
             "longitud": -73.954117,
             "latitud": 4.727611,
             "temperatura": 20.26,
@@ -7594,12 +7563,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 445,
+            "id": 439,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 20.35,
@@ -7608,12 +7577,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 446,
+            "id": 440,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 14,
@@ -7622,12 +7591,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 7.934,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 447,
+            "id": 441,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 20.25,
@@ -7636,12 +7605,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 7.744,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 448,
+            "id": 442,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 19,
@@ -7650,12 +7619,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 6.934,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 449,
+            "id": 443,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 20.02,
@@ -7664,12 +7633,12 @@ fetch(url, {
             "od": 7.17,
             "ph": 7.144,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 450,
+            "id": 444,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21.01,
@@ -7678,12 +7647,12 @@ fetch(url, {
             "od": 9.5,
             "ph": 6.789,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 451,
+            "id": 445,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21.02,
@@ -7692,12 +7661,12 @@ fetch(url, {
             "od": 13.17,
             "ph": 7.004,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 452,
+            "id": 446,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 22.22,
@@ -7706,12 +7675,12 @@ fetch(url, {
             "od": 10.11,
             "ph": 6.894,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 453,
+            "id": 447,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -7720,12 +7689,12 @@ fetch(url, {
             "od": 7.22,
             "ph": 6.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 454,
+            "id": 448,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.56,
@@ -7734,12 +7703,12 @@ fetch(url, {
             "od": 8,
             "ph": 4.99,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 455,
+            "id": 449,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.11,
@@ -7748,12 +7717,12 @@ fetch(url, {
             "od": 9.1,
             "ph": 6.894,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 456,
+            "id": 450,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.34,
@@ -7762,12 +7731,12 @@ fetch(url, {
             "od": 10.34,
             "ph": 5.29,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:12:31.000000Z",
             "updated_at": "2019-01-25T23:12:31.000000Z"
         },
         {
-            "id": 457,
+            "id": 451,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -7776,12 +7745,12 @@ fetch(url, {
             "od": 19.27,
             "ph": 9.135,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 458,
+            "id": 452,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -7790,12 +7759,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.204,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:41:49.000000Z",
             "updated_at": "2018-06-29T16:41:49.000000Z"
         },
         {
-            "id": 459,
+            "id": 453,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.31,
@@ -7804,12 +7773,12 @@ fetch(url, {
             "od": 13.88,
             "ph": 6.782,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T19:53:24.000000Z",
             "updated_at": "2018-06-29T19:53:24.000000Z"
         },
         {
-            "id": 460,
+            "id": 454,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 24.6,
@@ -7818,12 +7787,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 461,
+            "id": 455,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 23.73,
@@ -7832,12 +7801,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 462,
+            "id": 456,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.54,
@@ -7846,12 +7815,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 463,
+            "id": 457,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 16.47,
@@ -7860,12 +7829,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 464,
+            "id": 458,
             "longitud": -73.970116,
             "latitud": 4.722397,
             "temperatura": 18.54,
@@ -7874,12 +7843,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 465,
+            "id": 459,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 22.34,
@@ -7888,12 +7857,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 466,
+            "id": 460,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 21.38,
@@ -7902,12 +7871,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 467,
+            "id": 461,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20.35,
@@ -7916,12 +7885,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 468,
+            "id": 462,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.66,
@@ -7930,12 +7899,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 469,
+            "id": 463,
             "longitud": -73.967705,
             "latitud": 4.721514,
             "temperatura": 17.51,
@@ -7944,12 +7913,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 470,
+            "id": 464,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 15.52,
@@ -7958,12 +7927,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 471,
+            "id": 465,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 19.32,
@@ -7972,12 +7941,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 472,
+            "id": 466,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.14,
@@ -7986,12 +7955,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 473,
+            "id": 467,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.14,
@@ -8000,12 +7969,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 474,
+            "id": 468,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.02,
@@ -8014,12 +7983,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 475,
+            "id": 469,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8028,12 +7997,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 476,
+            "id": 470,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -8042,12 +8011,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 477,
+            "id": 471,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.09,
@@ -8056,12 +8025,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 478,
+            "id": 472,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8070,12 +8039,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 479,
+            "id": 473,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8084,12 +8053,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 480,
+            "id": 474,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 24.87,
@@ -8098,12 +8067,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 481,
+            "id": 475,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 12,
@@ -8112,12 +8081,12 @@ fetch(url, {
             "od": 7.84,
             "ph": 6.756,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 482,
+            "id": 476,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.56,
@@ -8126,12 +8095,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.58,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:38:08.000000Z",
             "updated_at": "2018-06-27T16:38:08.000000Z"
         },
         {
-            "id": 483,
+            "id": 477,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -8140,12 +8109,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 7.204,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 484,
+            "id": 478,
             "longitud": -74.0656,
             "latitud": 4.603385,
             "temperatura": 13,
@@ -8154,12 +8123,12 @@ fetch(url, {
             "od": 10.01,
             "ph": 6.204,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T15:59:09.000000Z",
             "updated_at": "2018-06-29T15:59:09.000000Z"
         },
         {
-            "id": 485,
+            "id": 479,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.14,
@@ -8168,12 +8137,12 @@ fetch(url, {
             "od": 6.45,
             "ph": 6.896,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 486,
+            "id": 480,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.24,
@@ -8182,12 +8151,12 @@ fetch(url, {
             "od": 6.23,
             "ph": 7.12,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 487,
+            "id": 481,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 19,
@@ -8196,12 +8165,12 @@ fetch(url, {
             "od": 7.01,
             "ph": 6.284,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 488,
+            "id": 482,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.6,
@@ -8210,12 +8179,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 7.38,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-27T16:41:00.000000Z",
             "updated_at": "2018-06-27T16:41:00.000000Z"
         },
         {
-            "id": 489,
+            "id": 483,
             "longitud": -74.066432,
             "latitud": 4.601489,
             "temperatura": 22.12,
@@ -8224,12 +8193,12 @@ fetch(url, {
             "od": 10.01,
             "ph": 6.854,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:13:11.000000Z",
             "updated_at": "2018-06-29T16:13:11.000000Z"
         },
         {
-            "id": 490,
+            "id": 484,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 21,
@@ -8238,12 +8207,12 @@ fetch(url, {
             "od": 9.84,
             "ph": 7.006,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 491,
+            "id": 485,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 19.98,
@@ -8252,12 +8221,12 @@ fetch(url, {
             "od": 10.24,
             "ph": 6.984,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 492,
+            "id": 486,
             "longitud": -74.064707,
             "latitud": 4.602244,
             "temperatura": 22.44,
@@ -8266,12 +8235,12 @@ fetch(url, {
             "od": 12,
             "ph": 6.987,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:32:51.000000Z",
             "updated_at": "2018-06-29T16:32:51.000000Z"
         },
         {
-            "id": 493,
+            "id": 487,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.24,
@@ -8280,12 +8249,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 6.87,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T16:44:38.000000Z",
             "updated_at": "2018-06-29T16:44:38.000000Z"
         },
         {
-            "id": 494,
+            "id": 488,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.77,
@@ -8294,12 +8263,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 8.122,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 495,
+            "id": 489,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.1,
@@ -8308,12 +8277,12 @@ fetch(url, {
             "od": 17.42,
             "ph": 9.812,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T18:30:33.000000Z",
             "updated_at": "2018-06-29T18:30:33.000000Z"
         },
         {
-            "id": 496,
+            "id": 490,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 22.94,
@@ -8322,12 +8291,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 497,
+            "id": 491,
             "longitud": -73.954819,
             "latitud": 4.750876,
             "temperatura": 25.04,
@@ -8336,12 +8305,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 498,
+            "id": 492,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 22.16,
@@ -8350,12 +8319,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 499,
+            "id": 493,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 24.69,
@@ -8364,12 +8333,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:22.000000Z",
             "updated_at": "2018-06-29T20:28:22.000000Z"
         },
         {
-            "id": 500,
+            "id": 494,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 18.37,
@@ -8378,12 +8347,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 501,
+            "id": 495,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20.31,
@@ -8392,12 +8361,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 502,
+            "id": 496,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 22.86,
@@ -8406,12 +8375,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 503,
+            "id": 497,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 18.54,
@@ -8420,12 +8389,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 504,
+            "id": 498,
             "longitud": -73.977379,
             "latitud": 4.707583,
             "temperatura": 16.39,
@@ -8434,12 +8403,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 505,
+            "id": 499,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 15.09,
@@ -8448,12 +8417,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 506,
+            "id": 500,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 20,
@@ -8462,12 +8431,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 507,
+            "id": 501,
             "longitud": -73.954117,
             "latitud": 4.727614,
             "temperatura": 19.16,
@@ -8476,12 +8445,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 508,
+            "id": 502,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.32,
@@ -8490,12 +8459,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 509,
+            "id": 503,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -8504,12 +8473,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 510,
+            "id": 504,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8518,12 +8487,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 511,
+            "id": 505,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -8532,12 +8501,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 512,
+            "id": 506,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.11,
@@ -8546,12 +8515,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 513,
+            "id": 507,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8560,12 +8529,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 514,
+            "id": 508,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.07,
@@ -8574,12 +8543,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 515,
+            "id": 509,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8588,12 +8557,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 516,
+            "id": 510,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.13,
@@ -8602,12 +8571,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 517,
+            "id": 511,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.06,
@@ -8616,12 +8585,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 518,
+            "id": 512,
             "longitud": -73.957397,
             "latitud": 4.725948,
             "temperatura": 19.04,
@@ -8630,12 +8599,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 519,
+            "id": 513,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 24.29,
@@ -8644,12 +8613,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 520,
+            "id": 514,
             "longitud": -73.970116,
             "latitud": 4.722394,
             "temperatura": 19.92,
@@ -8658,12 +8627,12 @@ fetch(url, {
             "od": 0,
             "ph": 0,
             "region_id": 2,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-06-29T20:28:23.000000Z",
             "updated_at": "2018-06-29T20:28:23.000000Z"
         },
         {
-            "id": 521,
+            "id": 515,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.44,
@@ -8672,12 +8641,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 5.204,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 522,
+            "id": 516,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.14,
@@ -8686,12 +8655,12 @@ fetch(url, {
             "od": 6.12,
             "ph": 4.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 523,
+            "id": 517,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.12,
@@ -8700,12 +8669,12 @@ fetch(url, {
             "od": 8.867,
             "ph": 5.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 524,
+            "id": 518,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 21.15,
@@ -8714,12 +8683,12 @@ fetch(url, {
             "od": 7.77,
             "ph": 6.5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 525,
+            "id": 519,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -8728,12 +8697,12 @@ fetch(url, {
             "od": 6.99,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 526,
+            "id": 520,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.16,
@@ -8742,12 +8711,12 @@ fetch(url, {
             "od": 9.99,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 527,
+            "id": 521,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.65,
@@ -8756,12 +8725,12 @@ fetch(url, {
             "od": 11.02,
             "ph": 6.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 528,
+            "id": 522,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.44,
@@ -8770,12 +8739,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 529,
+            "id": 523,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.11,
@@ -8784,12 +8753,12 @@ fetch(url, {
             "od": 10.15,
             "ph": 6.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 530,
+            "id": 524,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -8798,12 +8767,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 9.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 531,
+            "id": 525,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -8812,12 +8781,12 @@ fetch(url, {
             "od": 10.91,
             "ph": 9.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-30T16:04:16.000000Z",
             "updated_at": "2018-08-30T16:04:16.000000Z"
         },
         {
-            "id": 532,
+            "id": 526,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.87,
@@ -8826,12 +8795,12 @@ fetch(url, {
             "od": 8.98,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T16:56:40.000000Z",
             "updated_at": "2018-08-31T16:56:40.000000Z"
         },
         {
-            "id": 533,
+            "id": 527,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -8840,12 +8809,12 @@ fetch(url, {
             "od": 6.94,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 534,
+            "id": 528,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.45,
@@ -8854,12 +8823,12 @@ fetch(url, {
             "od": 10.21,
             "ph": 6.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 535,
+            "id": 529,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.15,
@@ -8868,12 +8837,12 @@ fetch(url, {
             "od": 6.64,
             "ph": 5.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 536,
+            "id": 530,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.27,
@@ -8882,12 +8851,12 @@ fetch(url, {
             "od": 7.48,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 537,
+            "id": 531,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -8896,12 +8865,12 @@ fetch(url, {
             "od": 9.15,
             "ph": 5.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 538,
+            "id": 532,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.65,
@@ -8910,12 +8879,12 @@ fetch(url, {
             "od": 9.41,
             "ph": 6.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 539,
+            "id": 533,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.45,
@@ -8924,12 +8893,12 @@ fetch(url, {
             "od": 8.15,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T17:02:47.000000Z",
             "updated_at": "2018-08-31T17:02:47.000000Z"
         },
         {
-            "id": 540,
+            "id": 534,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.65,
@@ -8938,12 +8907,12 @@ fetch(url, {
             "od": 9.32,
             "ph": 6.84,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:12:31.000000Z",
             "updated_at": "2019-01-25T23:12:31.000000Z"
         },
         {
-            "id": 541,
+            "id": 535,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.74,
@@ -8952,12 +8921,12 @@ fetch(url, {
             "od": 9.13,
             "ph": 4.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 542,
+            "id": 536,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.23,
@@ -8966,12 +8935,12 @@ fetch(url, {
             "od": 9.96,
             "ph": 9.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 543,
+            "id": 537,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 16.21,
@@ -8980,12 +8949,12 @@ fetch(url, {
             "od": 8.15,
             "ph": 8.49,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 544,
+            "id": 538,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -8994,12 +8963,12 @@ fetch(url, {
             "od": 10.45,
             "ph": 9.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 545,
+            "id": 539,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.14,
@@ -9008,12 +8977,12 @@ fetch(url, {
             "od": 8.25,
             "ph": 8.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 546,
+            "id": 540,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -9022,12 +8991,12 @@ fetch(url, {
             "od": 11,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 547,
+            "id": 541,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.09,
@@ -9036,12 +9005,12 @@ fetch(url, {
             "od": 9,
             "ph": 4.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 548,
+            "id": 542,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.25,
@@ -9050,12 +9019,12 @@ fetch(url, {
             "od": 8,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 549,
+            "id": 543,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.26,
@@ -9064,12 +9033,12 @@ fetch(url, {
             "od": 9,
             "ph": 5.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 550,
+            "id": 544,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16,
@@ -9078,12 +9047,12 @@ fetch(url, {
             "od": 5,
             "ph": 5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 551,
+            "id": 545,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.54,
@@ -9092,12 +9061,12 @@ fetch(url, {
             "od": 9,
             "ph": 6.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 552,
+            "id": 546,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.39,
@@ -9106,12 +9075,12 @@ fetch(url, {
             "od": 8,
             "ph": 8.92,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 553,
+            "id": 547,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.45,
@@ -9120,12 +9089,12 @@ fetch(url, {
             "od": 6,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 554,
+            "id": 548,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.55,
@@ -9134,12 +9103,12 @@ fetch(url, {
             "od": 7,
             "ph": 8.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 555,
+            "id": 549,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17,
@@ -9148,12 +9117,12 @@ fetch(url, {
             "od": 11,
             "ph": 8.75,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 556,
+            "id": 550,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21,
@@ -9162,12 +9131,12 @@ fetch(url, {
             "od": 7,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 557,
+            "id": 551,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -9176,12 +9145,12 @@ fetch(url, {
             "od": 9,
             "ph": 9.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 558,
+            "id": 552,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.35,
@@ -9190,12 +9159,12 @@ fetch(url, {
             "od": 8.83,
             "ph": 8.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 559,
+            "id": 553,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.73,
@@ -9204,12 +9173,12 @@ fetch(url, {
             "od": 6.75,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 560,
+            "id": 554,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.89,
@@ -9218,12 +9187,12 @@ fetch(url, {
             "od": 9.65,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 561,
+            "id": 555,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.21,
@@ -9232,12 +9201,12 @@ fetch(url, {
             "od": 11.24,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 562,
+            "id": 556,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.21,
@@ -9246,12 +9215,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 9.014,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 563,
+            "id": 557,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -9260,12 +9229,12 @@ fetch(url, {
             "od": 8.25,
             "ph": 9.036,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 564,
+            "id": 558,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -9274,12 +9243,12 @@ fetch(url, {
             "od": 7.56,
             "ph": 8.65,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 565,
+            "id": 559,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -9288,12 +9257,12 @@ fetch(url, {
             "od": 9.54,
             "ph": 9.145,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 566,
+            "id": 560,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.24,
@@ -9302,12 +9271,12 @@ fetch(url, {
             "od": 11,
             "ph": 9.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 567,
+            "id": 561,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.58,
@@ -9316,12 +9285,12 @@ fetch(url, {
             "od": 10.39,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 568,
+            "id": 562,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -9330,12 +9299,12 @@ fetch(url, {
             "od": 10,
             "ph": 8,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 569,
+            "id": 563,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.14,
@@ -9344,12 +9313,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 570,
+            "id": 564,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.35,
@@ -9358,12 +9327,12 @@ fetch(url, {
             "od": 6.89,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 571,
+            "id": 565,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.45,
@@ -9372,12 +9341,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 9.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 572,
+            "id": 566,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.24,
@@ -9386,12 +9355,12 @@ fetch(url, {
             "od": 9,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:38.000000Z",
             "updated_at": "2018-12-05T18:45:38.000000Z"
         },
         {
-            "id": 573,
+            "id": 567,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.25,
@@ -9400,12 +9369,12 @@ fetch(url, {
             "od": 9.25,
             "ph": 7.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 574,
+            "id": 568,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -9414,12 +9383,12 @@ fetch(url, {
             "od": 12.14,
             "ph": 7.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 575,
+            "id": 569,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 20,
@@ -9428,12 +9397,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 6.001,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 576,
+            "id": 570,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14,
@@ -9442,12 +9411,12 @@ fetch(url, {
             "od": 11,
             "ph": 4.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:30:34.000000Z",
             "updated_at": "2019-01-25T23:30:34.000000Z"
         },
         {
-            "id": 577,
+            "id": 571,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 16.06,
@@ -9456,12 +9425,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 6.86,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 578,
+            "id": 572,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16,
@@ -9470,12 +9439,12 @@ fetch(url, {
             "od": 11,
             "ph": 4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 579,
+            "id": 573,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.45,
@@ -9484,12 +9453,12 @@ fetch(url, {
             "od": 6,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 580,
+            "id": 574,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.15,
@@ -9498,12 +9467,12 @@ fetch(url, {
             "od": 9,
             "ph": 6.46,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 581,
+            "id": 575,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.14,
@@ -9512,12 +9481,12 @@ fetch(url, {
             "od": 8,
             "ph": 3.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 582,
+            "id": 576,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.95,
@@ -9526,12 +9495,12 @@ fetch(url, {
             "od": 8,
             "ph": 4.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 583,
+            "id": 577,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.95,
@@ -9540,12 +9509,12 @@ fetch(url, {
             "od": 10,
             "ph": 5.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 584,
+            "id": 578,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.45,
@@ -9554,12 +9523,12 @@ fetch(url, {
             "od": 10,
             "ph": 7.09,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 585,
+            "id": 579,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21,
@@ -9568,12 +9537,12 @@ fetch(url, {
             "od": 7,
             "ph": 8,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 586,
+            "id": 580,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20,
@@ -9582,12 +9551,12 @@ fetch(url, {
             "od": 10,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 587,
+            "id": 581,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -9596,12 +9565,12 @@ fetch(url, {
             "od": 12,
             "ph": 7.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 588,
+            "id": 582,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -9610,12 +9579,12 @@ fetch(url, {
             "od": 10,
             "ph": 8.38,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 589,
+            "id": 583,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.44,
@@ -9624,12 +9593,12 @@ fetch(url, {
             "od": 8.58,
             "ph": 7.41,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 590,
+            "id": 584,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.52,
@@ -9638,12 +9607,12 @@ fetch(url, {
             "od": 14.25,
             "ph": 7.145,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 591,
+            "id": 585,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.45,
@@ -9652,12 +9621,12 @@ fetch(url, {
             "od": 9.19,
             "ph": 7.089,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 592,
+            "id": 586,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.05,
@@ -9666,7 +9635,91 @@ fetch(url, {
             "od": 8.25,
             "ph": 6.458,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 587,
+            "longitud": -74.067635,
+            "latitud": 4.601806,
+            "temperatura": 19.05,
+            "hg": 0,
+            "conduct": 15.06,
+            "od": 9.94,
+            "ph": 7.48,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 588,
+            "longitud": -74.067635,
+            "latitud": 4.601806,
+            "temperatura": 19.04,
+            "hg": 0,
+            "conduct": 19.09,
+            "od": 11.21,
+            "ph": 7.002,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 589,
+            "longitud": -74.067635,
+            "latitud": 4.601806,
+            "temperatura": 18.01,
+            "hg": 0,
+            "conduct": 24.05,
+            "od": 9.04,
+            "ph": 5.515,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 590,
+            "longitud": -74.067635,
+            "latitud": 4.601806,
+            "temperatura": 17.9,
+            "hg": 0,
+            "conduct": 22.045,
+            "od": 10.15,
+            "ph": 6.087,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 591,
+            "longitud": -74.067635,
+            "latitud": 4.601806,
+            "temperatura": 18.25,
+            "hg": 0,
+            "conduct": 19.21,
+            "od": 11.04,
+            "ph": 6.08,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 592,
+            "longitud": -74.067635,
+            "latitud": 4.601806,
+            "temperatura": 20.02,
+            "hg": 0,
+            "conduct": 11.05,
+            "od": 11.23,
+            "ph": 7.02,
+            "region_id": 1,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
@@ -9676,100 +9729,16 @@ fetch(url, {
             "latitud": 4.601806,
             "temperatura": 19.05,
             "hg": 0,
-            "conduct": 15.06,
-            "od": 9.94,
-            "ph": 7.48,
+            "conduct": 21.02,
+            "od": 11.16,
+            "ph": 6.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
             "id": 594,
-            "longitud": -74.067635,
-            "latitud": 4.601806,
-            "temperatura": 19.04,
-            "hg": 0,
-            "conduct": 19.09,
-            "od": 11.21,
-            "ph": 7.002,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 595,
-            "longitud": -74.067635,
-            "latitud": 4.601806,
-            "temperatura": 18.01,
-            "hg": 0,
-            "conduct": 24.05,
-            "od": 9.04,
-            "ph": 5.515,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 596,
-            "longitud": -74.067635,
-            "latitud": 4.601806,
-            "temperatura": 17.9,
-            "hg": 0,
-            "conduct": 22.045,
-            "od": 10.15,
-            "ph": 6.087,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 597,
-            "longitud": -74.067635,
-            "latitud": 4.601806,
-            "temperatura": 18.25,
-            "hg": 0,
-            "conduct": 19.21,
-            "od": 11.04,
-            "ph": 6.08,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 598,
-            "longitud": -74.067635,
-            "latitud": 4.601806,
-            "temperatura": 20.02,
-            "hg": 0,
-            "conduct": 11.05,
-            "od": 11.23,
-            "ph": 7.02,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 599,
-            "longitud": -74.067635,
-            "latitud": 4.601806,
-            "temperatura": 19.05,
-            "hg": 0,
-            "conduct": 21.02,
-            "od": 11.16,
-            "ph": 6.08,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 600,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.87,
@@ -9778,12 +9747,12 @@ fetch(url, {
             "od": 8.48,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 601,
+            "id": 595,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.05,
@@ -9792,12 +9761,12 @@ fetch(url, {
             "od": 7.09,
             "ph": 7.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 602,
+            "id": 596,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.01,
@@ -9806,12 +9775,12 @@ fetch(url, {
             "od": 8.89,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 603,
+            "id": 597,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.19,
@@ -9820,12 +9789,12 @@ fetch(url, {
             "od": 13.26,
             "ph": 7.52,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 604,
+            "id": 598,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.22,
@@ -9834,12 +9803,12 @@ fetch(url, {
             "od": 11.06,
             "ph": 7.65,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 605,
+            "id": 599,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.02,
@@ -9848,12 +9817,12 @@ fetch(url, {
             "od": 11.25,
             "ph": 8.09,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 606,
+            "id": 600,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.84,
@@ -9862,12 +9831,12 @@ fetch(url, {
             "od": 9.46,
             "ph": 7.21,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 607,
+            "id": 601,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.05,
@@ -9876,12 +9845,12 @@ fetch(url, {
             "od": 11.01,
             "ph": 7.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 608,
+            "id": 602,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -9890,12 +9859,12 @@ fetch(url, {
             "od": 12.05,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 609,
+            "id": 603,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.05,
@@ -9904,12 +9873,12 @@ fetch(url, {
             "od": 12.25,
             "ph": 7.77,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 610,
+            "id": 604,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.05,
@@ -9918,12 +9887,12 @@ fetch(url, {
             "od": 9.25,
             "ph": 7.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 611,
+            "id": 605,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.02,
@@ -9932,12 +9901,12 @@ fetch(url, {
             "od": 8.19,
             "ph": 8.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 612,
+            "id": 606,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.06,
@@ -9946,7 +9915,91 @@ fetch(url, {
             "od": 16.56,
             "ph": 7.68,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 607,
+            "longitud": -74.070932,
+            "latitud": 4.60065,
+            "temperatura": 20.04,
+            "hg": 0,
+            "conduct": 18.04,
+            "od": 99.14,
+            "ph": 8.39,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 608,
+            "longitud": -74.070932,
+            "latitud": 4.60065,
+            "temperatura": 20.16,
+            "hg": 0,
+            "conduct": 11.14,
+            "od": 10.14,
+            "ph": 8.09,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 609,
+            "longitud": -74.070932,
+            "latitud": 4.60065,
+            "temperatura": 19.22,
+            "hg": 0,
+            "conduct": 14.04,
+            "od": 11.02,
+            "ph": 8.66,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 610,
+            "longitud": -74.070932,
+            "latitud": 4.60065,
+            "temperatura": 18.06,
+            "hg": 0,
+            "conduct": 22,
+            "od": 9.15,
+            "ph": 8.05,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 611,
+            "longitud": -74.070932,
+            "latitud": 4.60065,
+            "temperatura": 19.09,
+            "hg": 0,
+            "conduct": 22.01,
+            "od": 8.02,
+            "ph": 8.09,
+            "region_id": 1,
+            "transfer_id": 1,
+            "created_at": "2018-08-31T20:16:12.000000Z",
+            "updated_at": "2018-08-31T20:16:12.000000Z"
+        },
+        {
+            "id": 612,
+            "longitud": -74.070932,
+            "latitud": 4.60065,
+            "temperatura": 20.09,
+            "hg": 0,
+            "conduct": 11.14,
+            "od": 10.14,
+            "ph": 8.97,
+            "region_id": 1,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
@@ -9956,100 +10009,16 @@ fetch(url, {
             "latitud": 4.60065,
             "temperatura": 20.04,
             "hg": 0,
-            "conduct": 18.04,
-            "od": 99.14,
-            "ph": 8.39,
+            "conduct": 12.21,
+            "od": 8.31,
+            "ph": 9.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
             "id": 614,
-            "longitud": -74.070932,
-            "latitud": 4.60065,
-            "temperatura": 20.16,
-            "hg": 0,
-            "conduct": 11.14,
-            "od": 10.14,
-            "ph": 8.09,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 615,
-            "longitud": -74.070932,
-            "latitud": 4.60065,
-            "temperatura": 19.22,
-            "hg": 0,
-            "conduct": 14.04,
-            "od": 11.02,
-            "ph": 8.66,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 616,
-            "longitud": -74.070932,
-            "latitud": 4.60065,
-            "temperatura": 18.06,
-            "hg": 0,
-            "conduct": 22,
-            "od": 9.15,
-            "ph": 8.05,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 617,
-            "longitud": -74.070932,
-            "latitud": 4.60065,
-            "temperatura": 19.09,
-            "hg": 0,
-            "conduct": 22.01,
-            "od": 8.02,
-            "ph": 8.09,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 618,
-            "longitud": -74.070932,
-            "latitud": 4.60065,
-            "temperatura": 20.09,
-            "hg": 0,
-            "conduct": 11.14,
-            "od": 10.14,
-            "ph": 8.97,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 619,
-            "longitud": -74.070932,
-            "latitud": 4.60065,
-            "temperatura": 20.04,
-            "hg": 0,
-            "conduct": 12.21,
-            "od": 8.31,
-            "ph": 9.08,
-            "region_id": 1,
-            "transfer_id": 28,
-            "created_at": "2018-08-31T20:16:12.000000Z",
-            "updated_at": "2018-08-31T20:16:12.000000Z"
-        },
-        {
-            "id": 620,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.76,
@@ -10058,12 +10027,12 @@ fetch(url, {
             "od": 8.45,
             "ph": 8.91,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 621,
+            "id": 615,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.06,
@@ -10072,12 +10041,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 8.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 622,
+            "id": 616,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.81,
@@ -10086,12 +10055,12 @@ fetch(url, {
             "od": 10.24,
             "ph": 9.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 623,
+            "id": 617,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.05,
@@ -10100,12 +10069,12 @@ fetch(url, {
             "od": 9.15,
             "ph": 8.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 624,
+            "id": 618,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.31,
@@ -10114,12 +10083,12 @@ fetch(url, {
             "od": 12,
             "ph": 9.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 625,
+            "id": 619,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.1,
@@ -10128,12 +10097,12 @@ fetch(url, {
             "od": 15.11,
             "ph": 8.06,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 626,
+            "id": 620,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.24,
@@ -10142,12 +10111,12 @@ fetch(url, {
             "od": 6.31,
             "ph": 8.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 627,
+            "id": 621,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20,
@@ -10156,12 +10125,12 @@ fetch(url, {
             "od": 7,
             "ph": 8.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 628,
+            "id": 622,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.14,
@@ -10170,12 +10139,12 @@ fetch(url, {
             "od": 11,
             "ph": 6.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 629,
+            "id": 623,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.88,
@@ -10184,12 +10153,12 @@ fetch(url, {
             "od": 12,
             "ph": 6.11,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 630,
+            "id": 624,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.24,
@@ -10198,12 +10167,12 @@ fetch(url, {
             "od": 10,
             "ph": 7.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 631,
+            "id": 625,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.3,
@@ -10212,12 +10181,12 @@ fetch(url, {
             "od": 10,
             "ph": 4.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 632,
+            "id": 626,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -10226,12 +10195,12 @@ fetch(url, {
             "od": 8,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 633,
+            "id": 627,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.3,
@@ -10240,12 +10209,12 @@ fetch(url, {
             "od": 11,
             "ph": 6.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 634,
+            "id": 628,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.22,
@@ -10254,12 +10223,12 @@ fetch(url, {
             "od": 8,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 635,
+            "id": 629,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.95,
@@ -10268,12 +10237,12 @@ fetch(url, {
             "od": 9,
             "ph": 9.17,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 636,
+            "id": 630,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.45,
@@ -10282,12 +10251,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 4.84,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:12:31.000000Z",
             "updated_at": "2019-01-25T23:12:31.000000Z"
         },
         {
-            "id": 637,
+            "id": 631,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16,
@@ -10296,12 +10265,12 @@ fetch(url, {
             "od": 7.77,
             "ph": 5.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 638,
+            "id": 632,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.44,
@@ -10310,12 +10279,12 @@ fetch(url, {
             "od": 10,
             "ph": 7.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 639,
+            "id": 633,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -10324,12 +10293,12 @@ fetch(url, {
             "od": 5.44,
             "ph": 6.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 640,
+            "id": 634,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.22,
@@ -10338,12 +10307,12 @@ fetch(url, {
             "od": 10,
             "ph": 6.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 641,
+            "id": 635,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.55,
@@ -10352,12 +10321,12 @@ fetch(url, {
             "od": 6.89,
             "ph": 6.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 642,
+            "id": 636,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.54,
@@ -10366,12 +10335,12 @@ fetch(url, {
             "od": 8.51,
             "ph": 9.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 643,
+            "id": 637,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.36,
@@ -10380,12 +10349,12 @@ fetch(url, {
             "od": 6.56,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 644,
+            "id": 638,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.24,
@@ -10394,12 +10363,12 @@ fetch(url, {
             "od": 10.26,
             "ph": 6.789,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 645,
+            "id": 639,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.98,
@@ -10408,12 +10377,12 @@ fetch(url, {
             "od": 11.02,
             "ph": 7.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 646,
+            "id": 640,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.89,
@@ -10422,12 +10391,12 @@ fetch(url, {
             "od": 9.82,
             "ph": 9.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 647,
+            "id": 641,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.25,
@@ -10436,12 +10405,12 @@ fetch(url, {
             "od": 9.05,
             "ph": 8.65,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 648,
+            "id": 642,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17,
@@ -10450,12 +10419,12 @@ fetch(url, {
             "od": 8,
             "ph": 9.49,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 649,
+            "id": 643,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -10464,12 +10433,12 @@ fetch(url, {
             "od": 14,
             "ph": 9.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 650,
+            "id": 644,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -10478,12 +10447,12 @@ fetch(url, {
             "od": 6,
             "ph": 8.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 651,
+            "id": 645,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.65,
@@ -10492,12 +10461,12 @@ fetch(url, {
             "od": 9.24,
             "ph": 7.84,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 652,
+            "id": 646,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.25,
@@ -10506,12 +10475,12 @@ fetch(url, {
             "od": 10.85,
             "ph": 5.69,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 653,
+            "id": 647,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.14,
@@ -10520,12 +10489,12 @@ fetch(url, {
             "od": 10.04,
             "ph": 6.85,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 654,
+            "id": 648,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.25,
@@ -10534,12 +10503,12 @@ fetch(url, {
             "od": 11.3,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 655,
+            "id": 649,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.44,
@@ -10548,12 +10517,12 @@ fetch(url, {
             "od": 11.32,
             "ph": 8.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 656,
+            "id": 650,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.95,
@@ -10562,12 +10531,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 8.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 657,
+            "id": 651,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.14,
@@ -10576,12 +10545,12 @@ fetch(url, {
             "od": 10.45,
             "ph": 9.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 658,
+            "id": 652,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.59,
@@ -10590,12 +10559,12 @@ fetch(url, {
             "od": 13.25,
             "ph": 9.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 659,
+            "id": 653,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.89,
@@ -10604,12 +10573,12 @@ fetch(url, {
             "od": 8.47,
             "ph": 9.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 660,
+            "id": 654,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -10618,12 +10587,12 @@ fetch(url, {
             "od": 9.25,
             "ph": 8.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 661,
+            "id": 655,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.54,
@@ -10632,12 +10601,12 @@ fetch(url, {
             "od": 6,
             "ph": 6.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:38.000000Z",
             "updated_at": "2018-12-05T18:45:38.000000Z"
         },
         {
-            "id": 662,
+            "id": 656,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19.25,
@@ -10646,12 +10615,12 @@ fetch(url, {
             "od": 8.689,
             "ph": 4.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 663,
+            "id": 657,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 19,
@@ -10660,12 +10629,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 664,
+            "id": 658,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.89,
@@ -10674,12 +10643,12 @@ fetch(url, {
             "od": 7.25,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 665,
+            "id": 659,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16,
@@ -10688,12 +10657,12 @@ fetch(url, {
             "od": 9,
             "ph": 4.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 666,
+            "id": 660,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.45,
@@ -10702,12 +10671,12 @@ fetch(url, {
             "od": 9.02,
             "ph": 5.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 667,
+            "id": 661,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 15.25,
@@ -10716,12 +10685,12 @@ fetch(url, {
             "od": 11.25,
             "ph": 7.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 668,
+            "id": 662,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17,
@@ -10730,12 +10699,12 @@ fetch(url, {
             "od": 11.25,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 669,
+            "id": 663,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17,
@@ -10744,12 +10713,12 @@ fetch(url, {
             "od": 9.35,
             "ph": 8.32,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 670,
+            "id": 664,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -10758,12 +10727,12 @@ fetch(url, {
             "od": 11,
             "ph": 8.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 671,
+            "id": 665,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.03,
@@ -10772,12 +10741,12 @@ fetch(url, {
             "od": 10.05,
             "ph": 8.09,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 672,
+            "id": 666,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.56,
@@ -10786,12 +10755,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 8.07,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:35:55.000000Z",
             "updated_at": "2018-12-04T17:35:55.000000Z"
         },
         {
-            "id": 673,
+            "id": 667,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.24,
@@ -10800,12 +10769,12 @@ fetch(url, {
             "od": 10,
             "ph": 4.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 674,
+            "id": 668,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.87,
@@ -10814,12 +10783,12 @@ fetch(url, {
             "od": 10,
             "ph": 6.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 675,
+            "id": 669,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.15,
@@ -10828,12 +10797,12 @@ fetch(url, {
             "od": 6,
             "ph": 6.75,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 676,
+            "id": 670,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.3,
@@ -10842,12 +10811,12 @@ fetch(url, {
             "od": 10,
             "ph": 5.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 677,
+            "id": 671,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.02,
@@ -10856,12 +10825,12 @@ fetch(url, {
             "od": 9,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 678,
+            "id": 672,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.48,
@@ -10870,12 +10839,12 @@ fetch(url, {
             "od": 7,
             "ph": 9.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 679,
+            "id": 673,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -10884,12 +10853,12 @@ fetch(url, {
             "od": 10,
             "ph": 9.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 680,
+            "id": 674,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19,
@@ -10898,12 +10867,12 @@ fetch(url, {
             "od": 11,
             "ph": 8.81,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 681,
+            "id": 675,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.55,
@@ -10912,12 +10881,12 @@ fetch(url, {
             "od": 8,
             "ph": 9.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:39:22.000000Z",
             "updated_at": "2018-12-04T17:39:22.000000Z"
         },
         {
-            "id": 682,
+            "id": 676,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.55,
@@ -10926,12 +10895,12 @@ fetch(url, {
             "od": 8.31,
             "ph": 3.82,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:12:31.000000Z",
             "updated_at": "2019-01-25T23:12:31.000000Z"
         },
         {
-            "id": 683,
+            "id": 677,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.24,
@@ -10940,12 +10909,12 @@ fetch(url, {
             "od": 8,
             "ph": 6.66,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 684,
+            "id": 678,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.24,
@@ -10954,12 +10923,12 @@ fetch(url, {
             "od": 6,
             "ph": 4.55,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 685,
+            "id": 679,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.24,
@@ -10968,12 +10937,12 @@ fetch(url, {
             "od": 7.58,
             "ph": 9.014,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 686,
+            "id": 680,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.54,
@@ -10982,12 +10951,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 8.54,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 687,
+            "id": 681,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.05,
@@ -10996,12 +10965,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 688,
+            "id": 682,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17,
@@ -11010,12 +10979,12 @@ fetch(url, {
             "od": 5.89,
             "ph": 6.178,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 689,
+            "id": 683,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -11024,12 +10993,12 @@ fetch(url, {
             "od": 13.36,
             "ph": 8.014,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 690,
+            "id": 684,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.35,
@@ -11038,12 +11007,12 @@ fetch(url, {
             "od": 10.24,
             "ph": 8.06,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 691,
+            "id": 685,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -11052,12 +11021,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 8.26,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 692,
+            "id": 686,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.25,
@@ -11066,12 +11035,12 @@ fetch(url, {
             "od": 8.69,
             "ph": 9.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 693,
+            "id": 687,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.24,
@@ -11080,12 +11049,12 @@ fetch(url, {
             "od": 11.25,
             "ph": 9.47,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 694,
+            "id": 688,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -11094,12 +11063,12 @@ fetch(url, {
             "od": 11,
             "ph": 8,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 695,
+            "id": 689,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -11108,12 +11077,12 @@ fetch(url, {
             "od": 12,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 696,
+            "id": 690,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21,
@@ -11122,12 +11091,12 @@ fetch(url, {
             "od": 10,
             "ph": 9.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 697,
+            "id": 691,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -11136,12 +11105,12 @@ fetch(url, {
             "od": 7,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 698,
+            "id": 692,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -11150,12 +11119,12 @@ fetch(url, {
             "od": 7,
             "ph": 5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:38.000000Z",
             "updated_at": "2018-12-05T18:45:38.000000Z"
         },
         {
-            "id": 699,
+            "id": 693,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.25,
@@ -11164,12 +11133,12 @@ fetch(url, {
             "od": 4.14,
             "ph": 4.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 700,
+            "id": 694,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -11178,12 +11147,12 @@ fetch(url, {
             "od": 8.7,
             "ph": 6.66,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 701,
+            "id": 695,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.25,
@@ -11192,12 +11161,12 @@ fetch(url, {
             "od": 8.58,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 702,
+            "id": 696,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.56,
@@ -11206,12 +11175,12 @@ fetch(url, {
             "od": 8.59,
             "ph": 6.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 703,
+            "id": 697,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.12,
@@ -11220,12 +11189,12 @@ fetch(url, {
             "od": 12,
             "ph": 6.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 704,
+            "id": 698,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.24,
@@ -11234,12 +11203,12 @@ fetch(url, {
             "od": 10.99,
             "ph": 6.85,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 705,
+            "id": 699,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.58,
@@ -11248,12 +11217,12 @@ fetch(url, {
             "od": 9.56,
             "ph": 8.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 706,
+            "id": 700,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.56,
@@ -11262,12 +11231,12 @@ fetch(url, {
             "od": 8.98,
             "ph": 6.014,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 707,
+            "id": 701,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.06,
@@ -11276,12 +11245,12 @@ fetch(url, {
             "od": 7.55,
             "ph": 8.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 708,
+            "id": 702,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.22,
@@ -11290,12 +11259,12 @@ fetch(url, {
             "od": 8,
             "ph": 6.54,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 709,
+            "id": 703,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.25,
@@ -11304,12 +11273,12 @@ fetch(url, {
             "od": 6.35,
             "ph": 8.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 710,
+            "id": 704,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.89,
@@ -11318,12 +11287,12 @@ fetch(url, {
             "od": 8,
             "ph": 8.06,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 711,
+            "id": 705,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.48,
@@ -11332,12 +11301,12 @@ fetch(url, {
             "od": 8,
             "ph": 7.55,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 712,
+            "id": 706,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.35,
@@ -11346,12 +11315,12 @@ fetch(url, {
             "od": 8.02,
             "ph": 6.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 713,
+            "id": 707,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.25,
@@ -11360,12 +11329,12 @@ fetch(url, {
             "od": 10,
             "ph": 9.32,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 714,
+            "id": 708,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -11374,12 +11343,12 @@ fetch(url, {
             "od": 10.01,
             "ph": 8.59,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 715,
+            "id": 709,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 16.36,
@@ -11388,12 +11357,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 716,
+            "id": 710,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.25,
@@ -11402,12 +11371,12 @@ fetch(url, {
             "od": 7.54,
             "ph": 9.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 717,
+            "id": 711,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.45,
@@ -11416,12 +11385,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 7.39,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 718,
+            "id": 712,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.02,
@@ -11430,12 +11399,12 @@ fetch(url, {
             "od": 10.06,
             "ph": 8.09,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 719,
+            "id": 713,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.45,
@@ -11444,12 +11413,12 @@ fetch(url, {
             "od": 11.36,
             "ph": 8.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 720,
+            "id": 714,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.24,
@@ -11458,12 +11427,12 @@ fetch(url, {
             "od": 9.65,
             "ph": 8.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 721,
+            "id": 715,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.54,
@@ -11472,12 +11441,12 @@ fetch(url, {
             "od": 10.45,
             "ph": 7.68,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 722,
+            "id": 716,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.65,
@@ -11486,12 +11455,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 8.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 723,
+            "id": 717,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.69,
@@ -11500,12 +11469,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 9.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 724,
+            "id": 718,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.65,
@@ -11514,12 +11483,12 @@ fetch(url, {
             "od": 6.32,
             "ph": 8.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 725,
+            "id": 719,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.33,
@@ -11528,12 +11497,12 @@ fetch(url, {
             "od": 8.25,
             "ph": 8.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 726,
+            "id": 720,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.98,
@@ -11542,12 +11511,12 @@ fetch(url, {
             "od": 10.24,
             "ph": 9.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 727,
+            "id": 721,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -11556,12 +11525,12 @@ fetch(url, {
             "od": 8,
             "ph": 10,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 728,
+            "id": 722,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.24,
@@ -11570,12 +11539,12 @@ fetch(url, {
             "od": 14,
             "ph": 8.59,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 729,
+            "id": 723,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.24,
@@ -11584,12 +11553,12 @@ fetch(url, {
             "od": 6.02,
             "ph": 4.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 730,
+            "id": 724,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.62,
@@ -11598,12 +11567,12 @@ fetch(url, {
             "od": 10.35,
             "ph": 8.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 731,
+            "id": 725,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17,
@@ -11612,12 +11581,12 @@ fetch(url, {
             "od": 6.58,
             "ph": 7.048,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 732,
+            "id": 726,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -11626,12 +11595,12 @@ fetch(url, {
             "od": 11,
             "ph": 4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:38.000000Z",
             "updated_at": "2018-12-05T18:45:38.000000Z"
         },
         {
-            "id": 733,
+            "id": 727,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.24,
@@ -11640,12 +11609,12 @@ fetch(url, {
             "od": 8,
             "ph": 6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:38.000000Z",
             "updated_at": "2018-12-05T18:45:38.000000Z"
         },
         {
-            "id": 734,
+            "id": 728,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.56,
@@ -11654,12 +11623,12 @@ fetch(url, {
             "od": 11.14,
             "ph": 8.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 735,
+            "id": 729,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16,
@@ -11668,12 +11637,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 736,
+            "id": 730,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.56,
@@ -11682,12 +11651,12 @@ fetch(url, {
             "od": 10.11,
             "ph": 5.54,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 737,
+            "id": 731,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.74,
@@ -11696,12 +11665,12 @@ fetch(url, {
             "od": 6.04,
             "ph": 6.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 738,
+            "id": 732,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.04,
@@ -11710,12 +11679,12 @@ fetch(url, {
             "od": 5.22,
             "ph": 7.09,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 739,
+            "id": 733,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.56,
@@ -11724,12 +11693,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 740,
+            "id": 734,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.35,
@@ -11738,12 +11707,12 @@ fetch(url, {
             "od": 8.93,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 741,
+            "id": 735,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.22,
@@ -11752,12 +11721,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.55,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 742,
+            "id": 736,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.36,
@@ -11766,12 +11735,12 @@ fetch(url, {
             "od": 11,
             "ph": 4.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 743,
+            "id": 737,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.99,
@@ -11780,12 +11749,12 @@ fetch(url, {
             "od": 7.54,
             "ph": 7.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 744,
+            "id": 738,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.22,
@@ -11794,12 +11763,12 @@ fetch(url, {
             "od": 6.5,
             "ph": 8.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 745,
+            "id": 739,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.55,
@@ -11808,12 +11777,12 @@ fetch(url, {
             "od": 8.66,
             "ph": 6.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 746,
+            "id": 740,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17,
@@ -11822,12 +11791,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 747,
+            "id": 741,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.45,
@@ -11836,12 +11805,12 @@ fetch(url, {
             "od": 9,
             "ph": 6.11,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 748,
+            "id": 742,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17,
@@ -11850,12 +11819,12 @@ fetch(url, {
             "od": 8.58,
             "ph": 6.76,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 749,
+            "id": 743,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.24,
@@ -11864,12 +11833,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 750,
+            "id": 744,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.25,
@@ -11878,12 +11847,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 751,
+            "id": 745,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -11892,12 +11861,12 @@ fetch(url, {
             "od": 7.77,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 752,
+            "id": 746,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20,
@@ -11906,12 +11875,12 @@ fetch(url, {
             "od": 6,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 753,
+            "id": 747,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.48,
@@ -11920,12 +11889,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 754,
+            "id": 748,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17,
@@ -11934,12 +11903,12 @@ fetch(url, {
             "od": 8.96,
             "ph": 8,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 755,
+            "id": 749,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.14,
@@ -11948,12 +11917,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 8.91,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 756,
+            "id": 750,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.01,
@@ -11962,12 +11931,12 @@ fetch(url, {
             "od": 6.14,
             "ph": 8.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 757,
+            "id": 751,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.99,
@@ -11976,12 +11945,12 @@ fetch(url, {
             "od": 7,
             "ph": 7.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 758,
+            "id": 752,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.69,
@@ -11990,12 +11959,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 8.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 759,
+            "id": 753,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.11,
@@ -12004,12 +11973,12 @@ fetch(url, {
             "od": 7.03,
             "ph": 8.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 760,
+            "id": 754,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.25,
@@ -12018,12 +11987,12 @@ fetch(url, {
             "od": 7.58,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 761,
+            "id": 755,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.25,
@@ -12032,12 +12001,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 8,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 762,
+            "id": 756,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.25,
@@ -12046,12 +12015,12 @@ fetch(url, {
             "od": 8.65,
             "ph": 7.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 763,
+            "id": 757,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.65,
@@ -12060,12 +12029,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 8.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 764,
+            "id": 758,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 18,
@@ -12074,12 +12043,12 @@ fetch(url, {
             "od": 66,
             "ph": 13,
             "region_id": 6,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-03-18T21:16:20.000000Z",
             "updated_at": "2020-03-18T21:16:20.000000Z"
         },
         {
-            "id": 765,
+            "id": 759,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.06,
@@ -12088,12 +12057,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 9.11,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-08-31T20:16:12.000000Z",
             "updated_at": "2018-08-31T20:16:12.000000Z"
         },
         {
-            "id": 766,
+            "id": 760,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.45,
@@ -12102,12 +12071,12 @@ fetch(url, {
             "od": 9.45,
             "ph": 7.056,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 767,
+            "id": 761,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.25,
@@ -12116,12 +12085,12 @@ fetch(url, {
             "od": 8.62,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:39.000000Z",
             "updated_at": "2018-12-05T18:38:39.000000Z"
         },
         {
-            "id": 768,
+            "id": 762,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.89,
@@ -12130,12 +12099,12 @@ fetch(url, {
             "od": 7.58,
             "ph": 9.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 769,
+            "id": 763,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.54,
@@ -12144,12 +12113,12 @@ fetch(url, {
             "od": 9.24,
             "ph": 9.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 770,
+            "id": 764,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20,
@@ -12158,12 +12127,12 @@ fetch(url, {
             "od": 8.65,
             "ph": 8.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 771,
+            "id": 765,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.24,
@@ -12172,12 +12141,12 @@ fetch(url, {
             "od": 5,
             "ph": 6.54,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 772,
+            "id": 766,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.24,
@@ -12186,12 +12155,12 @@ fetch(url, {
             "od": 12.06,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:36:14.000000Z",
             "updated_at": "2018-12-05T18:36:14.000000Z"
         },
         {
-            "id": 773,
+            "id": 767,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.05,
@@ -12200,12 +12169,12 @@ fetch(url, {
             "od": 8.23,
             "ph": 9.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:38:40.000000Z",
             "updated_at": "2018-12-05T18:38:40.000000Z"
         },
         {
-            "id": 774,
+            "id": 768,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17,
@@ -12214,12 +12183,12 @@ fetch(url, {
             "od": 16,
             "ph": 7.86,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:40:54.000000Z",
             "updated_at": "2018-12-04T17:40:54.000000Z"
         },
         {
-            "id": 775,
+            "id": 769,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.56,
@@ -12228,12 +12197,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:38.000000Z",
             "updated_at": "2018-12-05T18:45:38.000000Z"
         },
         {
-            "id": 776,
+            "id": 770,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18,
@@ -12242,12 +12211,12 @@ fetch(url, {
             "od": 5.65,
             "ph": 5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 777,
+            "id": 771,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.65,
@@ -12256,12 +12225,12 @@ fetch(url, {
             "od": 8.36,
             "ph": 5.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 778,
+            "id": 772,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.14,
@@ -12270,12 +12239,12 @@ fetch(url, {
             "od": 6.9,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:45:39.000000Z",
             "updated_at": "2018-12-05T18:45:39.000000Z"
         },
         {
-            "id": 779,
+            "id": 773,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.43,
@@ -12284,12 +12253,12 @@ fetch(url, {
             "od": 10.56,
             "ph": 5.94,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 780,
+            "id": 774,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.78,
@@ -12298,12 +12267,12 @@ fetch(url, {
             "od": 7.23,
             "ph": 7.63,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 781,
+            "id": 775,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.83,
@@ -12312,12 +12281,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 7.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 782,
+            "id": 776,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.89,
@@ -12326,12 +12295,12 @@ fetch(url, {
             "od": 9.28,
             "ph": 6.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 783,
+            "id": 777,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.22,
@@ -12340,12 +12309,12 @@ fetch(url, {
             "od": 8,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 784,
+            "id": 778,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.22,
@@ -12354,12 +12323,12 @@ fetch(url, {
             "od": 9,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 785,
+            "id": 779,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 14.25,
@@ -12368,12 +12337,12 @@ fetch(url, {
             "od": 6,
             "ph": 8.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 786,
+            "id": 780,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.58,
@@ -12382,12 +12351,12 @@ fetch(url, {
             "od": 10.22,
             "ph": 7.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 787,
+            "id": 781,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.88,
@@ -12396,12 +12365,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 788,
+            "id": 782,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.55,
@@ -12410,12 +12379,12 @@ fetch(url, {
             "od": 8,
             "ph": 7.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 789,
+            "id": 783,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.85,
@@ -12424,12 +12393,12 @@ fetch(url, {
             "od": 11.25,
             "ph": 5.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 790,
+            "id": 784,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19,
@@ -12438,12 +12407,12 @@ fetch(url, {
             "od": 7,
             "ph": 8.55,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 791,
+            "id": 785,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.25,
@@ -12452,12 +12421,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 792,
+            "id": 786,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.02,
@@ -12466,12 +12435,12 @@ fetch(url, {
             "od": 11,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 793,
+            "id": 787,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18,
@@ -12480,12 +12449,12 @@ fetch(url, {
             "od": 8.25,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 794,
+            "id": 788,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.36,
@@ -12494,12 +12463,12 @@ fetch(url, {
             "od": 11,
             "ph": 6.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 795,
+            "id": 789,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -12508,12 +12477,12 @@ fetch(url, {
             "od": 8.25,
             "ph": 7.7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 796,
+            "id": 790,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.56,
@@ -12522,12 +12491,12 @@ fetch(url, {
             "od": 8.91,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 797,
+            "id": 791,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.55,
@@ -12536,12 +12505,12 @@ fetch(url, {
             "od": 9.01,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 798,
+            "id": 792,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.15,
@@ -12550,12 +12519,12 @@ fetch(url, {
             "od": 8.78,
             "ph": 7.77,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 799,
+            "id": 793,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.15,
@@ -12564,12 +12533,12 @@ fetch(url, {
             "od": 9.27,
             "ph": 5.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 800,
+            "id": 794,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.7,
@@ -12578,12 +12547,12 @@ fetch(url, {
             "od": 7.4,
             "ph": 6.17,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 801,
+            "id": 795,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 21.07,
@@ -12592,12 +12561,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 9.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 802,
+            "id": 796,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.57,
@@ -12606,12 +12575,12 @@ fetch(url, {
             "od": 7.12,
             "ph": 8.55,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 803,
+            "id": 797,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.89,
@@ -12620,12 +12589,12 @@ fetch(url, {
             "od": 7.93,
             "ph": 9.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 804,
+            "id": 798,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -12634,12 +12603,12 @@ fetch(url, {
             "od": 6.36,
             "ph": 9.27,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 805,
+            "id": 799,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.56,
@@ -12648,12 +12617,12 @@ fetch(url, {
             "od": 7.34,
             "ph": 7.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 806,
+            "id": 800,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23,
@@ -12662,12 +12631,12 @@ fetch(url, {
             "od": 6.17,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 807,
+            "id": 801,
             "longitud": -72.8373655,
             "latitud": 10.9423336,
             "temperatura": 31.25,
@@ -12676,12 +12645,12 @@ fetch(url, {
             "od": 7.436,
             "ph": 4.95,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-08T16:58:41.000000Z",
             "updated_at": "2019-07-08T16:58:41.000000Z"
         },
         {
-            "id": 808,
+            "id": 802,
             "longitud": -73.50493,
             "latitud": 5.47956,
             "temperatura": 21,
@@ -12690,12 +12659,12 @@ fetch(url, {
             "od": 40.3,
             "ph": 9.31,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:16:24.000000Z",
             "updated_at": "2020-05-07T04:16:24.000000Z"
         },
         {
-            "id": 809,
+            "id": 803,
             "longitud": -73.5421,
             "latitud": 5.45502,
             "temperatura": 17,
@@ -12704,12 +12673,12 @@ fetch(url, {
             "od": 33.7,
             "ph": 5.03,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 810,
+            "id": 804,
             "longitud": -73.49792,
             "latitud": 5.46671,
             "temperatura": 13,
@@ -12718,12 +12687,12 @@ fetch(url, {
             "od": 34.1,
             "ph": 6.97,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 811,
+            "id": 805,
             "longitud": -73.52232,
             "latitud": 5.47803,
             "temperatura": 18,
@@ -12732,12 +12701,12 @@ fetch(url, {
             "od": 47.1,
             "ph": 3.31,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 812,
+            "id": 806,
             "longitud": -73.49792,
             "latitud": 5.4667,
             "temperatura": 14,
@@ -12746,12 +12715,12 @@ fetch(url, {
             "od": 33.7,
             "ph": 6.92,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 813,
+            "id": 807,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.56,
@@ -12760,12 +12729,12 @@ fetch(url, {
             "od": 8.34,
             "ph": 6.25,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 814,
+            "id": 808,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.16,
@@ -12774,12 +12743,12 @@ fetch(url, {
             "od": 10.26,
             "ph": 6.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 815,
+            "id": 809,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.84,
@@ -12788,12 +12757,12 @@ fetch(url, {
             "od": 11.78,
             "ph": 6.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 816,
+            "id": 810,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 21.1,
@@ -12802,12 +12771,12 @@ fetch(url, {
             "od": 14,
             "ph": 7.204,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-10-17T16:23:11.000000Z",
             "updated_at": "2018-10-17T16:23:11.000000Z"
         },
         {
-            "id": 817,
+            "id": 811,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 30,
@@ -12816,12 +12785,12 @@ fetch(url, {
             "od": 48,
             "ph": 1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-11-22T12:28:57.000000Z",
             "updated_at": "2018-11-22T12:28:57.000000Z"
         },
         {
-            "id": 818,
+            "id": 812,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 56,
@@ -12830,12 +12799,12 @@ fetch(url, {
             "od": 44,
             "ph": 2,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-11-22T12:28:57.000000Z",
             "updated_at": "2018-11-22T12:28:57.000000Z"
         },
         {
-            "id": 819,
+            "id": 813,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16,
@@ -12844,12 +12813,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.38,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 820,
+            "id": 814,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.54,
@@ -12858,12 +12827,12 @@ fetch(url, {
             "od": 7.85,
             "ph": 7.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 821,
+            "id": 815,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.25,
@@ -12872,12 +12841,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 6.5,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 822,
+            "id": 816,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.14,
@@ -12886,12 +12855,12 @@ fetch(url, {
             "od": 6.9,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 823,
+            "id": 817,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.4,
@@ -12900,12 +12869,12 @@ fetch(url, {
             "od": 9.34,
             "ph": 6.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 824,
+            "id": 818,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20,
@@ -12914,12 +12883,12 @@ fetch(url, {
             "od": 9.22,
             "ph": 7.48,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 825,
+            "id": 819,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.4,
@@ -12928,12 +12897,12 @@ fetch(url, {
             "od": 9.38,
             "ph": 6.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 826,
+            "id": 820,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.01,
@@ -12942,12 +12911,12 @@ fetch(url, {
             "od": 7.22,
             "ph": 5.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 827,
+            "id": 821,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.16,
@@ -12956,12 +12925,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 6.9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 828,
+            "id": 822,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.65,
@@ -12970,12 +12939,12 @@ fetch(url, {
             "od": 6.18,
             "ph": 8.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 829,
+            "id": 823,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21,
@@ -12984,12 +12953,12 @@ fetch(url, {
             "od": 8,
             "ph": 9.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 830,
+            "id": 824,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.78,
@@ -12998,12 +12967,12 @@ fetch(url, {
             "od": 5.89,
             "ph": 8.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 831,
+            "id": 825,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.79,
@@ -13012,12 +12981,12 @@ fetch(url, {
             "od": 10.83,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 832,
+            "id": 826,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.72,
@@ -13026,12 +12995,12 @@ fetch(url, {
             "od": 11.18,
             "ph": 4.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 833,
+            "id": 827,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 15.05,
@@ -13040,12 +13009,12 @@ fetch(url, {
             "od": 8,
             "ph": 6.05,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 834,
+            "id": 828,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.33,
@@ -13054,12 +13023,12 @@ fetch(url, {
             "od": 8.35,
             "ph": 7.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 835,
+            "id": 829,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.58,
@@ -13068,12 +13037,12 @@ fetch(url, {
             "od": 9,
             "ph": 8.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 836,
+            "id": 830,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.25,
@@ -13082,12 +13051,12 @@ fetch(url, {
             "od": 8.62,
             "ph": 9.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 837,
+            "id": 831,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.58,
@@ -13096,12 +13065,12 @@ fetch(url, {
             "od": 7.15,
             "ph": 7.04,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 838,
+            "id": 832,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -13110,12 +13079,12 @@ fetch(url, {
             "od": 12,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 839,
+            "id": 833,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.36,
@@ -13124,12 +13093,12 @@ fetch(url, {
             "od": 10,
             "ph": 9.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 840,
+            "id": 834,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.25,
@@ -13138,12 +13107,12 @@ fetch(url, {
             "od": 9.32,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 841,
+            "id": 835,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.56,
@@ -13152,12 +13121,12 @@ fetch(url, {
             "od": 8.01,
             "ph": 8.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:38:22.000000Z",
             "updated_at": "2019-01-25T23:38:22.000000Z"
         },
         {
-            "id": 842,
+            "id": 836,
             "longitud": -72.8373655,
             "latitud": 10.9423336,
             "temperatura": 31.94,
@@ -13166,12 +13135,12 @@ fetch(url, {
             "od": 7.275,
             "ph": 10.81,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-08T16:58:41.000000Z",
             "updated_at": "2019-07-08T16:58:41.000000Z"
         },
         {
-            "id": 843,
+            "id": 837,
             "longitud": -72.5084375,
             "latitud": 11.176378,
             "temperatura": 30.12,
@@ -13180,12 +13149,12 @@ fetch(url, {
             "od": 7.183,
             "ph": 6.77,
             "region_id": 4,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-08T16:58:41.000000Z",
             "updated_at": "2019-07-08T16:58:41.000000Z"
         },
         {
-            "id": 844,
+            "id": 838,
             "longitud": -73.5421,
             "latitud": 5.45503,
             "temperatura": 17,
@@ -13194,12 +13163,12 @@ fetch(url, {
             "od": 33.1,
             "ph": 5.43,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 845,
+            "id": 839,
             "longitud": -73.5421,
             "latitud": 5.45503,
             "temperatura": 17,
@@ -13208,12 +13177,12 @@ fetch(url, {
             "od": 33.8,
             "ph": 5.01,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 846,
+            "id": 840,
             "longitud": -73.54258,
             "latitud": 5.45538,
             "temperatura": 20,
@@ -13222,12 +13191,12 @@ fetch(url, {
             "od": 39.1,
             "ph": 5,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 847,
+            "id": 841,
             "longitud": -73.54258,
             "latitud": 5.45538,
             "temperatura": 20,
@@ -13236,12 +13205,12 @@ fetch(url, {
             "od": 39.3,
             "ph": 4.99,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 848,
+            "id": 842,
             "longitud": -73.51252,
             "latitud": 5.47007,
             "temperatura": 18,
@@ -13250,12 +13219,12 @@ fetch(url, {
             "od": 40.7,
             "ph": 3.48,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 849,
+            "id": 843,
             "longitud": -73.49792,
             "latitud": 5.4667,
             "temperatura": 14,
@@ -13264,12 +13233,12 @@ fetch(url, {
             "od": 35.4,
             "ph": 6.89,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 850,
+            "id": 844,
             "longitud": -73.50513,
             "latitud": 5.48036,
             "temperatura": 22,
@@ -13278,12 +13247,12 @@ fetch(url, {
             "od": 25.4,
             "ph": 6.56,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 851,
+            "id": 845,
             "longitud": -73.50514,
             "latitud": 5.48035,
             "temperatura": 21,
@@ -13292,12 +13261,12 @@ fetch(url, {
             "od": 26.1,
             "ph": 6.52,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 852,
+            "id": 846,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -13306,12 +13275,12 @@ fetch(url, {
             "od": 6.95,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 853,
+            "id": 847,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.96,
@@ -13320,12 +13289,12 @@ fetch(url, {
             "od": 8.98,
             "ph": 7.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 854,
+            "id": 848,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.24,
@@ -13334,12 +13303,12 @@ fetch(url, {
             "od": 12.01,
             "ph": 5.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 855,
+            "id": 849,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.25,
@@ -13348,12 +13317,12 @@ fetch(url, {
             "od": 11,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 856,
+            "id": 850,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.36,
@@ -13362,12 +13331,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 857,
+            "id": 851,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -13376,12 +13345,12 @@ fetch(url, {
             "od": 11,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 858,
+            "id": 852,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.19,
@@ -13390,12 +13359,12 @@ fetch(url, {
             "od": 11.02,
             "ph": 7.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 859,
+            "id": 853,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -13404,12 +13373,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 5.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 860,
+            "id": 854,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.47,
@@ -13418,12 +13387,12 @@ fetch(url, {
             "od": 6.45,
             "ph": 9.65,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 861,
+            "id": 855,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.11,
@@ -13432,12 +13401,12 @@ fetch(url, {
             "od": 7.14,
             "ph": 8.88,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 862,
+            "id": 856,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.62,
@@ -13446,12 +13415,12 @@ fetch(url, {
             "od": 7.48,
             "ph": 8.95,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 863,
+            "id": 857,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.24,
@@ -13460,12 +13429,12 @@ fetch(url, {
             "od": 6.99,
             "ph": 6.86,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 864,
+            "id": 858,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22,
@@ -13474,12 +13443,12 @@ fetch(url, {
             "od": 5.14,
             "ph": 9.03,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 865,
+            "id": 859,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 23.98,
@@ -13488,12 +13457,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 8.24,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 866,
+            "id": 860,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.67,
@@ -13502,12 +13471,12 @@ fetch(url, {
             "od": 9.23,
             "ph": 5.44,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 867,
+            "id": 861,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.65,
@@ -13516,12 +13485,12 @@ fetch(url, {
             "od": 8.59,
             "ph": 5.13,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 868,
+            "id": 862,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.83,
@@ -13530,12 +13499,12 @@ fetch(url, {
             "od": 10,
             "ph": 4.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 869,
+            "id": 863,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.93,
@@ -13544,12 +13513,12 @@ fetch(url, {
             "od": 10.03,
             "ph": 6.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 870,
+            "id": 864,
             "longitud": -73.953506,
             "latitud": 4.748996,
             "temperatura": 18,
@@ -13558,12 +13527,12 @@ fetch(url, {
             "od": 66,
             "ph": 13,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-03-06T20:34:09.000000Z",
             "updated_at": "2019-03-06T20:34:09.000000Z"
         },
         {
-            "id": 871,
+            "id": 865,
             "longitud": -72.8373655,
             "latitud": 10.9423336,
             "temperatura": 32.63,
@@ -13572,12 +13541,12 @@ fetch(url, {
             "od": 7.367,
             "ph": 8.13,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-08T16:58:41.000000Z",
             "updated_at": "2019-07-08T16:58:41.000000Z"
         },
         {
-            "id": 872,
+            "id": 866,
             "longitud": -73.54214,
             "latitud": 5.45502,
             "temperatura": 18,
@@ -13586,12 +13555,12 @@ fetch(url, {
             "od": 32.8,
             "ph": 5.66,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 873,
+            "id": 867,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.24,
@@ -13600,12 +13569,12 @@ fetch(url, {
             "od": 8.63,
             "ph": 3.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 874,
+            "id": 868,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.37,
@@ -13614,12 +13583,12 @@ fetch(url, {
             "od": 8,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 875,
+            "id": 869,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -13628,12 +13597,12 @@ fetch(url, {
             "od": 4.583,
             "ph": 4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 876,
+            "id": 870,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.12,
@@ -13642,12 +13611,12 @@ fetch(url, {
             "od": 9.15,
             "ph": 7.14,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 877,
+            "id": 871,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18,
@@ -13656,12 +13625,12 @@ fetch(url, {
             "od": 8.46,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 878,
+            "id": 872,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.01,
@@ -13670,12 +13639,12 @@ fetch(url, {
             "od": 8.4,
             "ph": 5.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 879,
+            "id": 873,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.01,
@@ -13684,12 +13653,12 @@ fetch(url, {
             "od": 7,
             "ph": 6.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 880,
+            "id": 874,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.89,
@@ -13698,12 +13667,12 @@ fetch(url, {
             "od": 10.21,
             "ph": 7.81,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 881,
+            "id": 875,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.78,
@@ -13712,12 +13681,12 @@ fetch(url, {
             "od": 8.63,
             "ph": 8.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 882,
+            "id": 876,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.89,
@@ -13726,12 +13695,12 @@ fetch(url, {
             "od": 9.01,
             "ph": 8.15,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 883,
+            "id": 877,
             "longitud": -73.5421,
             "latitud": 5.45502,
             "temperatura": 17,
@@ -13740,12 +13709,12 @@ fetch(url, {
             "od": 33.7,
             "ph": 5.04,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 884,
+            "id": 878,
             "longitud": -73.49792,
             "latitud": 5.46671,
             "temperatura": 13,
@@ -13754,12 +13723,12 @@ fetch(url, {
             "od": 34,
             "ph": 6.99,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 885,
+            "id": 879,
             "longitud": -73.49792,
             "latitud": 5.46671,
             "temperatura": 13,
@@ -13768,12 +13737,12 @@ fetch(url, {
             "od": 34,
             "ph": 6.99,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 886,
+            "id": 880,
             "longitud": -73.51252,
             "latitud": 5.47007,
             "temperatura": 18,
@@ -13782,12 +13751,12 @@ fetch(url, {
             "od": 40.7,
             "ph": 3.47,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 887,
+            "id": 881,
             "longitud": -73.50742,
             "latitud": 5.48027,
             "temperatura": 22,
@@ -13796,12 +13765,12 @@ fetch(url, {
             "od": 28.2,
             "ph": 6.69,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 888,
+            "id": 882,
             "longitud": -73.50493,
             "latitud": 5.47956,
             "temperatura": 21,
@@ -13810,12 +13779,12 @@ fetch(url, {
             "od": 40.2,
             "ph": 9.33,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 889,
+            "id": 883,
             "longitud": -73.50493,
             "latitud": 5.47956,
             "temperatura": 21,
@@ -13824,12 +13793,12 @@ fetch(url, {
             "od": 40.3,
             "ph": 9.31,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 890,
+            "id": 884,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 14.25,
@@ -13838,12 +13807,12 @@ fetch(url, {
             "od": 8.58,
             "ph": 6.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 891,
+            "id": 885,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.25,
@@ -13852,12 +13821,12 @@ fetch(url, {
             "od": 12.04,
             "ph": 7.6,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 892,
+            "id": 886,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 20.12,
@@ -13866,12 +13835,12 @@ fetch(url, {
             "od": 8,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 893,
+            "id": 887,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.24,
@@ -13880,12 +13849,12 @@ fetch(url, {
             "od": 9.12,
             "ph": 6.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 894,
+            "id": 888,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.14,
@@ -13894,12 +13863,12 @@ fetch(url, {
             "od": 9.17,
             "ph": 7.93,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 895,
+            "id": 889,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.18,
@@ -13908,12 +13877,12 @@ fetch(url, {
             "od": 8.99,
             "ph": 7.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 896,
+            "id": 890,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.67,
@@ -13922,12 +13891,12 @@ fetch(url, {
             "od": 8,
             "ph": 7.4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 897,
+            "id": 891,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.5,
@@ -13936,12 +13905,12 @@ fetch(url, {
             "od": 5.56,
             "ph": 8.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 898,
+            "id": 892,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 21.44,
@@ -13950,12 +13919,12 @@ fetch(url, {
             "od": 6.23,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 899,
+            "id": 893,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 22.14,
@@ -13964,12 +13933,12 @@ fetch(url, {
             "od": 7.77,
             "ph": 7.4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-05T18:51:01.000000Z",
             "updated_at": "2018-12-05T18:51:01.000000Z"
         },
         {
-            "id": 900,
+            "id": 894,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.75,
@@ -13978,12 +13947,12 @@ fetch(url, {
             "od": 5.34,
             "ph": 7.84,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 901,
+            "id": 895,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.73,
@@ -13992,12 +13961,12 @@ fetch(url, {
             "od": 5.3,
             "ph": 7.21,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 902,
+            "id": 896,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.72,
@@ -14006,12 +13975,12 @@ fetch(url, {
             "od": 13,
             "ph": 6.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:18:46.000000Z",
             "updated_at": "2019-01-25T23:18:46.000000Z"
         },
         {
-            "id": 903,
+            "id": 897,
             "longitud": -72.5084375,
             "latitud": 11.176378,
             "temperatura": 30.87,
@@ -14020,12 +13989,12 @@ fetch(url, {
             "od": 7.051,
             "ph": 9.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-08T16:58:41.000000Z",
             "updated_at": "2019-07-08T16:58:41.000000Z"
         },
         {
-            "id": 904,
+            "id": 898,
             "longitud": -73.55224,
             "latitud": 5.44418,
             "temperatura": 18,
@@ -14034,12 +14003,12 @@ fetch(url, {
             "od": 29,
             "ph": 5.77,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-04-27T06:22:10.000000Z",
             "updated_at": "2020-04-27T06:22:10.000000Z"
         },
         {
-            "id": 905,
+            "id": 899,
             "longitud": -73.54258,
             "latitud": 5.45538,
             "temperatura": 20,
@@ -14048,12 +14017,12 @@ fetch(url, {
             "od": 39.5,
             "ph": 4.96,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 906,
+            "id": 900,
             "longitud": -73.51252,
             "latitud": 5.47007,
             "temperatura": 18,
@@ -14062,12 +14031,12 @@ fetch(url, {
             "od": 40.6,
             "ph": 3.48,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 907,
+            "id": 901,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.21,
@@ -14076,12 +14045,12 @@ fetch(url, {
             "od": 10,
             "ph": 5.76,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 908,
+            "id": 902,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.87,
@@ -14090,12 +14059,12 @@ fetch(url, {
             "od": 10.11,
             "ph": 5.02,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 909,
+            "id": 903,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 18.26,
@@ -14104,12 +14073,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 6.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 910,
+            "id": 904,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.15,
@@ -14118,12 +14087,12 @@ fetch(url, {
             "od": 5.45,
             "ph": 7.75,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 911,
+            "id": 905,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.11,
@@ -14132,12 +14101,12 @@ fetch(url, {
             "od": 11.12,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 912,
+            "id": 906,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19.41,
@@ -14146,12 +14115,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 6.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 913,
+            "id": 907,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.02,
@@ -14160,12 +14129,12 @@ fetch(url, {
             "od": 9.41,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 914,
+            "id": 908,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.45,
@@ -14174,12 +14143,12 @@ fetch(url, {
             "od": 7.88,
             "ph": 7.45,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 915,
+            "id": 909,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 16.26,
@@ -14188,12 +14157,12 @@ fetch(url, {
             "od": 10,
             "ph": 7.75,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 916,
+            "id": 910,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.56,
@@ -14202,12 +14171,12 @@ fetch(url, {
             "od": 13,
             "ph": 8.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 917,
+            "id": 911,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19,
@@ -14216,12 +14185,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 8.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 918,
+            "id": 912,
             "longitud": -73.52232,
             "latitud": 5.47803,
             "temperatura": 18,
@@ -14230,12 +14199,12 @@ fetch(url, {
             "od": 46.7,
             "ph": 3.32,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 919,
+            "id": 913,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.13,
@@ -14244,12 +14213,12 @@ fetch(url, {
             "od": 7.76,
             "ph": 8.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 920,
+            "id": 914,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.94,
@@ -14258,12 +14227,12 @@ fetch(url, {
             "od": 8.34,
             "ph": 6.32,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 921,
+            "id": 915,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.56,
@@ -14272,12 +14241,12 @@ fetch(url, {
             "od": 10.73,
             "ph": 7.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 922,
+            "id": 916,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.24,
@@ -14286,12 +14255,12 @@ fetch(url, {
             "od": 9.63,
             "ph": 9.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 923,
+            "id": 917,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 16.96,
@@ -14300,12 +14269,12 @@ fetch(url, {
             "od": 8.73,
             "ph": 8.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 924,
+            "id": 918,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 18.53,
@@ -14314,12 +14283,12 @@ fetch(url, {
             "od": 10.24,
             "ph": 9.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 925,
+            "id": 919,
             "longitud": -75.683997,
             "latitud": 10.141092,
             "temperatura": 27.12,
@@ -14328,12 +14297,12 @@ fetch(url, {
             "od": 6.5,
             "ph": 8.633,
             "region_id": 6,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-15T16:38:19.000000Z",
             "updated_at": "2019-07-15T16:38:19.000000Z"
         },
         {
-            "id": 926,
+            "id": 920,
             "longitud": -75.683997,
             "latitud": 10.141092,
             "temperatura": 29.06,
@@ -14342,12 +14311,12 @@ fetch(url, {
             "od": 7.7,
             "ph": 7.74,
             "region_id": 6,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-15T16:38:19.000000Z",
             "updated_at": "2019-07-15T16:38:19.000000Z"
         },
         {
-            "id": 927,
+            "id": 921,
             "longitud": -73.52232,
             "latitud": 5.47802,
             "temperatura": 18,
@@ -14356,12 +14325,12 @@ fetch(url, {
             "od": 46.9,
             "ph": 3.32,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 928,
+            "id": 922,
             "longitud": -73.49794,
             "latitud": 5.46669,
             "temperatura": 14,
@@ -14370,12 +14339,12 @@ fetch(url, {
             "od": 33.4,
             "ph": 6.83,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 929,
+            "id": 923,
             "longitud": -73.50742,
             "latitud": 5.48028,
             "temperatura": 22,
@@ -14384,12 +14353,12 @@ fetch(url, {
             "od": 28.2,
             "ph": 6.65,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 930,
+            "id": 924,
             "longitud": -73.50514,
             "latitud": 5.48035,
             "temperatura": 22,
@@ -14398,12 +14367,12 @@ fetch(url, {
             "od": 31.4,
             "ph": 6.48,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 931,
+            "id": 925,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.06,
@@ -14412,12 +14381,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 6.58,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 932,
+            "id": 926,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.17,
@@ -14426,12 +14395,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 6.39,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 933,
+            "id": 927,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -14440,12 +14409,12 @@ fetch(url, {
             "od": 5.65,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 934,
+            "id": 928,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.03,
@@ -14454,12 +14423,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 7.01,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 935,
+            "id": 929,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.36,
@@ -14468,12 +14437,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 6.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 936,
+            "id": 930,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.3,
@@ -14482,12 +14451,12 @@ fetch(url, {
             "od": 8.15,
             "ph": 7.92,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 937,
+            "id": 931,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20,
@@ -14496,12 +14465,12 @@ fetch(url, {
             "od": 6.66,
             "ph": 8.51,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 938,
+            "id": 932,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18,
@@ -14510,12 +14479,12 @@ fetch(url, {
             "od": 9.19,
             "ph": 9,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 939,
+            "id": 933,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.58,
@@ -14524,12 +14493,12 @@ fetch(url, {
             "od": 10.12,
             "ph": 8.78,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 940,
+            "id": 934,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.92,
@@ -14538,12 +14507,12 @@ fetch(url, {
             "od": 9.73,
             "ph": 8.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 941,
+            "id": 935,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.96,
@@ -14552,12 +14521,12 @@ fetch(url, {
             "od": 9.03,
             "ph": 6.36,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 942,
+            "id": 936,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.73,
@@ -14566,12 +14535,12 @@ fetch(url, {
             "od": 6.86,
             "ph": 8.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 943,
+            "id": 937,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 20.04,
@@ -14580,12 +14549,12 @@ fetch(url, {
             "od": 8.67,
             "ph": 8.35,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 944,
+            "id": 938,
             "longitud": -75.683997,
             "latitud": 10.141092,
             "temperatura": 28.19,
@@ -14594,12 +14563,12 @@ fetch(url, {
             "od": 10.62,
             "ph": 7.727,
             "region_id": 6,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-07-15T16:38:19.000000Z",
             "updated_at": "2019-07-15T16:38:19.000000Z"
         },
         {
-            "id": 945,
+            "id": 939,
             "longitud": -73.50513,
             "latitud": 5.48035,
             "temperatura": 21,
@@ -14608,12 +14577,12 @@ fetch(url, {
             "od": 25,
             "ph": 6.54,
             "region_id": 7,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2020-05-07T04:27:38.000000Z",
             "updated_at": "2020-05-07T04:27:38.000000Z"
         },
         {
-            "id": 946,
+            "id": 940,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17,
@@ -14622,12 +14591,12 @@ fetch(url, {
             "od": 9.15,
             "ph": 4.08,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 947,
+            "id": 941,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.15,
@@ -14636,12 +14605,12 @@ fetch(url, {
             "od": 8,
             "ph": 6.46,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 948,
+            "id": 942,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.14,
@@ -14650,12 +14619,12 @@ fetch(url, {
             "od": 6.48,
             "ph": 6.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 949,
+            "id": 943,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 16.14,
@@ -14664,12 +14633,12 @@ fetch(url, {
             "od": 10.56,
             "ph": 6.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 950,
+            "id": 944,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 17.14,
@@ -14678,12 +14647,12 @@ fetch(url, {
             "od": 5.89,
             "ph": 7,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 951,
+            "id": 945,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.02,
@@ -14692,12 +14661,12 @@ fetch(url, {
             "od": 10.06,
             "ph": 6.99,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 952,
+            "id": 946,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.33,
@@ -14706,12 +14675,12 @@ fetch(url, {
             "od": 7.89,
             "ph": 8.56,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 953,
+            "id": 947,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.04,
@@ -14720,12 +14689,12 @@ fetch(url, {
             "od": 9.14,
             "ph": 6.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 954,
+            "id": 948,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19,
@@ -14734,12 +14703,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 955,
+            "id": 949,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.14,
@@ -14748,12 +14717,12 @@ fetch(url, {
             "od": 9.88,
             "ph": 8.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 956,
+            "id": 950,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.14,
@@ -14762,12 +14731,12 @@ fetch(url, {
             "od": 6.66,
             "ph": 9.22,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 957,
+            "id": 951,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 19.12,
@@ -14776,12 +14745,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 9.27,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 958,
+            "id": 952,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.54,
@@ -14790,12 +14759,12 @@ fetch(url, {
             "od": 8.23,
             "ph": 7.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 959,
+            "id": 953,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 20.23,
@@ -14804,12 +14773,12 @@ fetch(url, {
             "od": 6.34,
             "ph": 8.34,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 960,
+            "id": 954,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 18.73,
@@ -14818,12 +14787,12 @@ fetch(url, {
             "od": 7.95,
             "ph": 7.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 961,
+            "id": 955,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 17.98,
@@ -14832,12 +14801,12 @@ fetch(url, {
             "od": 13.83,
             "ph": 8.4,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 962,
+            "id": 956,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.84,
@@ -14846,12 +14815,12 @@ fetch(url, {
             "od": 10.84,
             "ph": 9.23,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 963,
+            "id": 957,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 16.16,
@@ -14860,12 +14829,12 @@ fetch(url, {
             "od": 9.17,
             "ph": 6.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2019-01-25T23:24:29.000000Z",
             "updated_at": "2019-01-25T23:24:29.000000Z"
         },
         {
-            "id": 964,
+            "id": 958,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.89,
@@ -14874,12 +14843,12 @@ fetch(url, {
             "od": 10.14,
             "ph": 3.38,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 965,
+            "id": 959,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.45,
@@ -14888,12 +14857,12 @@ fetch(url, {
             "od": 8.95,
             "ph": 5.12,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 966,
+            "id": 960,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 16.88,
@@ -14902,12 +14871,12 @@ fetch(url, {
             "od": 9.36,
             "ph": 5.1,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 967,
+            "id": 961,
             "longitud": -74.065282,
             "latitud": 4.603333,
             "temperatura": 17.24,
@@ -14916,12 +14885,12 @@ fetch(url, {
             "od": 8.14,
             "ph": 6.89,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:11.000000Z",
             "updated_at": "2018-12-04T17:34:11.000000Z"
         },
         {
-            "id": 968,
+            "id": 962,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 18.65,
@@ -14930,12 +14899,12 @@ fetch(url, {
             "od": 10.25,
             "ph": 6.98,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 969,
+            "id": 963,
             "longitud": -74.067635,
             "latitud": 4.601806,
             "temperatura": 19,
@@ -14944,12 +14913,12 @@ fetch(url, {
             "od": 11,
             "ph": 4.87,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 970,
+            "id": 964,
             "longitud": -74.070932,
             "latitud": 4.60065,
             "temperatura": 19.13,
@@ -14958,12 +14927,12 @@ fetch(url, {
             "od": 9.01,
             "ph": 6.67,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         },
         {
-            "id": 971,
+            "id": 965,
             "longitud": -74.072422,
             "latitud": 4.600916,
             "temperatura": 17.45,
@@ -14972,7 +14941,7 @@ fetch(url, {
             "od": 10.14,
             "ph": 9.38,
             "region_id": 1,
-            "transfer_id": 28,
+            "transfer_id": 1,
             "created_at": "2018-12-04T17:34:12.000000Z",
             "updated_at": "2018-12-04T17:34:12.000000Z"
         }
@@ -15031,6 +15000,29 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/registro'
+payload = {
+    "longitud": 4.12,
+    "latitud": -74.105001,
+    "temperatura": 15.2,
+    "hg": 0,
+    "conduct": 4.5,
+    "od": 6,
+    "ph": 4.5,
+    "region_id": 2
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -15082,1930 +15074,25 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
 
-> Example response (200):
+url = 'https://monitoreo.test/doc.json'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
+
+> Example response (401):
 
 ```json
 {
-    "variables": [],
-    "info": {
-        "name": "Monitoreo Ciudadano del Agua API",
-        "_postman_id": "90732f3f-2b23-4729-9be8-28dd3d7cfa33",
-        "description": "",
-        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
-    },
-    "item": [
-        {
-            "name": "general",
-            "description": "",
-            "item": [
-                {
-                    "name": "doc.json",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "doc.json",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Authorize a client to access the user's account.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/authorize",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Approve the authorization request.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/authorize",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Deny the authorization request.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/authorize",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Authorize a client to access the user's account.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/token",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Get all of the authorized tokens for the authenticated user.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/tokens",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Delete the given token.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/tokens\/:token_id",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Get a fresh transient token cookie for the authenticated user.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/token\/refresh",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Get all of the clients for the authenticated user.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/clients",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a new client.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/clients",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the given client.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/clients\/:client_id",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Delete the given client.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/clients\/:client_id",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Get all of the available scopes for the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/scopes",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Get all of the personal access tokens for the authenticated user.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/personal-access-tokens",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Create a new personal access token for the user.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/personal-access-tokens",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Delete the given token.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "oauth\/personal-access-tokens\/:token_id",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/register",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/register",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/login",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/login",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/registro",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/registro",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/registro\/:registro",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/registro\/:registro",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/registro\/:registro",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/region",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/region",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/region\/:region",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/region\/:region",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/region\/:region",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "api\/region\/{region}\/{fechaIni}\/{fechaFin}",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "api\/region\/:region\/:fechaIni\/:fechaFin",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the application's login form.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "login",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Handle a login request to the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "login",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Log the user out of the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "logout",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the application registration form.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "register",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Handle a registration request for the application.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "register",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the form to request a password reset link.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "password\/reset",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Send a reset link to the given user.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "password\/email",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the password reset view for the given token.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "password\/reset\/:token",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "If no token is present, display the link request form.",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Reset the given user's password.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "password\/reset",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the password confirmation view.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "password\/confirm",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Confirm the given user's password.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "password\/confirm",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the application dashboard.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "home",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "registro\/import",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/import",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "registro\/import",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/import",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/:registro",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/:registro\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/:registro",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "registro\/:registro",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region\/:region",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region\/:region\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region\/:region",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "region\/:region",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for creating a new resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular\/create",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular\/:celular",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the specified resource.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular\/:celular\/edit",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the specified resource in storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular\/:celular",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Remove the specified resource from storage.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "celular\/:celular",
-                            "query": []
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Display a listing of the users",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "user",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Show the form for editing the profile.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "profile",
-                            "query": []
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Update the profile",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "profile",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "Change the password",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "monitoreo.test",
-                            "path": "profile\/password",
-                            "query": []
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                }
-            ]
-        }
-    ]
+    "message": "Unauthenticated."
 }
 ```
 
@@ -17043,6 +15130,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/authorize'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17090,6 +15190,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/authorize'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17126,6 +15239,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/authorize'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
 ```
 
 
@@ -17166,6 +15292,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/token'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17202,6 +15341,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/tokens'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17249,6 +15401,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/tokens/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17287,6 +15452,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/token/refresh'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17323,6 +15501,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/clients'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17370,6 +15561,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/clients'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17406,6 +15610,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/clients/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('PUT', url, headers=headers)
+response.json()
 ```
 
 
@@ -17446,6 +15663,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/clients/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17482,6 +15712,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/scopes'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17529,6 +15772,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/personal-access-tokens'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -17574,6 +15830,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/personal-access-tokens'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17610,6 +15879,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/oauth/personal-access-tokens/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
 ```
 
 
@@ -17649,6 +15931,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/register'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17684,6 +15979,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/api/login'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
 ```
 
 
@@ -17722,6 +16030,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/login'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17767,6 +16088,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/login'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17805,6 +16139,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/logout'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17841,6 +16188,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/register'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17886,6 +16246,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/register'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -17922,6 +16295,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/password/reset'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -17967,6 +16353,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/password/email'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18005,6 +16404,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/password/reset/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18050,6 +16462,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/password/reset'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18086,6 +16511,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/password/confirm'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18133,6 +16571,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/password/confirm'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18169,6 +16620,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/home'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18215,6 +16679,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/import'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -18259,6 +16736,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/import'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18295,6 +16785,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18342,6 +16845,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/create'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -18387,6 +16903,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18423,6 +16952,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18470,6 +17012,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/1/edit'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -18515,6 +17070,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('PUT', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18555,6 +17123,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/registro/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18591,6 +17172,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18638,6 +17232,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region/create'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -18683,6 +17290,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18719,6 +17339,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18766,6 +17399,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region/1/edit'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -18811,6 +17457,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('PUT', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18851,6 +17510,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/region/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -18887,6 +17559,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -18934,6 +17619,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular/create'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -18979,6 +17677,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('POST', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -19015,6 +17726,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -19062,6 +17786,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular/1/edit'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -19107,6 +17844,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('PUT', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -19147,6 +17897,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/celular/1'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('DELETE', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -19183,6 +17946,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/user'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
 ```
 
 
@@ -19230,6 +18006,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/profile'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('GET', url, headers=headers)
+response.json()
+```
+
 
 > Example response (401):
 
@@ -19275,6 +18064,19 @@ fetch(url, {
     .then(json => console.log(json));
 ```
 
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/profile'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('PUT', url, headers=headers)
+response.json()
+```
+
 
 
 ### HTTP Request
@@ -19311,6 +18113,19 @@ fetch(url, {
 })
     .then(response => response.json())
     .then(json => console.log(json));
+```
+
+```python
+import requests
+import json
+
+url = 'https://monitoreo.test/profile/password'
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+response = requests.request('PUT', url, headers=headers)
+response.json()
 ```
 
 

@@ -92,7 +92,7 @@ class RegistroController extends Controller
     public function importCreate(){
       $transfer = new Transference();
       $transfer->user_id = Auth::id();
-      $transfer->metodo_id = Metodo::where('id','=',1)->first()->id;
+      $transfer->metodo_id = Metodo::where('id','=',2)->first()->id;
       $transfer->estado = 1;
       $transfer->save();
       Excel::import(new RegistroImport($transfer), request()->file('file'));
