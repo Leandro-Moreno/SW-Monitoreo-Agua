@@ -1,4 +1,4 @@
-@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'registro', 'title' => __('Registros')])
+@extends('layouts.app', ['class' => 'region-show', 'activePage' => 'region', 'title' => __('Region')])
 
 @section('content')
 <div class="content">
@@ -8,7 +8,7 @@
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title ">{{$region->nombre}}</h4>
-            <p class="card-category"> Here is a subtitle for this table</p>
+            <p class="card-category"> Todos los datos de la region {{$region->nombre}}</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">

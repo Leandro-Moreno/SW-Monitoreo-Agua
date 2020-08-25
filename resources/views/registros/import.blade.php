@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'eventos', 'titlePage' => __('Eventos')])
+@extends('layouts.app', ['activePage' => 'registro-import', 'titlePage' => __('Importar Registros')])
 
 @section('content')
 
