@@ -15449,7 +15449,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   white-space: nowrap;
 }
 
-.sidebar .nav i {
+.sidebar .nav i,
+.sidebar .nav em {
   font-size: 24px;
   float: left;
   margin-right: 15px;

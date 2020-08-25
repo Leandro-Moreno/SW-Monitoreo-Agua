@@ -13,13 +13,13 @@
     <ul class="nav">
       <li class="nav-item{{ $activePage == 'dashboard' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('home') }}">
-          <i class="material-icons">dashboard</i>
+          <em class="material-icons">dashboard</em>
             <p>{{ __('Tablero') }}</p>
         </a>
       </li>
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
-          <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
+          <em><emmg style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></em>
           <p>{{ __('Datos Usuario') }}
             <b class="caret"></b>
           </p>
@@ -43,19 +43,19 @@
       </li>
       <li class="nav-item{{ $activePage == 'registro' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('registro.index') }}">
-          <i class="material-icons">content_paste</i>
+          <em class="material-icons">content_paste</em>
             <p>{{ __('Registros') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'region' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('region.index') }}">
-          <i class="material-icons">content_paste</i>
+          <em class="material-icons">content_paste</em>
             <p>{{ __('Regiones') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'registro-import' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'region' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('registroimport') }}">
-          <i class="material-icons">content_paste</i>
+          <em class="material-icons">content_paste</em>
             <p>{{ __('Importar Registros') }}</p>
         </a>
       </li>
