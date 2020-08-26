@@ -14,7 +14,7 @@ use Illuminate\Support\Carbon;
  * @group Regiones
  * APIs para administrar los Datos de las Regiones
  */
-class RegionController extends Controller
+class RegionController extends \App\Http\Controllers\Controller
 {
     /**
      * Muestra el listado de todas las regiones
