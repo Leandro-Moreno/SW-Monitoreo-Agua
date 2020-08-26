@@ -20,6 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register', 'Api\AuthController@register');
 Route::post('/login', 'Api\AuthController@login');
 
-Route::resource('/registro', 'Api\RegistroController');
-Route::resource('/region', 'Api\RegionController');
+Route::resource('/registro', 'API\RegistroController');
+Route::resource('/region', 'API\RegionController');
 Route::get('/region/{region}/{fechaIni}/{fechaFin}', 'Api\RegionController@porfecha');
