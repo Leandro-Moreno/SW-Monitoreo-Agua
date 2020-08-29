@@ -9,6 +9,7 @@ use App\Transference;
 use Illuminate\Http\Request;
 use App\Http\Resources\RegistroResource;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 /**
  *
  * @group Registros
@@ -25,6 +26,54 @@ class RegistroController extends Controller
     {
       $registros = Registro::all();
       return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
+    }
+    /**
+     * Muestra el listado de todos los registros.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function ultimos100(Request $request)
+    {
+      $registros = Registro::orderBy('created_at', 'DESC')->paginate(100);
+      return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
+    }
+    public function ultimosDinamico($cantidad = 20)
+    {
+      $registros = Registro::orderBy('created_at', 'DESC')->paginate($cantidad);
+      return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
+    }
+    public function ubicacion($latitud,$longitud,$radio)
+    {
+      $all = $this->distance($latitud, $longitud, 0, $radio);
+      // dd($all);
+      return response([ 'registros' => RegistroResource::collection($all), 'message' => 'Retrieved successfully'], 200);
+    }
+    /*
+    $table->id();
+    $table->double('longitud');
+    $table->double('latitud');
+    $table->double('temperatura');
+    $table->double('hg');
+    $table->double('conduct');
+    $table->double('od');
+    $table->double('ph');
+    $table->biginteger('region_id')->unsigned();
+    $table->foreign('region_id')->references('id')->on('regions')->onUpdate('cascade')->onDelete('cascade');
+    $table->foreignId('transfer_id')->references('id')->onUpdate('cascade')->on('transferences');
+    $table->datetime('created_at');
+    $table->datetime('updated_at');
+    */
+    public function distance( $latitude, $longitude, $inner_radius, $outer_radius)
+    {
+        $latName = "latitud";
+        $lonName = "longitud";
+        $sql = "((ACOS(SIN(? * PI() / 180) * SIN(" . $latName . " * PI() / 180) + COS(? * PI() / 180) * COS(" .
+            $latName . " * PI() / 180) * COS((? - " . $lonName . ") * PI() / 180)) * 180 / PI()) * 60 * ?) as distance";
+
+      $query = Registro::select('id', 'hg', 'region_id', 'longitud', 'latitud', 'conduct', 'ph','temperatura','od', 'created_at')->selectRaw($sql, [$latitude, $latitude, $longitude, 1.1515 * 1.609344])
+      ->havingRaw('distance BETWEEN '.$inner_radius.' AND '.$outer_radius)
+      ->get();
+        return $query;
     }
 
     /**

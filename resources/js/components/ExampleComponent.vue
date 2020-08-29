@@ -18,10 +18,12 @@
     import axios from 'axios';
     import moment from 'moment';    
     import LineChart from './LineChart.vue';
+    // Vue.component('line-chart', require('./components/Example.vue').default);
     
     export default {
       components: {
-          LineChart
+          LineChart,
+          componentConfig.default || componentConfig
         },
       data () {
         return {

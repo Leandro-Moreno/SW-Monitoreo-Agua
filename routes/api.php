@@ -21,5 +21,8 @@ Route::post('/register', 'API\AuthController@register');
 Route::post('/login', 'API\AuthController@login');
 
 Route::resource('/registro', 'API\RegistroController');
-Route::resource('/region', 'API\RegionController');
+Route::get('/registro-ultimos', 'API\RegistroController@ultimos100');
+Route::get('/registro-ultimos/{cantidad}', 'API\RegistroController@ultimosDinamico');
 Route::get('/region/{region}/{fechaIni}/{fechaFin}', 'Api\RegionController@porfecha');
+Route::get('/registro-ubicacion/{latitud}/{longitud}/{radio}', 'Api\RegistroController@ubicacion');
+Route::resource('/region', 'API\RegionController');

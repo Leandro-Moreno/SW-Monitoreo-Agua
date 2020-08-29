@@ -1,9 +1,13 @@
-import Vue from 'vue'
-import App from './components/ExampleComponent.vue'
-// import 'bootstap/dist/css/bootstrap.css'
+import VueAxios from 'vue-axios';
+import axios from 'axios';
 
-Vue.config.productionTip = false
+require('./bootstrap');
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+window.Vue = require('vue');
+Vue.use(VueAxios,axios);
+
+Vue.component('line-chart', require('./components/LineChart.vue').default);
+
+const app = new Vue({
+    el: '#app'
+});
