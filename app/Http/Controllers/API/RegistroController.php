@@ -29,6 +29,8 @@ class RegistroController extends Controller
 
     /**
      * Almacena un nuevo registro
+     * @bodyParam data["longitud"] array required Longitud de la ubicación. Example: 4.12
+     *
      * @bodyParam longitud float required Longitud de la ubicación. Example: 4.12
      * @bodyParam latitud float required Latitud de la ubicación. Example: -74.105001
      * @bodyParam temperatura double required PH del agua. Example: 15.2
@@ -50,11 +52,12 @@ class RegistroController extends Controller
       $transfer->save();
       $data = $request->all();
       $data['transfer_id'] =  $transfer->id;
-      $data['created_at'] =  Carbon::now();
-      $data['updated_at'] =  Carbon::now();
-      $registro = Registro::create($data);
+      // $data['created_at'] =  Carbon::now();
+      // $data['updated_at'] =  Carbon::now();
+      // dd($data);
+      // $registro = Registro::create($data);
       // dd($registro);
-        return response(['message' => 'Retrieved successfully'], 200);
+      return response([ 'registros' => RegistroResource::collection([$request]), 'message' => 'Retrieved successfully'], 200);
     }
 
 }

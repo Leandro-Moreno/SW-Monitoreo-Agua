@@ -17,10 +17,10 @@ class CreateTransferencesTable extends Migration
             $table->id();
             $table->biginteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreignId('metodo_id')->references('id')->on('metodos');
+            $table->foreignId('metodo_id')->references('id')->onUpdate('cascade')->on('metodos');
             $table->integer('estado')->default(1);
             $table->biginteger('celular_id')->unsigned()->nullable();
-            $table->foreign('celular_id')->references('id')->on('celulars');
+            $table->foreign('celular_id')->references('id')->onUpdate('cascade')->on('celulars');
             $table->timestamps();
         });
     }
