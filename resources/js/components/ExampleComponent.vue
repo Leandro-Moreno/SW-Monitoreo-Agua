@@ -128,7 +128,7 @@
         };
       },
       async created(){
-        let temp = await axios.get("https://monitoreo.test/api/registro-ultimos/100");
+        let temp = await axios.get("https://monitoreociudadanoadm.uniandes.edu.co/api/registro-ultimos/100");
         const data = temp.data.registros;
         data.forEach( d => {
           const fecha = moment(d.created_at);
