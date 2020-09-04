@@ -1959,12 +1959,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     LineChart: _LineChart_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  props: {
+    label: {
+      type: String
+    }
   },
   data: function data() {
     return {
@@ -1987,21 +1995,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       arrHG: [],
       hgColors: {
+        borderColor: "#BF0436",
+        pointBorderColor: "#5F0340",
+        pointBackgroundColor: "#8C034E",
+        backgroundColor: "#F20587"
+      },
+      arrTemperatura: [],
+      temperaturaColors: {
+        borderColor: "#C004D9",
+        pointBorderColor: "#5E2C99",
+        pointBackgroundColor: "#492378",
+        backgroundColor: "#8C43E6"
+      },
+      arrConduct: [],
+      conductColors: {
         borderColor: "#D9CB04",
         pointBorderColor: "#8C7503",
         pointBackgroundColor: "#402401",
         backgroundColor: "#D9B504"
       },
-      arrTemperatura: [],
-      temperaturaColors: {
-        borderColor: "#9C4AFF",
-        pointBorderColor: "#5E2C99",
-        pointBackgroundColor: "#492378",
-        backgroundColor: "#8C43E6"
-      },
       chartOptions: {
+        cutoutPercentage: 80,
         responsive: true,
-        mantaineAspectRatio: true
+        mantaineAspectRatio: true,
+        legend: {
+          display: true
+        },
+        tooltips: {
+          enabled: true
+        },
+        scales: {
+          xAxes: [{
+            display: false
+          }]
+        }
       }
     };
   },
@@ -2014,14 +2041,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              console.log(_this.label);
+              _context.next = 3;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://monitoreo.test/api/registro-ultimos/100");
 
-            case 2:
+            case 3:
               temp = _context.sent;
               data = temp.data.registros;
               data.forEach(function (d) {
                 var fecha = moment__WEBPACK_IMPORTED_MODULE_2___default()(d.created_at);
+                fecha.locale('es');
                 var nombre = "(" + d.longitud + "," + d.latitud + ")." + fecha.format('LL');
                 var id = d.id,
                     longitud = d.longitud,
@@ -2029,6 +2058,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     ph = d.ph,
                     od = d.od,
                     hg = d.hg,
+                    conduct = d.conduct,
                     temperatura = d.temperatura;
 
                 _this.arrID.push({
@@ -2061,15 +2091,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   total: hg
                 });
 
+                _this.arrConduct.push({
+                  nombre: nombre,
+                  total: conduct
+                });
+
                 _this.arrTemperatura.push({
                   nombre: nombre,
                   total: temperatura
                 });
-
-                console.log(_this.arrPH);
               });
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -76399,7 +76432,7 @@ var render = function() {
             _vm.arrTemperatura.length > 0
               ? _c(
                   "div",
-                  { staticClass: "col-md-6" },
+                  { staticClass: "col-md-4" },
                   [
                     _c("line-chart", {
                       attrs: {
@@ -76417,7 +76450,7 @@ var render = function() {
             _vm.arrPH.length > 0
               ? _c(
                   "div",
-                  { staticClass: "col-md-6" },
+                  { staticClass: "col-md-4" },
                   [
                     _c("line-chart", {
                       attrs: {
@@ -76435,7 +76468,7 @@ var render = function() {
             _vm.arrOD.length > 0
               ? _c(
                   "div",
-                  { staticClass: "col-md-6" },
+                  { staticClass: "col-md-4" },
                   [
                     _c("line-chart", {
                       attrs: {
@@ -76453,7 +76486,7 @@ var render = function() {
             _vm.arrHG.length > 0
               ? _c(
                   "div",
-                  { staticClass: "col-md-6" },
+                  { staticClass: "col-md-4" },
                   [
                     _c("line-chart", {
                       attrs: {
@@ -76461,6 +76494,24 @@ var render = function() {
                         chartColors: _vm.hgColors,
                         options: _vm.chartOptions,
                         label: "Hg"
+                      }
+                    })
+                  ],
+                  1
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.arrConduct.length > 0
+              ? _c(
+                  "div",
+                  { staticClass: "col-md-4" },
+                  [
+                    _c("line-chart", {
+                      attrs: {
+                        chartData: _vm.arrConduct,
+                        chartColors: _vm.conductColors,
+                        options: _vm.chartOptions,
+                        label: "Conduct"
                       }
                     })
                   ],
@@ -88720,15 +88771,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!******************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue ***!
   \******************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
 /* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -88758,7 +88808,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

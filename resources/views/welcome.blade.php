@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" style="height: auto;">
+<div class="container" >
   <header class="row masthead text-center text-white">
     <div class="masthead-content">
       <div class="container">
@@ -17,7 +17,7 @@
   </header>
   <div class="row justify-content-center">
       <div class="col-md-12" id="app">
-          <example-component />
+          <example-component label="Hg" />
       </div>
   </div>
 </div>
