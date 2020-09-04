@@ -1,8 +1,14 @@
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import VueGoogleHeatmap from 'vue-google-heatmap';
+import Vue from 'vue';
+import VueLayers from 'vuelayers';
+import 'vuelayers/lib/style.css'; // needs css-loader
 
 require('./bootstrap');
+
+
+Vue.use(VueLayers);
+
 
 window.Vue = require('vue');
 // Vue.use(VueAxios,axios);
