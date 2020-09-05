@@ -127,35 +127,45 @@
           }
         };
       },
+      watch: {
+        center(){
+          this.datos()
+        }
+      },
       async created(){
-        let temp = await axios.get("https://monitoreociudadanoadm.uniandes.edu.co/api/registro-ultimos/100");
-        const data = temp.data.registros;
-        data.forEach( d => {
-          const fecha = moment(d.created_at);
-          fecha.locale('es');
-          const nombre = "("+d.longitud+","+d.latitud+")."+fecha.format('LL');
+        this.datos();
+      },
+      methods: {
+        async datos(){
+          let temp = await axios.get("https://monitoreociudadanoadm.uniandes.edu.co/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/100");
+          const data = temp.data.registros;
+          data.forEach( d => {
+            const fecha = moment(d.created_at);
+            fecha.locale('es');
+            const nombre = "("+d.longitud+","+d.latitud+")."+fecha.format('LL');
 
-          const {
-            id,
-            longitud,
-            latitud,
-            ph,
-            od,
-            hg,
-            conduct,
-            temperatura
-          } = d;
-          this.arrID.push({nombre, total: id});
-          this.arrUbicacion.push([ longitud, latitud]);
-          this.arrLongitud.push({nombre, total: longitud});
-          this.arrLatitud.push({nombre, total: latitud});
-          this.arrPH.push({nombre, total: ph});
-          this.arrOD.push({nombre, total: od});
-          this.arrHG.push({nombre, total: hg});
-          this.arrConduct.push({nombre, total: conduct});
-          this.arrTemperatura.push({nombre, total: temperatura});
-        });
-        console.log(this.arrUbicacion[0]);
+            const {
+              id,
+              longitud,
+              latitud,
+              ph,
+              od,
+              hg,
+              conduct,
+              temperatura
+            } = d;
+            this.arrID.push({nombre, total: id});
+            this.arrUbicacion.push([ longitud, latitud]);
+            this.arrLongitud.push({nombre, total: longitud});
+            this.arrLatitud.push({nombre, total: latitud});
+            this.arrPH.push({nombre, total: ph});
+            this.arrOD.push({nombre, total: od});
+            this.arrHG.push({nombre, total: hg});
+            this.arrConduct.push({nombre, total: conduct});
+            this.arrTemperatura.push({nombre, total: temperatura});
+          });
+          console.log(this.arrID);
+        }
       }
     }
 </script>

@@ -63,18 +63,39 @@ class RegistroController extends Controller
     $table->datetime('created_at');
     $table->datetime('updated_at');
     */
-    public function distance( $latitude, $longitude, $inner_radius, $outer_radius)
+    public function distance( float $latitude = 0, float $longitude = 0, $inner_radius, $outer_radius)
     {
         $latName = "latitud";
         $lonName = "longitud";
-        $sql = "((ACOS(SIN(? * PI() / 180) * SIN(" . $latName . " * PI() / 180) + COS(? * PI() / 180) * COS(" .
-            $latName . " * PI() / 180) * COS((? - " . $lonName . ") * PI() / 180)) * 180 / PI()) * 60 * ?) as distance";
+        // $sql = "((ACOS(SIN(? * PI() / 180) * SIN(" . $latName . " * PI() / 180) + COS(? * PI() / 180) * COS(" .
+        //     $latName . " * PI() / 180) * COS((? - " . $lonName . ") * PI() / 180)) * 180 / PI()) * 60 * ?) as distance";
 
-      $query = Registro::select('id', 'hg', 'region_id', 'longitud', 'latitud', 'conduct', 'ph','temperatura','od', 'created_at')->selectRaw($sql, [$latitude, $latitude, $longitude, 1.1515 * 1.609344])
+       $sql = "6371 *acos(
+         cos( radians(?))*
+         cos(radians(".$latName."))*
+         cos(radians(".$lonName.") - radians(?))
+         + sin (radians(?))*
+         sin(radians(".$latName."))
+         ) AS distance";
+
+      $query = Registro::select('id', 'hg', 'region_id', 'longitud', 'latitud', 'conduct', 'ph','temperatura','od', 'created_at')->selectRaw($sql, [$latitude, $longitude, $latitude])
       ->havingRaw('distance BETWEEN '.$inner_radius.' AND '.$outer_radius)
+      ->orderBy('distance', 'ASC')
+      ->limit(80)
       ->get();
         return $query;
     }
+/*
+(
+    6373 * acos (
+        cos ( radians( PASSED_IN_LATITUDE ) )
+        * cos( radians( X(location) ) )
+        * cos( radians( Y(location) ) - radians( PASSED_IN_LONGITUDE ) )
+        + sin ( radians( PASSED_IN_LATITUDE ) )
+        * sin( radians( X(location) )
+    )
+) AS distance
+*/
 
     /**
      * Almacena un nuevo registro
