@@ -10,7 +10,7 @@
                         <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
                           <vl-feature v-for="ubicacion in arrUbicacion">
-                            <vl-geom-circle :coordinates="ubicacion" :radius="300"></vl-geom-circle>
+                            <vl-geom-circle :coordinates="ubicacion" :radius="tamano"></vl-geom-circle>
                             <vl-style-box>
                               <vl-style-geom-circle :radius="100">
                                 <vl-style-fill color="#31E98136"></vl-style-fill>
@@ -31,19 +31,19 @@
                     </div>
                       <div class="row">
                         <div class="col-md-4" v-if="arrTemperatura.length > 0">
-                          <line-chart :chartData="arrTemperatura" :chartColors="temperaturaColors" :options="chartOptions" label="Temperatura" />
+                          <line-chart :chartDatos="arrTemperatura" :chartColors="temperaturaColors" :options="chartOptions" label="Temperatura" />
                         </div>
                         <div class="col-md-4" v-if="arrPH.length > 0">
-                          <line-chart :chartData="arrPH" :chartColors="phColors" :options="chartOptions" label="ph" />
+                          <line-chart :chartDatos="arrPH" :chartColors="phColors" :options="chartOptions" label="ph" />
                         </div>
                         <div class="col-md-4" v-if="arrOD.length > 0">
-                          <line-chart :chartData="arrOD" :chartColors="ogColors" :options="chartOptions" label="OD" />
+                          <line-chart :chartDatos="arrOD" :chartColors="ogColors" :options="chartOptions" label="OD" />
                         </div>
                         <div class="col-md-4" v-if="arrHG.length > 0">
-                          <line-chart :chartData="arrHG" :chartColors="hgColors" :options="chartOptions" label="Hg" />
+                          <line-chart :chartDatos="arrHG" :chartColors="hgColors" :options="chartOptions" label="Hg" />
                         </div>
                         <div class="col-md-4" v-if="arrConduct.length > 0">
-                          <line-chart :chartData="arrConduct" :chartColors="conductColors" :options="chartOptions" label="Conduct" />
+                          <line-chart :chartDatos="arrConduct" :chartColors="conductColors" :options="chartOptions" label="Conduct" />
                         </div>
                       </div>
                 </div>
@@ -69,6 +69,7 @@
       data () {
         return {
           zoom: 12,
+          tamano: 200,
           center: [-73.49792, 5.46671],
           rotation: 0,
           geolocPosition: undefined,
@@ -130,15 +131,29 @@
       watch: {
         center(){
           this.datos()
+        },
+        arrPH(){
+
         }
       },
       async created(){
+        // this._chart.destroy();
         this.datos();
       },
       methods: {
         async datos(){
-          let temp = await axios.get("https://monitoreociudadanoadm.uniandes.edu.co/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/100");
-          const data = temp.data.registros;
+          let temp = await axios.get("http://monitoreo.test/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/"+this.zoom);
+          let data = [];
+          this.arrID = [];
+          this.arrUbicacion = [];
+          this.arrPH = [];
+          this.arrOD = [];
+          this.arrHG = [];
+          this.arrConduct = [];
+          this.arrTemperatura = [];
+          this.tamano = 1500 - 84*this.zoom;
+          console.log(this.tamano);
+          data = temp.data.registros;
           data.forEach( d => {
             const fecha = moment(d.created_at);
             fecha.locale('es');
@@ -164,7 +179,6 @@
             this.arrConduct.push({nombre, total: conduct});
             this.arrTemperatura.push({nombre, total: temperatura});
           });
-          console.log(this.arrID);
         }
       }
     }

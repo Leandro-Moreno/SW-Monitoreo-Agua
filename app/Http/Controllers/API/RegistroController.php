@@ -44,8 +44,8 @@ class RegistroController extends Controller
     }
     public function ubicacion($latitud,$longitud,$radio)
     {
-      $all = $this->distance($latitud, $longitud, 0, $radio);
-      // dd($all);
+      $all = $this->distance($latitud, $longitud,$radio);
+      $all = $all->sortByDesc('created_at');
       return response([ 'registros' => RegistroResource::collection($all), 'message' => 'Retrieved successfully'], 200);
     }
     /*
@@ -63,13 +63,13 @@ class RegistroController extends Controller
     $table->datetime('created_at');
     $table->datetime('updated_at');
     */
-    public function distance( float $latitude = 0, float $longitude = 0, $inner_radius, $outer_radius)
+    public function distance( float $latitude = 0, float $longitude = 0, $zoom)
     {
         $latName = "latitud";
         $lonName = "longitud";
         // $sql = "((ACOS(SIN(? * PI() / 180) * SIN(" . $latName . " * PI() / 180) + COS(? * PI() / 180) * COS(" .
         //     $latName . " * PI() / 180) * COS((? - " . $lonName . ") * PI() / 180)) * 180 / PI()) * 60 * ?) as distance";
-
+        $km = (40000/pow(2, $zoom))* 2;
        $sql = "6371 *acos(
          cos( radians(?))*
          cos(radians(".$latName."))*
@@ -79,9 +79,8 @@ class RegistroController extends Controller
          ) AS distance";
 
       $query = Registro::select('id', 'hg', 'region_id', 'longitud', 'latitud', 'conduct', 'ph','temperatura','od', 'created_at')->selectRaw($sql, [$latitude, $longitude, $latitude])
-      ->havingRaw('distance BETWEEN '.$inner_radius.' AND '.$outer_radius)
+      ->havingRaw('distance BETWEEN 0 AND '.$km)
       ->orderBy('distance', 'ASC')
-      ->limit(80)
       ->get();
         return $query;
     }
