@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\RegistroResource;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\RegistroRequest;
 /**
  *
  * @group Registros
@@ -112,21 +113,24 @@ class RegistroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistroRequest $request)
     {
+      // dd($request);
+      if (isset($request->validator) && $request->validator->fails()) {
+        return response([ 'registros' => RegistroResource::collection([$request]), 'message' => 'No se han podido crear los datos'], 200);
+      }
+      else{
+        $transfer = new Transference();
+        $transfer->metodo_id = Metodo::where('id','=',3)->first()->id;
+        $transfer->estado = 1;
+        $transfer->save();
+        $data = $request->all();
+        $data['transfer_id'] =  $transfer->id;
+        $registro = Registro::create($data);
+      }
 
-      $transfer = new Transference();
-      $transfer->metodo_id = Metodo::where('id','=',3)->first()->id;
-      $transfer->estado = 1;
-      $transfer->save();
-      $data = $request->all();
-      $data['transfer_id'] =  $transfer->id;
-      // $data['created_at'] =  Carbon::now();
-      // $data['updated_at'] =  Carbon::now();
-      // dd($data);
-      // $registro = Registro::create($data);
       // dd($registro);
-      return response([ 'registros' => RegistroResource::collection([$request]), 'message' => 'Retrieved successfully'], 200);
+      return response([ 'registros' => RegistroResource::collection([$registro]), 'message' => 'Se han creado los datos correctamente'], 200);
     }
 
 }
