@@ -28,10 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
   Route::resource('registro', 'RegistroController');
   Route::resource('region', 'RegionController');
   Route::resource('celular', 'CelularController');
-});
-
-
-Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
