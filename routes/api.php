@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', 'API\AuthController@register');
 Route::post('/login', 'API\AuthController@login');
 
-Route::apiResource('/registro', 'API\RegistroController');
+Route::apiResource('/registros', 'API\RegistroController');
 Route::get('/registro-ultimos', 'API\RegistroController@ultimos100');
 Route::get('/registro-ultimos/{cantidad}', 'API\RegistroController@ultimosDinamico');
 Route::get('/region/{region}/{fechaIni}/{fechaFin}', 'API\RegionController@porfecha');
