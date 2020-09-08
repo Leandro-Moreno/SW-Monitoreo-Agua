@@ -25,4 +25,4 @@ Route::get('/registro-ultimos', 'API\RegistroController@ultimos100');
 Route::get('/registro-ultimos/{cantidad}', 'API\RegistroController@ultimosDinamico');
 Route::get('/region/{region}/{fechaIni}/{fechaFin}', 'API\RegionController@porfecha');
 Route::get('/registro-ubicacion/{latitud}/{longitud}/{radio}', 'API\RegistroController@ubicacion');
-Route::apiResource('/region', 'API\RegionController');
+Route::apiResource('/regiones', 'API\RegionController');
