@@ -122,20 +122,29 @@
             tooltips: {
                 enabled: true,
             },
+            onClick: (evt, item) => {
+              let index = item[0]["_index"];
+              console.log(item[0]["_chart"].data.labels[index]);
+              console.log(item[0]["_chart"].data.datasets[0].data[index]);
+            },
             scales: {
               xAxes: [{
                   type: 'time',
+                  gridLines: {display: true},
                   time: {
                       parser: 'DD/MM/YYYY',
-                      unit: 'minute',
+                      unit: 'month',
                       displayFormats: {
-                          'minute': 'YYYY-MM-DD HH:mm:ss',
-                          'hour': 'YYYY-MM-DD HH:mm:ss'
+                          'hour': 'YYYY-MM'
                       }
                   },
                   ticks: {
-                      source: 'data'
+                      source: 'data',
+                      callback: function(value) {
+                          return new Date(value).toLocaleDateString('es', {month:'short', year:'numeric'});
+                      },
                   }
+
               }] ,
 
             }
@@ -174,13 +183,11 @@
           else{
             this.tamano = 1500 - 84*this.zoom;
           }
-          console.log(this.tamano);
           data = temp.data.registros;
           data.forEach( d => {
             const fecha = moment(d.created_at);
             fecha.locale('es');
             const nombre = fecha.format('L');
-            console.log(nombre);
             const {
               id,
               longitud,
