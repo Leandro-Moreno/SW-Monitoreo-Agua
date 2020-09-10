@@ -123,7 +123,21 @@
                 enabled: true,
             },
             scales: {
-                xAxes: [{ display: false }]
+              xAxes: [{
+                  type: 'time',
+                  time: {
+                      parser: 'DD/MM/YYYY',
+                      unit: 'minute',
+                      displayFormats: {
+                          'minute': 'YYYY-MM-DD HH:mm:ss',
+                          'hour': 'YYYY-MM-DD HH:mm:ss'
+                      }
+                  },
+                  ticks: {
+                      source: 'data'
+                  }
+              }] ,
+
             }
           }
         };
@@ -151,14 +165,22 @@
           this.arrHG = [];
           this.arrConduct = [];
           this.arrTemperatura = [];
-          this.tamano = 1500 - 84*this.zoom;
+          if(this.zoom > 18){
+            this.tamano = 29 - this.zoom;
+          }
+          else if(this.zoom > 25){
+            this.tamano = (29 - this.zoom)*6/10;
+          }
+          else{
+            this.tamano = 1500 - 84*this.zoom;
+          }
           console.log(this.tamano);
           data = temp.data.registros;
           data.forEach( d => {
             const fecha = moment(d.created_at);
             fecha.locale('es');
-            const nombre = "("+d.longitud+","+d.latitud+")."+fecha.format('LL');
-
+            const nombre = fecha.format('L');
+            console.log(nombre);
             const {
               id,
               longitud,

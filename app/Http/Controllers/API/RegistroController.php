@@ -29,7 +29,7 @@ class RegistroController extends Controller
       return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
     }
     /**
-     * Muestra el listado de todos los registros.
+     * Devuelve los ultimos 100 registros.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,11 +38,21 @@ class RegistroController extends Controller
       $registros = Registro::orderBy('created_at', 'DESC')->paginate(100);
       return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
     }
+    /**
+     * Devuelve la cantidad de registros que se pidan por el parametro cantidad
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function ultimosDinamico($cantidad = 20)
     {
       $registros = Registro::orderBy('created_at', 'DESC')->paginate($cantidad);
       return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
     }
+    /**
+     * Devuelve los registros de una zona
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function ubicacion($latitud,$longitud,$radio)
     {
       $all = $this->distance($latitud, $longitud,$radio);
