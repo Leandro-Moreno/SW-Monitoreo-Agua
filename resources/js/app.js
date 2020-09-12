@@ -3,6 +3,7 @@ import VueAxios from 'vue-axios';
 import Vue from 'vue';
 import VueLayers from 'vuelayers';
 import 'vuelayers/lib/style.css'; // needs css-loader
+import { PointGeom } from 'vuelayers'
 
 require('./bootstrap');
 

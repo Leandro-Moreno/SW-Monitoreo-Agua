@@ -9,15 +9,8 @@
                                data-projection="EPSG:4326" style="height: 400px">
                         <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
-                          <vl-feature v-for="ubicacion in arrUbicacion">
-                            <vl-geom-circle :coordinates="ubicacion" :radius="tamano"></vl-geom-circle>
-                            <vl-style-box>
-                              <vl-style-geom-circle :radius="100">
-                                <vl-style-fill color="#31E98136"></vl-style-fill>
-                                <vl-style-stroke color="#4E5E6606"></vl-style-stroke>
-                              </vl-style-geom-circle>
-
-                            </vl-style-box>
+                          <vl-feature v-for="(ubicacion, index) in arrUbicacion" :key="index">
+                            <vl-geom-point :coordinates="ubicacion"></vl-geom-point>
                           </vl-feature>
 
                         <vl-layer-tile id="osm">
@@ -56,6 +49,7 @@
     import axios from 'axios';
     import moment from 'moment';
     import LineChart from './LineChart.vue';
+    import zoom from 'chartjs-plugin-zoom';
 
     export default {
       components: {
@@ -76,6 +70,7 @@
           arrID: [],
           arrLongitud: [],
           arrLatitud: [],
+          arrUbicacion: [],
           arrUbicacion: [],
           arrPH: [],
           phColors: {
@@ -116,6 +111,23 @@
             cutoutPercentage: 80,
             responsive: true,
             mantaineAspectRatio: true,
+            pan: {
+              // Boolean to enable panning
+                enabled: true,
+
+                // Panning directions. Remove the appropriate direction to disable
+                // Eg. 'y' would only allow panning in the y direction
+                mode: 'x'
+            },
+            // Container for zoom options
+            zoom: {
+                // Boolean to enable zooming
+                enabled: true,
+
+                // Zooming directions. Remove the appropriate direction to disable
+                // Eg. 'y' would only allow zooming in the y direction
+                mode: 'x',
+            },
             legend: {
                 display: true
             },
@@ -163,12 +175,11 @@
         // this._chart.destroy();
         this.datos();
       },
-      methods: {
+      methods:{
         async datos(){
-          let temp = await axios.get("https://monitoreociudadanoadm.uniandes.edu.co/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/"+this.zoom);
+          let temp = await axios.get("http://monitoreo.test/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/"+this.zoom);
           let data = [];
           this.arrID = [];
-          this.arrUbicacion = [];
           this.arrPH = [];
           this.arrOD = [];
           this.arrHG = [];
@@ -199,7 +210,7 @@
               temperatura
             } = d;
             this.arrID.push({nombre, total: id});
-            this.arrUbicacion.push([ longitud, latitud]);
+            this.pushUniqueCoordinates( this.arrUbicacion, longitud, latitud);
             this.arrLongitud.push({nombre, total: longitud});
             this.arrLatitud.push({nombre, total: latitud});
             this.arrPH.push({nombre, total: ph});
@@ -208,6 +219,24 @@
             this.arrConduct.push({nombre, total: conduct});
             this.arrTemperatura.push({nombre, total: temperatura});
           });
+          this.arrUbicacion = this.arrUbicacion;
+          console.log(this.arrUbicacion);
+        },
+        pushUniqueCoordinates( datos, longitud, latitud){
+          let no_existe = true;
+          if(datos.length==0 ){
+            this.arrUbicacion.push([ longitud, latitud ]);
+          }
+          else{
+            for(let i=0 ; i < datos.length && no_existe; i++){
+              if( datos[i][0] == longitud && datos[i][1] == latitud){
+                no_existe = false;
+              }
+            }
+            if(no_existe){
+              this.arrUbicacion.push([ longitud, latitud ]);
+            }
+          }
         }
       }
     }
