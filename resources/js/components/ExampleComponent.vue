@@ -5,14 +5,14 @@
                 <div class="card">
                     <div class="card-header">Datos Monitoreo Ciudadano</div>
                     <div class="row">
-                      <vl-map :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
+                      <vl-map  @click="onClick" :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
                                data-projection="EPSG:4326" style="height: 400px">
                         <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
 
-                          <vl-feature v-for="(ubicacion, index) in arrUbicacion" :key="index">
+                          <vl-feature v-for="(ubicacion, index) in arrUbicacion" :key="index" :name="index">
                             <vl-geom-point :coordinates="ubicacion"></vl-geom-point>
                           </vl-feature>
-
+                          <vl-interaction-select :features="arrUbicacion"></vl-interaction-select>
                         <vl-layer-tile id="osm">
                           <vl-source-osm></vl-source-osm>
                         </vl-layer-tile>
@@ -67,6 +67,7 @@
           center: [-73.49792, 5.46671],
           rotation: 0,
           geolocPosition: undefined,
+          properties: [],
           arrID: [],
           arrLongitud: [],
           arrLatitud: [],
@@ -169,6 +170,9 @@
         },
         arrPH(){
 
+        },
+        properties(){
+          console.log(this.properties);
         }
       },
       async created(){
@@ -176,6 +180,18 @@
         this.datos();
       },
       methods:{
+        onClick(evt,item){
+          console.log(item)
+          evt.map.forEachFeatureAtPixel(
+            evt.pixel,
+            function(layer){
+              console.log(layer.getProperties())
+              
+            }
+
+          );
+          
+        },
         async datos(){
           let temp = await axios.get("http://monitoreo.test/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/"+this.zoom);
           let data = [];
@@ -220,7 +236,6 @@
             this.arrTemperatura.push({nombre, total: temperatura});
           });
           this.arrUbicacion = this.arrUbicacion;
-          console.log(this.arrUbicacion);
         },
         pushUniqueCoordinates( datos, longitud, latitud){
           let no_existe = true;
