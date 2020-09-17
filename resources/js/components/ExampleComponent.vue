@@ -193,7 +193,7 @@
           
         },
         async datos(){
-          let temp = await axios.get("http://monitoreo.test/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/"+this.zoom);
+          let temp = await axios.get("https://monitoreociudadanoadm.uniandes.edu.co/api/registro-ubicacion/"+this.center[1]+"/"+this.center[0]+"/"+this.zoom);
           let data = [];
           this.arrID = [];
           this.arrPH = [];
