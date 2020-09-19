@@ -25,7 +25,9 @@ class RegistroController extends Controller
      */
     public function index()
     {
-      $registros = Registro::all();
+      $registros = Registro::whereHas('transferencia', function($query){
+        $query->where('estado',1);
+      })->get();
       return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
     }
     /**
@@ -35,7 +37,9 @@ class RegistroController extends Controller
      */
     public function ultimos100(Request $request)
     {
-      $registros = Registro::orderBy('created_at', 'DESC')->paginate(100);
+      $registros = Registro::whereHas('transferencia', function($query){
+        $query->where('estado',1);
+      })->orderBy('created_at', 'DESC')->paginate(100);
       return response([ 'registros' => RegistroResource::collection($registros), 'message' => 'Retrieved successfully'], 200);
     }
     /**
@@ -89,7 +93,10 @@ class RegistroController extends Controller
          sin(radians(".$latName."))
          ) AS distance";
 
-      $query = Registro::select('id', 'hg', 'region_id', 'longitud', 'latitud', 'conduct', 'ph','temperatura','od', 'created_at')->selectRaw($sql, [$latitude, $longitude, $latitude])
+      $query = Registro::whereHas('transferencia', function($query){
+        $query->where('estado',1);
+      })
+      ->select('id', 'hg', 'region_id', 'longitud', 'latitud', 'conduct', 'ph','temperatura','od', 'created_at')->selectRaw($sql, [$latitude, $longitude, $latitude])
       ->havingRaw('distance BETWEEN 0 AND '.$km)
       ->orderBy('distance', 'ASC')
       ->get();
@@ -125,7 +132,6 @@ class RegistroController extends Controller
      */
     public function store(RegistroRequest $request)
     {
-      // dd($request);
       if (isset($request->validator) && $request->validator->fails()) {
         return response([ 'registros' => RegistroResource::collection([$request]), 'message' => 'No se han podido crear los datos'], 200);
       }
@@ -133,6 +139,7 @@ class RegistroController extends Controller
         $transfer = new Transference();
         $transfer->metodo_id = Metodo::where('id','=',3)->first()->id;
         $transfer->estado = 1;
+        $transfer->ip = $request->ip();
         $transfer->save();
         $data = $request->all();
         $data['transfer_id'] =  $transfer->id;

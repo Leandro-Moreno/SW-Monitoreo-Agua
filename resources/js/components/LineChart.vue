@@ -10,8 +10,8 @@ export default {
     chartDatos: {
       type: Array
     },
-    options: {
-      type: Object
+    unit: {
+      type: String
     },
     chartColors: {
       type: Object
@@ -55,11 +55,72 @@ export default {
             }
           ]
         },
-        this.options
+        {
+          cutoutPercentage: 80,
+          responsive: true,
+          mantaineAspectRatio: true,
+          pan: {
+            // Boolean to enable panning
+              enabled: true,
+
+              // Panning directions. Remove the appropriate direction to disable
+              // Eg. 'y' would only allow panning in the y direction
+              mode: 'x'
+          },
+          // Container for zoom options
+          zoom: {
+              // Boolean to enable zooming
+              enabled: true,
+
+              // Zooming directions. Remove the appropriate direction to disable
+              // Eg. 'y' would only allow zooming in the y direction
+              mode: 'x',
+          },
+          legend: {
+              display: true
+          },
+          tooltips: {
+              enabled: true,
+              callbacks: {
+                label: ((tooltipItems, data) => {
+                  return tooltipItems.yLabel + ' '+this.unit;
+                })
+              },
+              
+          },
+          onClick: (evt, item) => {
+            let index = item[0]["_index"];
+            console.log(item[0]["_chart"].data.labels[index]);
+            console.log(item[0]["_chart"].data.datasets[0].data[index]);
+          },
+          scales: {
+            xAxes: [{
+                type: 'time',
+                gridLines: {display: true},
+                time: {
+                    parser: 'DD/MM/YYYY',
+                    unit: 'month',
+                    displayFormats: {
+                        'hour': 'YYYY-MM'
+                    }
+                },
+                ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: 20,
+                    source: 'data',
+                    callback: function(value) {
+                        return new Date(value).toLocaleDateString('es', {month:'short', year:'numeric'});
+                    },
+                }
+
+            }] ,
+
+          }
+        }
       );
     }
   },
-  mounted() {
+  mounted() {    
     this.rendChart();
   }
 };

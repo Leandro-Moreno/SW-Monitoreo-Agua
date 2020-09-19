@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Metodo;
-use App\Registro;
 use App\Transference;
+use App\Registro;
 use Illuminate\Http\Request;
 
 use App\Imports\RegistroImport;
@@ -20,7 +20,9 @@ class RegistroController extends Controller
      */
     public function index(Registro $registros)
     {
-        $registros = Registro::orderBy('id', 'DESC')->paginate(80);
+      $registros = Registro::whereHas('transferencia', function($query){
+        $query->where('estado',1);
+      })->orderByDesc('id')->paginate(80);
         return view('registros.index', ['registros' => $registros]);
     }
 

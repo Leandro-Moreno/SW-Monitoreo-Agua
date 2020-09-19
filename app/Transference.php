@@ -15,4 +15,12 @@ class Transference extends Model
     protected $fillable = [
         'metodo_id','user_id', 'estado', 'celular_id'
     ];
+    public function metodos()
+    {
+        return $this->belongsTo('App\Metodo', 'metodo_id');
+    }
+    public function registros()
+    {
+        return $this->hasMany('App\Registro', 'transfer_id', 'id');
+    }
 }

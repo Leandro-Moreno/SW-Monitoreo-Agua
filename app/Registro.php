@@ -24,4 +24,8 @@ class Registro extends Model
     {
         return $this->belongsTo('App\Region', 'region_id');
     }
+    public function transferencia()
+    {
+      return $this->belongsTo('App\Transference', 'transfer_id');
+    }
 }

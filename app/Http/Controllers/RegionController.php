@@ -15,13 +15,8 @@ class RegionController extends Controller
      */
     public function index()
     {
-      $regiones = Region::paginate(80);
-      $registros = Registro::all();
-      $registros = $registros->countBy(function ($registro) {
-                return $registro->region_id;
-            });
-            // dd($registros);
-      return view('regiones.index', ['regiones' => $regiones, 'registros' => $registros]);
+      $regiones = Region::withCount('registros')->paginate(80);
+      return view('regiones.index', ['regiones' => $regiones]);
     }
 
     /**

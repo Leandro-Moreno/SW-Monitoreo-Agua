@@ -15,6 +15,7 @@ class CreateTransferencesTable extends Migration
     {
         Schema::create('transferences', function (Blueprint $table) {
             $table->id();
+            $table->ipAddress('ip')->nullable();
             $table->biginteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreignId('metodo_id')->references('id')->onUpdate('cascade')->on('metodos');

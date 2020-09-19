@@ -24,19 +24,19 @@
                     </div>
                       <div class="row">
                         <div class="col-md-4" v-if="arrTemperatura.length > 0">
-                          <line-chart :chartDatos="arrTemperatura" :chartColors="temperaturaColors" :options="chartOptions" label="Temperatura" />
+                          <line-chart :chartDatos="arrTemperatura" :chartColors="temperaturaColors" unit="C" label="Temperatura" />
                         </div>
                         <div class="col-md-4" v-if="arrPH.length > 0">
-                          <line-chart :chartDatos="arrPH" :chartColors="phColors" :options="chartOptions" label="ph" />
+                          <line-chart :chartDatos="arrPH" :chartColors="phColors" unit="pH" label="pH" />
                         </div>
                         <div class="col-md-4" v-if="arrOD.length > 0">
-                          <line-chart :chartDatos="arrOD" :chartColors="ogColors" :options="chartOptions" label="OD" />
+                          <line-chart :chartDatos="arrOD" :chartColors="ogColors" unit="mg/L" label="Oxígeno Disuelto" />
                         </div>
                         <div class="col-md-4" v-if="arrHG.length > 0">
-                          <line-chart :chartDatos="arrHG" :chartColors="hgColors" :options="chartOptions" label="Hg" />
+                          <line-chart :chartDatos="arrHG" :chartColors="hgColors" unit="ppm" label="Hg" />
                         </div>
                         <div class="col-md-4" v-if="arrConduct.length > 0">
-                          <line-chart :chartDatos="arrConduct" :chartColors="conductColors" :options="chartOptions" label="Conduct" />
+                          <line-chart :chartDatos="arrConduct" :chartColors="conductColors" unit="µS/cm" label="Conductividad" />
                         </div>
                       </div>
                 </div>
@@ -58,11 +58,17 @@
         props: {
           label: {
             type: String
+          },
+          dlatitud: {
+            type: String 
+          },
+          dlongitud: {
+            type: String 
           }
         },
       data () {
         return {
-          zoom: 12,
+          zoom: 8,
           tamano: 200,
           center: [-73.49792, 5.46671],
           rotation: 0,
@@ -74,93 +80,39 @@
           arrUbicacion: [],
           arrUbicacion: [],
           arrPH: [],
+          arrOD: [],
+          arrHG: [],
+          arrTemperatura: [],
+          arrConduct: [],
           phColors: {
             borderColor: "#4E5E66",
             pointBorderColor: "#4E5E66",
             pointBackgroundColor: "#31E981",
             backgroundColor: "#31E981"
           },
-          arrOD: [],
           ogColors: {
             borderColor: "#829FD9",
             pointBorderColor: "#0029FA",
             pointBackgroundColor: "#230A59",
             backgroundColor: "#5C73F2"
           },
-          arrHG: [],
           hgColors: {
             borderColor: "#BF0436",
             pointBorderColor: "#5F0340",
             pointBackgroundColor: "#8C034E",
             backgroundColor: "#F20587"
           },
-          arrTemperatura: [],
           temperaturaColors: {
             borderColor: "#C004D9",
             pointBorderColor: "#5E2C99",
             pointBackgroundColor: "#492378",
             backgroundColor: "#8C43E6"
           },
-          arrConduct: [],
           conductColors: {
             borderColor: "#D9CB04",
             pointBorderColor: "#8C7503",
             pointBackgroundColor: "#402401",
             backgroundColor: "#D9B504"
-          },
-          chartOptions: {
-            cutoutPercentage: 80,
-            responsive: true,
-            mantaineAspectRatio: true,
-            pan: {
-              // Boolean to enable panning
-                enabled: true,
-
-                // Panning directions. Remove the appropriate direction to disable
-                // Eg. 'y' would only allow panning in the y direction
-                mode: 'x'
-            },
-            // Container for zoom options
-            zoom: {
-                // Boolean to enable zooming
-                enabled: true,
-
-                // Zooming directions. Remove the appropriate direction to disable
-                // Eg. 'y' would only allow zooming in the y direction
-                mode: 'x',
-            },
-            legend: {
-                display: true
-            },
-            tooltips: {
-                enabled: true,
-            },
-            onClick: (evt, item) => {
-              let index = item[0]["_index"];
-              console.log(item[0]["_chart"].data.labels[index]);
-              console.log(item[0]["_chart"].data.datasets[0].data[index]);
-            },
-            scales: {
-              xAxes: [{
-                  type: 'time',
-                  gridLines: {display: true},
-                  time: {
-                      parser: 'DD/MM/YYYY',
-                      unit: 'month',
-                      displayFormats: {
-                          'hour': 'YYYY-MM'
-                      }
-                  },
-                  ticks: {
-                      source: 'data',
-                      callback: function(value) {
-                          return new Date(value).toLocaleDateString('es', {month:'short', year:'numeric'});
-                      },
-                  }
-
-              }] ,
-
-            }
           }
         };
       },
@@ -176,7 +128,8 @@
         }
       },
       async created(){
-        // this._chart.destroy();
+        this.center[0] = parseFloat(this.dlatitud);
+        this.center[1] = parseFloat(this.dlongitud);
         this.datos();
       },
       methods:{

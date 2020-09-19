@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('registro/import','RegistroController@importCreate')->name('registroCreate');
   Route::resource('registro', 'RegistroController');
   Route::resource('region', 'RegionController');
+  Route::resource('transferencia', 'TransferenceController');
   Route::resource('celular', 'CelularController');
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);

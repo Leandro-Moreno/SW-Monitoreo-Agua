@@ -14,7 +14,12 @@ class TransferenceController extends Controller
      */
     public function index()
     {
-        //
+      $transferencias = Transference::with('metodos')->withCount('registros')->get();
+      // dd($transferencias);
+      $transferencias = $transferencias->filter(function( $value  ){
+        return $value->registros_count > 0;
+      });
+        return view('transferencia.index', ['transferencias' => $transferencias]);
     }
 
     /**

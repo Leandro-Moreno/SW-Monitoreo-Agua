@@ -33,7 +33,7 @@
                   <td>{{$region->id}}</td>
                   <td>{{$region->nombre}}</td>
                   <td>
-                    {{isset($registros[$key+1])?$registros[$key+1]:0}}
+                    {{$region->registros_count}}
                   </td>
                   <td>
                     <a href="{{  route('region.show', $region)  }}"> entrar </a>
