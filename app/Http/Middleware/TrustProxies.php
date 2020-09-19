@@ -13,7 +13,7 @@ class TrustProxies extends Middleware
      * @var array|string|null
      */
     protected $proxies = [
-      '157.253.237.13', 
+      '*',
     ];
 
     /**
