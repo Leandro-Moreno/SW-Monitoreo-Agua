@@ -139,7 +139,7 @@ class RegistroController extends Controller
         $transfer = new Transference();
         $transfer->metodo_id = Metodo::where('id','=',3)->first()->id;
         $transfer->estado = 1;
-        $transfer->ip = $request->header('X-Forwarded-For');
+        $transfer->ip = $request->ip();
         $transfer->save();
         $data = $request->all();
         $data['transfer_id'] =  $transfer->id;
