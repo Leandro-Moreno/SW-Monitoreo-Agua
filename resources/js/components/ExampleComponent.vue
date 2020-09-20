@@ -3,7 +3,6 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Datos Monitoreo Ciudadano</div>
                     <div class="row">
                       <vl-map  @click="onClick" :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
                                data-projection="EPSG:4326" style="height: 400px">
@@ -17,10 +16,6 @@
                           <vl-source-osm></vl-source-osm>
                         </vl-layer-tile>
                       </vl-map>
-                      <div style="padding: 15px">
-                        Zoom: {{ zoom }}<br>
-                        Center: {{ center }}<br>
-                      </div>
                     </div>
                       <div class="row">
                         <div class="col-md-4" v-if="arrTemperatura.length > 0">
