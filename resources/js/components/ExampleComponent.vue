@@ -50,6 +50,9 @@
     import moment from 'moment';
     import LineChart from './LineChart.vue';
     import zoom from 'chartjs-plugin-zoom';
+    import {toStringXY} from 'ol/coordinate';
+    import {createStringXY} from 'ol/coordinate';
+
 
     export default {
       components: {
@@ -138,12 +141,22 @@
       },
       methods:{
         onClick(evt,item){
-          console.log(item)
           evt.map.forEachFeatureAtPixel(
             evt.pixel,
             function(layer){
-              console.log(layer.getProperties())
-              
+              let nZoom = evt.map.getView().getZoom()
+              switch(true){
+                case nZoom <=10:
+                  nZoom = 15
+                break;
+                case nZoom >20:
+                  nZoom++
+                break;
+                default:
+                nZoom = nZoom +2
+                break;
+              }
+              evt.map.getView().animate({zoom: nZoom}, {center: layer.values_.geometry.flatCoordinates})
             }
 
           );
