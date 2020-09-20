@@ -17,7 +17,7 @@
   </header>
   <div class="row justify-content-center">
       <div class="col-md-12" id="app">
-          <example-component label="Hg" dlatitud="-73.73963821151351" dlongitud="5.491208876517987" />
+          <example-component label="Hg" dlatitud="-73.48986625671388" dlongitud="5.467680228728099" dzoom="13"/>
       </div>
   </div>
 </div>

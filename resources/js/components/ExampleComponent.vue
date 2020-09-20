@@ -64,6 +64,9 @@
           },
           dlongitud: {
             type: String 
+          },
+          dzoom: {
+            type: String 
           }
         },
       data () {
@@ -130,6 +133,7 @@
       async created(){
         this.center[0] = parseFloat(this.dlatitud);
         this.center[1] = parseFloat(this.dlongitud);
+        this.zoom = parseFloat(this.dzoom);
         this.datos();
       },
       methods:{
