@@ -122,10 +122,11 @@ class RegistroController extends Controller
      * @bodyParam latitud float required Latitud de la ubicación. Example: -74.105001
      * @bodyParam temperatura double required PH del agua. Example: 15.2
      * @bodyParam hg double required PH del agua. Example: 0
-     * @bodyParam conduct double required PH del agua. Example: 4.5
-     * @bodyParam od double required PH del agua. Example: 6
+     * @bodyParam conduct double PH del agua. Example: 4.5
+     * @bodyParam od double PH del agua. Example: 6
      * @bodyParam ph double required PH del agua. Example: 4.5
-     * @bodyParam region_id int required PH del agua. Example: 2
+     * @bodyParam region_id int  PH del agua. Example: 2
+     * @bodyParam hg double required PH del agua. Example: 0
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -136,14 +137,19 @@ class RegistroController extends Controller
         return response([ 'registros' => RegistroResource::collection([$request]), 'message' => 'No se han podido crear los datos'], 200);
       }
       else{
+        $data = $request->all();
         $transfer = new Transference();
         $transfer->metodo_id = Metodo::where('id','=',3)->first()->id;
         $transfer->estado = 1;
         $transfer->ip = $request->ip();
-        $transfer->save();
-        $data = $request->all();
-        $data['transfer_id'] =  $transfer->id;
-        $registro = Registro::create($data);
+        $transfer->mac = $data['mac'];
+        $registro = new Registro;
+        $registro->fill($data);
+        if(!isset($data['pruebas'])){
+          $transfer->save();
+          $registro->transfer_id =  $transfer->id;
+          $registro->save();
+        }
       }
 
       // dd($registro);

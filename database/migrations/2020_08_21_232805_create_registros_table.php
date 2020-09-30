@@ -17,12 +17,12 @@ class CreateRegistrosTable extends Migration
             $table->id();
             $table->double('longitud');
             $table->double('latitud');
-            $table->double('temperatura');
-            $table->double('hg');
-            $table->double('conduct');
-            $table->double('od');
+            $table->double('temperatura')->nullable();
+            $table->double('hg')->nullable();
+            $table->double('conduct')->nullable();
+            $table->double('od')->nullable();
             $table->double('ph');
-            $table->biginteger('region_id')->unsigned();
+            $table->biginteger('region_id')->unsigned()->nullable();
             $table->foreign('region_id')->references('id')->on('regions')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('transfer_id')->references('id')->onUpdate('cascade')->on('transferences');
             $table->datetime('created_at');

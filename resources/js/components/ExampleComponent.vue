@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="row">
+                    <div class="row" data-tour-step="1">
                       <vl-map  @click="onClick" :load-tiles-while-animating="true" :load-tiles-while-interacting="true"
                                data-projection="EPSG:4326" style="height: 400px">
                         <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
@@ -17,7 +17,7 @@
                         </vl-layer-tile>
                       </vl-map>
                     </div>
-                      <div class="row">
+                      <div class="row" data-tour-step="2">
                         <div class="col-md-4" v-if="arrTemperatura.length > 0">
                           <line-chart :chartDatos="arrTemperatura" :chartColors="temperaturaColors" unit="C" label="Temperatura" />
                         </div>
@@ -36,6 +36,7 @@
                       </div>
                 </div>
             </div>
+            <v-tour name="tourmonitoreo" :steps="steps" :options="myOptions"></v-tour>
         </div>
     </div>
 </template>
@@ -114,18 +115,47 @@
             pointBorderColor: "#8C7503",
             pointBackgroundColor: "#402401",
             backgroundColor: "#D9B504"
-          }
+          },
+          myOptions: {
+            useKeyboardNavigation: true,
+            startTimeout: 3000,
+            labels: {
+              buttonSkip: 'Saltar Tour',
+              buttonPrevious: 'Anterior',
+              buttonNext: 'Siguiente',
+              buttonStop: 'Terminar'
+            }
+          },
+          steps: [
+            {
+              target: '[data-tour-step="1"]',
+                content: 'Cada punto representa las ubicaciones desde donde hemos recolectado datos, puedes interactuar con ellos. Y en la parte inferior veras la información que se recolectó.',
+              params: {
+                placement: 'top-right' 
+              }      
+            },
+            {
+              target: '[data-tour-step="2"]',
+              content: 'Acá puedes ver las graficas de los datos que se han recolectado en el proyecto',
+              params: {
+                placement: 'right' 
+              }      
+            }
+          ]
         };
+      },
+      mounted: function () {
+        this.$tours.['tourmonitoreo'].start()
       },
       watch: {
         center(){
           this.datos()
         },
+        zoom(){
+          this.datos()
+        },
         arrPH(){
 
-        },
-        properties(){
-          console.log(this.properties);
         }
       },
       async created(){
@@ -166,15 +196,6 @@
           this.arrHG = [];
           this.arrConduct = [];
           this.arrTemperatura = [];
-          if(this.zoom > 18){
-            this.tamano = 29 - this.zoom;
-          }
-          else if(this.zoom > 25){
-            this.tamano = (29 - this.zoom)*6/10;
-          }
-          else{
-            this.tamano = 1500 - 84*this.zoom;
-          }
           data = temp.data.registros;
           data.forEach( d => {
             const fecha = moment(d.created_at);

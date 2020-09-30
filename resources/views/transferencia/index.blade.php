@@ -24,6 +24,12 @@
                     Método de carga
                   </th>
                   <th>
+                    IP
+                  </th>
+                  <th>
+                    Dirección MAC
+                  </th>
+                  <th>
                     Estado de visualización
                   </th>
                   <th>
@@ -39,10 +45,12 @@
                   <td>{{$transferencia->id}}</td>
                   <td>{{$transferencia->registros_count}}</td>
                   <td>{{$transferencia->metodos->nombre}}</td>
+                  <td>{{$transferencia->ip}}</td>
+                  <td>{{$transferencia->mac}}</td>
                   <td>{{$transferencia->estado==1?'Activo':'Inactivo'}}</td>
                   <td>{{$transferencia->created_at}}</td>
                   <td>
-                    <a class="btn btn-success" href="{{ route('transferencia.show', $transferencia->id) }}">
+                    <a class="btn btn-sm btn-success" href="{{ route('transferencia.show', $transferencia) }}">
                       Actualizar Estado
                     </a>
                   </td>

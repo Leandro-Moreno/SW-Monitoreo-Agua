@@ -51,7 +51,8 @@ class TransferenceController extends Controller
      */
     public function show(Transference $transference)
     {
-        //
+      dd($transference);
+        return view('transferencia.show', ['transferencia' => $transference]);
     }
 
     /**
