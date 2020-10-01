@@ -9,6 +9,7 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title ">Registros</h4>
             <p class="card-category"> Información de los ultimos registros monitoreadas</p>
+            <a class="btn btn-danger" href="{{route('registroExport')}}"> Exportar Registros </a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
