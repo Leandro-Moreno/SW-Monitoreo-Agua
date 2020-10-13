@@ -58,7 +58,7 @@ export default {
         {
           cutoutPercentage: 80,
           responsive: true,
-          mantaineAspectRatio: true,
+          mantaineAspectRatio: false,
           pan: {
             // Boolean to enable panning
               enabled: true,
