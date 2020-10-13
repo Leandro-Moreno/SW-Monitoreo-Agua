@@ -10,6 +10,7 @@
                                 <vl-geom-point :coordinates="ubicacion"></vl-geom-point>
                                 <vl-style-box>
                                   <vl-style-circle>
+                                    /* <vl-style-fill color="white"></vl-style-fill> */
                                     <vl-style-stroke color="#C004D9" width="2"></vl-style-stroke>
                                   </vl-style-circle>
                                 </vl-style-box>
@@ -20,7 +21,7 @@
                             </vl-layer-tile>
                           </vl-map>
                     </div>
-                    <div v-if="mostrarDatos === true">
+                    <div v-if="mostrarDatos">
                         <ul class="nav nav-tabs" id="pestanasInfo" role="tablist">
                             <li class="nav-item">
                                 <a class="btn btn-sm btn-success btn-outline active" id="temperatura-tab" data-toggle="tab" href="#temperatura" role="tab" aria-controls="temperatura" aria-selected="true">Temperatura</a>
@@ -89,13 +90,13 @@
             dzoom: {
                 type: String 
             },
-            dmostrarDatos: {
-                type: Boolean 
+            mostrargrafica: {
+                type: String 
             }
         },
         data () {
             return {
-                mostrarDatos: true,
+                mostrarDatos: "Si",
                 zoom: 8,
                 tamano: 200,
                 center: [-73.49792, 5.46671],
@@ -188,11 +189,9 @@
             this.center[0] = parseFloat(this.dlatitud);
             this.center[1] = parseFloat(this.dlongitud);
             this.zoom = parseFloat(this.dzoom);
-            if(this.dmostrarDatos === false){
+            if( 1 === this.mostrargrafica){
                 this.mostrarDatos = false;              
             }
-            console.log(this.dmostrarDatos);
-            console.log(this.mostrarDatos);
             this.datos();
         },
         methods:{
