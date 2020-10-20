@@ -11,7 +11,7 @@
                                 <vl-style-box>
                                   <vl-style-circle>
                                     /* <vl-style-fill color="white"></vl-style-fill> */
-                                    <vl-style-stroke color="#C004D9" width="2"></vl-style-stroke>
+                                    <vl-style-stroke color="#C004D9"></vl-style-stroke>
                                   </vl-style-circle>
                                 </vl-style-box>
                             </vl-feature>
@@ -56,10 +56,9 @@
                                 <line-chart height="100px" :chartDatos="arrConduct" :chartColors="conductColors" unit="µS/cm" label="Conductividad µS/cm" />
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
-            <v-tour name="tourmonitoreo" :steps="steps" :options="myOptions"></v-tour>
         </div>
     </div>
 </template>
@@ -172,7 +171,7 @@
             };
         },
         mounted: function () {
-            this.$tours.['tourmonitoreo'].start()
+            // this.$tours.['tourmonitoreo'].start()
         },
         watch: {
             center(){

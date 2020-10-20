@@ -26,9 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('registro/import','RegistroController@import')->name('registroimport');
   Route::post('registro/import','RegistroController@importCreate')->name('registroCreate');
   Route::get('registro/export','RegistroController@export')->name('registroExport');
-  Route::resource('registro', 'RegistroController')->except([
-    'show', 'create' ,'edit'
-  ]);
+  Route::resource('registro', 'RegistroController');
   Route::resource('region', 'RegionController');
   Route::resource('transferencia', 'TransferenceController', ['parameters' => [
     'transferencia' => 'transferencia'

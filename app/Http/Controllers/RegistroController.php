@@ -6,11 +6,14 @@ use Auth;
 use App\Metodo;
 use App\Transference;
 use App\Registro;
+use App\Region;
 use Illuminate\Http\Request;
 
 use App\Imports\RegistroImport;
 use App\Exports\RegistroExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\RegistroRequest;
+
 
 class RegistroController extends Controller
 {
@@ -35,7 +38,14 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        //
+      // dd($registro);
+
+        return view('registros.edit', ['registro' => $registro]);
+    }
+
+    public function show(Registro $registro)
+    {
+        return view('registros.show', ['registro' => $registro]);
     }
 
     /**
@@ -47,7 +57,30 @@ class RegistroController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        //
+        $datos = $request->all();
+        $registro->update($datos);
+        return redirect()->route('registro.index')->withStatus(__('Registro Actualizado con éxito.'));
+    }
+    public function destroy(Registro $registro){
+      $registro->delete();
+      return redirect()->route('registro.index')->with('success', 'Registro eliminado con exito');
+    }
+    public function create(){
+      $regiones = Region::all();
+      return view('registros.create',['regiones' => $regiones]);
+    }
+    public function store(RegistroRequest $request, Registro $registro){
+      $datos = $request->all();
+      $transfer = new Transference();
+      $transfer->metodo_id = Metodo::where('id','=',4)->first()->id;
+      $transfer->estado = 1;
+      $transfer->ip = $request->ip();
+      $transfer->save();
+      $registro = new Registro;
+      $registro->transfer_id = $transfer->id;
+      $registro->fill($datos);
+      $registro->save();
+      return redirect()->route('registro.index')->withStatus(__('Registro Actualizado con éxito.'));
     }
 
     public function importCreate(){

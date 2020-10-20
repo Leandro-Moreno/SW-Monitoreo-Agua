@@ -9,6 +9,7 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title ">Registros</h4>
             <p class="card-category"> Información de los ultimos registros monitoreadas</p>
+            <a class="btn btn-success" href="{{route('registro.create')}}"> Crear registro </a>
             <a class="btn btn-danger" href="{{route('registroExport')}}"> Exportar Registros </a>
           </div>
           <div class="card-body">
@@ -16,10 +17,10 @@
               <table class="table">
                 <thead class=" text-primary">
                   <th>
-                    ID
+                    {{ __('ID') }}
                   </th>
                   <th>
-                    Latitud
+                    {{ __('Latitud') }}
                   </th>
                   <th>
                     Longitud
@@ -46,10 +47,13 @@
                     Fecha de Creación
                   </th>
                   <th>
-                    estado
+                    Estado
                   </th>
                   <th>
-                    Modificar Transferencia
+                    Transferencia
+                  </th>
+                  <th>
+                    Acciones
                   </th>
                 </thead>
                 <tbody>
@@ -64,15 +68,22 @@
                   <td>{{$registro->od}}</td>
                   <td>{{$registro->ph}}</td>
                   <td>
-                    <a href="{{ route('region.show', $registro->region_id) }}">
-                    {{$registro->region->nombre}}
-                  </a>
+                    @isset($registro->region_id)
+                      <a href="{{ route('region.show', $registro->region_id) }}">
+                      {{$registro->region->nombre}}
+                      </a>
+                    @endisset
                   </td>
                   <td>{{$registro->created_at}}</td>
                   <td>{{$registro->transferencia->estado}}</td>
                   <td>
                     <a href="{{ route('transferencia.edit', $registro->transferencia->id) }}">
                       {{$registro->transferencia->id}}
+                    </a>
+                  </td>
+                  <td>
+                    <a href="{{ route('registro.edit', $registro) }}">
+                      {{ __('Editar registro') }}
                     </a>
                   </td>
                 </tr>

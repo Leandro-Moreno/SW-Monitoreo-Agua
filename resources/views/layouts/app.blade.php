@@ -27,8 +27,11 @@
 
         <!--   Core JS Files   -->
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
-        <!-- <script src="{{ asset('material') }}/js/core/popper.min.js"></script> -->
+        <script src="{{ asset('material') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('material') }}/js/core/bootstrap-material-design.min.js"></script>
+
+        <script src="{{ asset('material') }}/js/plugins/jquery.validate.min.js"></script>
+
         <script src="{{ asset('material') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
         <!-- Forms Validations Plugin -->
         <script src="{{ asset('material') }}/js/plugins/jquery.validate.min.js"></script>
@@ -38,6 +41,8 @@
         <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>
         <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
         <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>
+        <script src="{{ asset('material') }}/js/material-dashboard.js"></script>
+
         <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
         <script src="{{ mix('js/app.js') }}"></script>

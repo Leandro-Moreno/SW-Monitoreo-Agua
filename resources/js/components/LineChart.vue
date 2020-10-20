@@ -51,7 +51,13 @@ export default {
               borderColor: borderColor,
               pointBorderColor: pointBorderColor,
               pointBackgroundColor: pointBackgroundColor,
-              backgroundColor: backgroundColor
+              backgroundColor: backgroundColor,
+              lineTension: 0,
+              hoverBorderWidth: 5,
+              borderCapStyle: 'square',
+              borderWidth: 1,
+              spanGaps: false,
+              fill: false
             }
           ]
         },
@@ -97,17 +103,22 @@ export default {
             xAxes: [{
                 type: 'time',
                 gridLines: {display: true},
+                distribution: 'linear',
                 time: {
                     parser: 'DD/MM/YYYY',
                     unit: 'month',
                     displayFormats: {
-                        'hour': 'YYYY-MM'
+                        month: 'YYYY MM'
                     }
                 },
                 ticks: {
+                    beginAtZero: true,
                     autoSkip: true,
-                    maxTicksLimit: 20,
-                    source: 'data',
+                    suggestedMin: 0,
+                    precision: 1,
+                    stepSize: 1,
+                    source: 'auto',
+                    length: 100,
                     callback: function(value) {
                         return new Date(value).toLocaleDateString('es', {month:'short', year:'numeric'});
                     },

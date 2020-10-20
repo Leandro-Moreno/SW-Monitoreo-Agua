@@ -17,7 +17,7 @@
   </header>
   <div class="row justify-content-center">
       <div class="col-md-12" id="app">
-          <mapa-monitoreo label="Hg" dlatitud="-73.48986625671388" dlongitud="5.467680228728099" dzoom="13" :mostrargrafica="1"/>
+          <mapa-monitoreo dlatitud="-74.06614396876195" dlongitud="4.601696849367869" dzoom="16" dmostrarDatos="true"/>
       </div>
   </div>
 </div>
