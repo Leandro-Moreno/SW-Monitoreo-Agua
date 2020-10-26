@@ -24,20 +24,21 @@ class RegistroImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-
+      if( ! is_null($row['longitude'])){
         return new Registro([
-            'longitud' => $row['longitude'],
-            'latitud' => $row['latitude'],
-            'hg' => $row['hg'],
-            'temperatura' => $row['temp'],
-            'conduct' => $row['conduct'],
-            'od' => $row['od'],
-            'ph' => $row['ph'],
-            'transfer_id' => $this->transfer->id,
-            'region_id' => $row['region'],
-            'created_at' => $row['createdat'],
-            'updated_at' => $row['updatedat'],
+          'longitud' => $row['longitude'],
+          'latitud' => $row['latitude'],
+          'hg' => $row['hg'],
+          'temperatura' => $row['temp'],
+          'conduct' => $row['conduct'],
+          'od' => $row['od'],
+          'ph' => $row['ph'],
+          'transfer_id' => $this->transfer->id,
+          'region_id' => $row['region'],
+          'created_at' => $row['createdat'],
+          'updated_at' => $row['updatedat'],
         ]);
+      }
     }
     public function columnFormats(): array
     {
