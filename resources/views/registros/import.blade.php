@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'registro-import', 'titlePage' => __('Importar Registros')])
+@extends('layouts.app', ['activePage' => 'registro-import', 'title' => __('Importar Registros')])
 
 @section('content')
 
@@ -24,7 +24,7 @@
 
                 <div class="card ">
               <div class="card-header card-header-primary">
-                <h4 class="card-title">{{ __('Añadir Servidor') }}</h4>
+                <h4 class="card-title">{{ __('Importador de datos en excel') }}</h4>
                 <p class="card-category"></p>
               </div>
               <div class="card-body ">
@@ -47,20 +47,9 @@
                     </div>
                   </div>
                 @endif
-                <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Nombre') }}</label>
-                  <div class="col-sm-7">
-                    <div class="form-group{{ $errors->has('nombre') ? ' has-danger' : '' }}">
-                      <input class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" id="input-nombre" type="text" placeholder="{{ __('Nombre') }}" value="{{ old('nombre') }}" required="true" aria-required="true"/>
-                      @if ($errors->has('nombre'))
-                        <span id="nombre-error" class="error text-danger" for="input-nombre">{{ $errors->first('nombre') }}</span>
-                      @endif
-                    </div>
-                  </div>
-                </div>
                 <input type="file" name="file" class="form-control">
                 <br>
-                <button class="btn btn-success">Import User Data</button>
+                <button class="btn btn-success">Importar registros</button>
               </div>
             </form>
         </div>
