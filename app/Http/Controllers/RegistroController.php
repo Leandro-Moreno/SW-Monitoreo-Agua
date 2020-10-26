@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Metodo;
-use App\Registro;
 use App\Transference;
+use App\Registro;
+use App\Region;
 use Illuminate\Http\Request;
 
 use App\Imports\RegistroImport;
+use App\Exports\RegistroExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\RegistroRequest;
+
 
 class RegistroController extends Controller
 {
@@ -20,40 +24,10 @@ class RegistroController extends Controller
      */
     public function index(Registro $registros)
     {
-        $registros = Registro::orderBy('id', 'DESC')->paginate(80);
+      $registros = Registro::whereHas('transferencia', function($query){
+        $query->where('estado',1);
+      })->orderByDesc('id')->paginate(80);
         return view('registros.index', ['registros' => $registros]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Registro $registro)
-    {
-        //
     }
 
     /**
@@ -64,7 +38,14 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        //
+      // dd($registro);
+
+        return view('registros.edit', ['registro' => $registro]);
+    }
+
+    public function show(Registro $registro)
+    {
+        return view('registros.show', ['registro' => $registro]);
     }
 
     /**
@@ -76,19 +57,32 @@ class RegistroController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        //
+        $datos = $request->all();
+        $registro->update($datos);
+        return redirect()->route('registro.index')->withStatus(__('Registro Actualizado con éxito.'));
+    }
+    public function destroy(Registro $registro){
+      $registro->delete();
+      return redirect()->route('registro.index')->with('success', 'Registro eliminado con exito');
+    }
+    public function create(){
+      $regiones = Region::all();
+      return view('registros.create',['regiones' => $regiones]);
+    }
+    public function store(RegistroRequest $request, Registro $registro){
+      $datos = $request->all();
+      $transfer = new Transference();
+      $transfer->metodo_id = Metodo::where('id','=',4)->first()->id;
+      $transfer->estado = 1;
+      $transfer->ip = $request->ip();
+      $transfer->save();
+      $registro = new Registro;
+      $registro->transfer_id = $transfer->id;
+      $registro->fill($datos);
+      $registro->save();
+      return redirect()->route('registro.index')->withStatus(__('Registro Actualizado con éxito.'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Registro  $registro
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Registro $registro)
-    {
-        //
-    }
     public function importCreate(){
       $transfer = new Transference();
       $transfer->user_id = Auth::id();
@@ -101,5 +95,10 @@ class RegistroController extends Controller
     }
     public function import(){
       return view('registros.import');
+    }
+
+    public function export()
+    {
+      return Excel::download(new RegistroExport, 'registro'.now().'.xlsx');
     }
 }

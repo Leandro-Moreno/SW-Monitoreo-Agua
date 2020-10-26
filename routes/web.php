@@ -13,55 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@root');
 
 Auth::routes();
 
 
-Auth::routes();
-
-Route::get('/homes', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/homes', 'HomeController@index')->name('homes')->middleware('auth');
 Route::get('/home', 'RegistroController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
 
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
-
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
-
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
-
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
   Route::get('registro/import','RegistroController@import')->name('registroimport');
   Route::post('registro/import','RegistroController@importCreate')->name('registroCreate');
+  Route::get('registro/export','RegistroController@export')->name('registroExport');
   Route::resource('registro', 'RegistroController');
   Route::resource('region', 'RegionController');
+  Route::resource('transferencia', 'TransferenceController', ['parameters' => [
+    'transferencia' => 'transferencia'
+]]);
   Route::resource('celular', 'CelularController');
-});
-
-
-Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);

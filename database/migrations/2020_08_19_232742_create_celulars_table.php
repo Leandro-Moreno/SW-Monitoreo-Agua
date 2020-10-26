@@ -16,7 +16,6 @@ class CreateCelularsTable extends Migration
         Schema::create('celulars', function (Blueprint $table) {
             $table->id();
             $table->macAddress('device');
-            $table->foreignId('user_id')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }

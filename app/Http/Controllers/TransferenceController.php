@@ -14,29 +14,14 @@ class TransferenceController extends Controller
      */
     public function index()
     {
-        //
+      $transferencias = Transference::with('metodos')->withCount('registros')->get();
+      // dd($transferencias);
+      $transferencias = $transferencias->filter(function( $value  ){
+        return $value->registros_count > 0;
+      });
+        return view('transferencia.index', ['transferencias' => $transferencias]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -44,9 +29,9 @@ class TransferenceController extends Controller
      * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function show(Transference $transference)
+    public function show(Transference $transferencia)
     {
-        //
+        return view('transferencia.show', ['transferencia' => $transferencia]);
     }
 
     /**
@@ -55,9 +40,10 @@ class TransferenceController extends Controller
      * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transference $transference)
+    public function edit(Transference $transferencia)
     {
-        //
+      return view('transferencia.edit', ['transferencia' => $transferencia]);
+
     }
 
     /**
@@ -67,19 +53,10 @@ class TransferenceController extends Controller
      * @param  \App\Transference  $transference
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transference $transference)
+    public function update(Request $request, Transference $transferencia)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Transference  $transference
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Transference $transference)
-    {
-        //
+        $datos = $request->all();
+        $transferencia->update($datos);
+        return redirect()->route('transferencia.show',$transferencia)->withStatus(__('Transferencia actualizada con éxito.'));
     }
 }

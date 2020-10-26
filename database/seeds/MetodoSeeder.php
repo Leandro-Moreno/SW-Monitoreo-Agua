@@ -26,5 +26,10 @@ class MetodoSeeder extends Seeder
           'created_at' => now(),
           'updated_at' => now()
       ]);
+      DB::table('metodos')->insert([
+          'nombre' => "manual",
+          'created_at' => now(),
+          'updated_at' => now()
+      ]);
     }
 }

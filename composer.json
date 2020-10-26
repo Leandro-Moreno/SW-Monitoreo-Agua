@@ -20,7 +20,8 @@
         "laravel/ui": "^2.0",
         "maatwebsite/excel": "^3.1",
         "malhal/laravel-geographical": "^1.0",
-        "mpociot/laravel-apidoc-generator": "^4.8"
+        "mpociot/laravel-apidoc-generator": "^4.8",
+        "spatie/laravel-backup": "^6.11"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
