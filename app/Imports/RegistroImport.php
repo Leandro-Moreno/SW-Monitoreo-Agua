@@ -2,8 +2,7 @@
 
 namespace App\Imports;
 
-
-
+use Carbon\Carbon;
 use App\Region;
 use App\Registro;
 use App\Transference;
@@ -35,8 +34,8 @@ class RegistroImport implements ToModel, WithHeadingRow
           'ph' => $row['ph'],
           'transfer_id' => $this->transfer->id,
           'region_id' => $row['region'],
-          'created_at' => $row['createdat'],
-          'updated_at' => $row['updatedat'],
+          'created_at' => new Carbon($row['timestamp'], 'America/Bogota'),
+          'updated_at' => new Carbon($row['timestamp'], 'America/Bogota'),
         ]);
       }
     }
