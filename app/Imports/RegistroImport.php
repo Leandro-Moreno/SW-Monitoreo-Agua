@@ -24,6 +24,7 @@ class RegistroImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
       if( ! is_null($row['longitude'])){
+        $fecha = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['timestamp'])->format('d/m/Y H:i');
         return new Registro([
           'longitud' => $row['longitude'],
           'latitud' => $row['latitude'],
@@ -34,8 +35,8 @@ class RegistroImport implements ToModel, WithHeadingRow
           'ph' => $row['ph'],
           'transfer_id' => $this->transfer->id,
           'region_id' => $row['region'],
-          'created_at' => new Carbon($row['timestamp'], 'America/Bogota'),
-          'updated_at' => new Carbon($row['timestamp'], 'America/Bogota'),
+          'created_at' => Carbon::createFromFormat('d/m/Y H:i', $fecha, 'America/Bogota'),
+          'updated_at' => now(),
         ]);
       }
     }
