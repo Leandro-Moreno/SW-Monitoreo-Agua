@@ -3,7 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="row" data-tour-step="1">
+                    <div class="row">
+                    <span id="info-tip" v-tooltip.bottom="'Cada punto representa las ubicaciones desde donde hemos recolectado datos, puedes interactuar con ellos. Y en la parte inferior veras la información que se recolectó.'">i</span>
                         <vl-map  @click="onClick" :load-tiles-while-animating="true" data-projection="EPSG:4326" style="height: 400px">
                           <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
                             <vl-feature v-for="(ubicacion, index) in arrUbicacion" :key="index" :name="index">
@@ -62,7 +63,20 @@
         </div>
     </div>
 </template>
-
+<style>
+  #info-tip{
+    background-color: #0029FA80;
+    color: white;
+    display: block;
+    width: 24px;
+    height: 24px;
+    right: 30px;
+    border-radius: 30%;
+    text-align: center;
+    margin-left: 10px;
+    font-weight: bolder;
+  }
+</style>
 <script>
     import axios from 'axios';
     import moment from 'moment';
@@ -141,33 +155,7 @@
                     pointBorderColor: "#8C7503",
                     pointBackgroundColor: "#402401",
                     backgroundColor: "#D9B504"
-                },
-                myOptions: {
-                    useKeyboardNavigation: true,
-                    startTimeout: 3000,
-                    labels: {
-                        buttonSkip: 'Saltar Tour',
-                        buttonPrevious: 'Anterior',
-                        buttonNext: 'Siguiente',
-                        buttonStop: 'Terminar'
-                    }
-                },
-                steps: [
-                    {
-                        target: '[data-tour-step="1"]',
-                            content: 'Cada punto representa las ubicaciones desde donde hemos recolectado datos, puedes interactuar con ellos. Y en la parte inferior veras la información que se recolectó.',
-                        params: {
-                            placement: 'top-right' 
-                        }      
-                    },
-                    {
-                        target: '[data-tour-step="2"]',
-                        content: 'Acá puedes ver las graficas de los datos que se han recolectado en el proyecto',
-                        params: {
-                            placement: 'right' 
-                        }      
-                    }
-                ]
+                }
             };
         },
         mounted: function () {

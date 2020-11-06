@@ -4,14 +4,13 @@ import Vue from 'vue';
 import VueLayers from 'vuelayers';
 import 'vuelayers/lib/style.css'; // needs css-loader
 import { PointGeom } from 'vuelayers';
-import VueTour from 'vue-tour';
+import Tooltip from "vue-directive-tooltip";
+import "vue-directive-tooltip/dist/vueDirectiveTooltip.css";
 
 require('./bootstrap');
-require('vue-tour/dist/vue-tour.css');
-
 
 Vue.use(VueLayers);
-Vue.use(VueTour);
+Vue.use(Tooltip);
 
 
 window.Vue = require('vue');
