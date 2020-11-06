@@ -75,6 +75,7 @@
     text-align: center;
     margin-left: 10px;
     font-weight: bolder;
+    font-size: 15px;
   }
 </style>
 <script>
