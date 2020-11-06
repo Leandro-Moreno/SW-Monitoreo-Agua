@@ -10,8 +10,8 @@
                                 <vl-geom-point :coordinates="ubicacion"></vl-geom-point>
                                 <vl-style-box>
                                   <vl-style-circle>
-                                    /* <vl-style-fill color="white"></vl-style-fill> */
-                                    <vl-style-stroke color="#C004D9"></vl-style-stroke>
+                                    <vl-style-fill color="#230A59"></vl-style-fill>
+                                    <vl-style-stroke color="#0029FA"></vl-style-stroke>
                                   </vl-style-circle>
                                 </vl-style-box>
                             </vl-feature>
@@ -243,16 +243,22 @@
                     this.arrID.push({nombre, total: id});
                     this.pushUniqueCoordinates( this.arrUbicacion, longitud, latitud);
                     if(this.mostrarDatos){
-                      this.arrLongitud.push({nombre, total: longitud});
-                      this.arrLatitud.push({nombre, total: latitud});
-                      this.arrPH.push({nombre, total: ph});
-                      this.arrOD.push({nombre, total: od});
-                      this.arrHG.push({nombre, total: hg});
-                      this.arrConduct.push({nombre, total: conduct});
-                      this.arrTemperatura.push({nombre, total: temperatura});
+                      this.arrLongitud = this.validarDatos(longitud, this.arrLongitud, nombre);
+                      this.arrLatitud = this.validarDatos(latitud, this.arrLatitud, nombre);
+                      this.arrPH = this.validarDatos(ph, this.arrPH, nombre);
+                      this.arrOD = this.validarDatos(od, this.arrOD, nombre);                      
+                      this.arrHG = this.validarDatos(hg, this.arrHG, nombre);
+                      this.arrConduct = this.validarDatos(conduct, this.arrConduct, nombre);
+                      this.arrTemperatura = this.validarDatos(temperatura, this.arrTemperatura, nombre);
                     }
                 });
                 this.arrUbicacion = this.arrUbicacion;
+            },
+            validarDatos(datos, arrayTotal, nombre){
+              if(datos){
+                arrayTotal.push({nombre, total: datos});
+              }
+              return arrayTotal;
             },
             pushUniqueCoordinates( datos, longitud, latitud){
                 let no_existe = true;
