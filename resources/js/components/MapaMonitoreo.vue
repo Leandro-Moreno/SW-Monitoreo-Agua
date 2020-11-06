@@ -77,6 +77,9 @@
     font-weight: bolder;
     font-size: 15px;
   }
+  .tooltip-content{
+    font-size: 15px!important;
+  }
 </style>
 <script>
     import axios from 'axios';
