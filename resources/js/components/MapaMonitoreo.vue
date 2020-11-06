@@ -3,15 +3,16 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="row" data-tour-step="1">
+                    <div class="row">
+                    <span id="info-tip" v-tooltip.bottom="'Cada punto representa las ubicaciones desde donde hemos recolectado datos, puedes interactuar con ellos. Y en la parte inferior veras la información que se recolectó.'">i</span>
                         <vl-map  @click="onClick" :load-tiles-while-animating="true" data-projection="EPSG:4326" style="height: 400px">
                           <vl-view :zoom.sync="zoom" :center.sync="center" :rotation.sync="rotation"></vl-view>
                             <vl-feature v-for="(ubicacion, index) in arrUbicacion" :key="index" :name="index">
                                 <vl-geom-point :coordinates="ubicacion"></vl-geom-point>
                                 <vl-style-box>
                                   <vl-style-circle>
-                                    /* <vl-style-fill color="white"></vl-style-fill> */
-                                    <vl-style-stroke color="#C004D9"></vl-style-stroke>
+                                    <vl-style-fill color="#230A59"></vl-style-fill>
+                                    <vl-style-stroke color="#0029FA"></vl-style-stroke>
                                   </vl-style-circle>
                                 </vl-style-box>
                             </vl-feature>
@@ -62,7 +63,20 @@
         </div>
     </div>
 </template>
-
+<style>
+  #info-tip{
+    background-color: #0029FA80;
+    color: white;
+    display: block;
+    width: 24px;
+    height: 24px;
+    right: 30px;
+    border-radius: 30%;
+    text-align: center;
+    margin-left: 10px;
+    font-weight: bolder;
+  }
+</style>
 <script>
     import axios from 'axios';
     import moment from 'moment';
@@ -141,33 +155,7 @@
                     pointBorderColor: "#8C7503",
                     pointBackgroundColor: "#402401",
                     backgroundColor: "#D9B504"
-                },
-                myOptions: {
-                    useKeyboardNavigation: true,
-                    startTimeout: 3000,
-                    labels: {
-                        buttonSkip: 'Saltar Tour',
-                        buttonPrevious: 'Anterior',
-                        buttonNext: 'Siguiente',
-                        buttonStop: 'Terminar'
-                    }
-                },
-                steps: [
-                    {
-                        target: '[data-tour-step="1"]',
-                            content: 'Cada punto representa las ubicaciones desde donde hemos recolectado datos, puedes interactuar con ellos. Y en la parte inferior veras la información que se recolectó.',
-                        params: {
-                            placement: 'top-right' 
-                        }      
-                    },
-                    {
-                        target: '[data-tour-step="2"]',
-                        content: 'Acá puedes ver las graficas de los datos que se han recolectado en el proyecto',
-                        params: {
-                            placement: 'right' 
-                        }      
-                    }
-                ]
+                }
             };
         },
         mounted: function () {
@@ -243,16 +231,22 @@
                     this.arrID.push({nombre, total: id});
                     this.pushUniqueCoordinates( this.arrUbicacion, longitud, latitud);
                     if(this.mostrarDatos){
-                      this.arrLongitud.push({nombre, total: longitud});
-                      this.arrLatitud.push({nombre, total: latitud});
-                      this.arrPH.push({nombre, total: ph});
-                      this.arrOD.push({nombre, total: od});
-                      this.arrHG.push({nombre, total: hg});
-                      this.arrConduct.push({nombre, total: conduct});
-                      this.arrTemperatura.push({nombre, total: temperatura});
+                      this.arrLongitud = this.validarDatos(longitud, this.arrLongitud, nombre);
+                      this.arrLatitud = this.validarDatos(latitud, this.arrLatitud, nombre);
+                      this.arrPH = this.validarDatos(ph, this.arrPH, nombre);
+                      this.arrOD = this.validarDatos(od, this.arrOD, nombre);                      
+                      this.arrHG = this.validarDatos(hg, this.arrHG, nombre);
+                      this.arrConduct = this.validarDatos(conduct, this.arrConduct, nombre);
+                      this.arrTemperatura = this.validarDatos(temperatura, this.arrTemperatura, nombre);
                     }
                 });
                 this.arrUbicacion = this.arrUbicacion;
+            },
+            validarDatos(datos, arrayTotal, nombre){
+              if(datos){
+                arrayTotal.push({nombre, total: datos});
+              }
+              return arrayTotal;
             },
             pushUniqueCoordinates( datos, longitud, latitud){
                 let no_existe = true;

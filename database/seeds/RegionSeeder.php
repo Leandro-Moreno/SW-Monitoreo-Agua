@@ -12,37 +12,37 @@ class RegionSeeder extends Seeder
     public function run()
     {
       DB::table('regions')->insert([
-        'nombre'=> '1',
+        'nombre'=> 'Uniandes',
         'created_at' => now(),
         'updated_at' => now()
       ]);
       DB::table('regions')->insert([
-        'nombre'=> '2',
+        'nombre'=> 'Aguas',
         'created_at' => now(),
         'updated_at' => now()
       ]);
       DB::table('regions')->insert([
-        'nombre'=> '3',
+        'nombre'=> 'Leticia',
         'created_at' => now(),
         'updated_at' => now()
       ]);
       DB::table('regions')->insert([
-        'nombre'=> '4',
+        'nombre'=> 'Guajira',
         'created_at' => now(),
         'updated_at' => now()
       ]);
       DB::table('regions')->insert([
-        'nombre'=> '5',
+        'nombre'=> 'Santander',
         'created_at' => now(),
         'updated_at' => now()
       ]);
       DB::table('regions')->insert([
-        'nombre'=> '6',
+        'nombre'=> 'Baru',
         'created_at' => now(),
         'updated_at' => now()
       ]);
       DB::table('regions')->insert([
-        'nombre'=> '7',
+        'nombre'=> 'Samaca',
         'created_at' => now(),
         'updated_at' => now()
       ]);
