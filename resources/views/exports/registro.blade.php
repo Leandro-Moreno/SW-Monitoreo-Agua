@@ -54,7 +54,7 @@
     <td>{{$registro->od}}</td>
     <td>{{$registro->ph}}</td>
     <td>
-      {{$registro->region->id}}
+      {{$registro->region_id}}
     </td>
     <td>{{$registro->created_at}}</td>
     <td>{{$registro->transferencia->estado}}</td>
