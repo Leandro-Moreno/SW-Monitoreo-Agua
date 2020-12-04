@@ -45,7 +45,7 @@
                                 <line-chart height="100px" :chartDatos="arrTemperatura" :chartColors="temperaturaColors" unit="C" label="Temperatura °C" />
                             </div>
                             <div v-if="arrPH.length > 0" class="tab-pane fade" id="ph" role="tabpanel" aria-labelledby="ph-tab">
-                                <line-chart height="100px" :chartDatos="arrPH" :chartColors="phColors" unit="pH" label="pH" />
+                                <line-chart height="100px" :chartDatos="arrPH" :chartColors="phColors" unit="" label="" />
                             </div>
                             <div class="tab-pane fade" id="od" role="tabpanel" aria-labelledby="od-tab" v-if="arrOD.length > 0">
                                 <line-chart height="100px" :chartDatos="arrOD" :chartColors="ogColors" unit="mg/L" label="Oxígeno Disuelto mg/L" />
